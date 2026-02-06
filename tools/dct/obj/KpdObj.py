@@ -233,14 +233,14 @@ class KpdObj(ModuleObj):
         if KpdData.get_keyType() == 'NORMAL_TYPE':
             if value == 'POWER':
                 return KpdData.get_col() - 1
-            elif cmp(value, KpdData.get_homeKey()) == 0:
+            elif value == KpdData.get_homeKey():
                 return 2 * KpdData.get_col() - 1
             else:
                 return KpdData.get_matrix().index(value)
         elif KpdData.get_keyType() == 'EXTEND_TYPE':
             if value == 'POWER':
                 return KpdData.get_col_ext() - 1
-            elif cmp(value, KpdData.get_homeKey()) == 0:
+            elif value == KpdData.get_homeKey():
                 return 2 * KpdData.get_col_ext() - 1
             else:
                 return KpdData.get_matrix_ext().index(value)
