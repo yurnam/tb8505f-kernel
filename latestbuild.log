@@ -1,3 +1,4 @@
+martin@mklinux:~/pwnagotchi-a5/8505F/devenv/linux$ 
 martin@mklinux:~/pwnagotchi-a5/8505F/devenv/linux$ make -j32 
   CHK     include/config/kernel.release
   CHK     include/generated/uapi/linux/version.h
@@ -14,131 +15,43 @@ else \
 fi
   CHK     include/generated/utsrelease.h
   CHK     scripts/mod/devicetable-offsets.h
-for i in ./arch/arm64/boot/dts/mediatek/akita_row_wifi.dtb; do \
-	./scripts/dtc/ufdt_apply_overlay ./arch/arm64/boot/dts/mediatek/mt6761.dtb $i $i.merge;\
-done
-ufdt_apply_overlay: took 0.000000000 secs
   CHK     include/generated/timeconst.h
   CHK     include/generated/bounds.h
   CHK     include/generated/asm-offsets.h
+for i in ./arch/arm64/boot/dts/mediatek/akita_row_wifi.dtb; do \
+	./scripts/dtc/ufdt_apply_overlay ./arch/arm64/boot/dts/mediatek/mt6761.dtb $i $i.merge;\
+done
   CALL    scripts/checksyscalls.sh
+ufdt_apply_overlay: took 0.000000000 secs
   CHK     include/generated/compile.h
 .
 FDVT: Drv use 3.5 folder
-  CHK     kernel/config_data.h
-.
 .
 .
 cameraisp drv by platform 
-  CC      drivers/misc/mediatek/base/power/spm/common/mtk_idle_select.o
+.
+  CHK     kernel/config_data.h
 PLATFORM = mt6761
 DEVAPC platform code exists...
 *MTK_GPU_VERSION 2 = clark
 imgsensor drv by common ../common/v1/gc5035_mipi_raw/ ../common/v1/gc5035b_mipi_raw/ ../common/v1/hi556_mipi_raw/ ../common/v1/hi556txd_mipi_raw/ ../common/v1/sc500cs_mipi_raw/ ../common/v1/s5k4h7_mipi_raw/ ../common/v1/gc2375h_mipi_raw/ ../common/v1/gc2375_mipi_raw/ ../common/v1/sc201cs_mipi_raw/ ../common/v1/s5k4h7_qtech_mipi_raw/ ../common/v1/gc02m1_mipi_raw/
+"CONFIG_MICROTRUST_TEE_VERSION="300""
+build trng...
+"CONFIG_MICROTRUST_TEE_SUPPORT=y"
+"CONFIG_MICROTRUST_TZ_DRIVER=y"
+"CONFIG_MICROTRUST_VFS_DRIVER=y"
+"CONFIG_MICROTRUST_FP_DRIVER=y"
+"CONFIG_MICROTRUST_TUI_DRIVER="
+"CONFIG_MICROTRUST_DEBUG="
+"CONFIG_MICROTRUST_TEST_DRIVERS="
   CC      drivers/misc/mediatek/sspm/sspm_reservedmem.o
   CC      drivers/misc/mediatek/sspm/sspm_plt.o
-"CONFIG_MICROTRUST_TEE_VERSION="300""
-  CC      drivers/misc/mediatek/sspm/mt6761/../sspm_mbox.o
-build trng...
-  CC      drivers/misc/mediatek/sspm/mt6761/../sspm_ipi_mbox.o
-  CC      drivers/misc/mediatek/videocodec/videocodec_kernel.o
-  CC      drivers/misc/mediatek/sspm/mt6761/../sspm_logger_impl.o
-  CC      drivers/misc/mediatek/timer/timesync/mtk_sys_timer.o
-  LD      drivers/misc/mediatek/teei/built-in.o
-  CC      drivers/misc/mediatek/zone_movable_cma/single_cma.o
-  CC      drivers/misc/mediatek/zone_movable_cma/zmc_notify.o
-  CC      drivers/misc/mediatek/video/common/aal30/ddp_aal.o
-  CC      drivers/misc/mediatek/videocodec/mt6765/videocodec_kernel_driver.o
-aarch64-linux-gnu-ld: drivers/misc/mediatek/teei/300/built-in.o kann nicht gefunden werden: Datei oder Verzeichnis nicht gefunden
-make[4]: *** [scripts/Makefile.build:508: drivers/misc/mediatek/teei/built-in.o] Fehler 1
-  CC      drivers/misc/mediatek/video/mt6761/dispsys/ddp_ovl.o
-make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/teei] Fehler 2
-  CC      drivers/misc/mediatek/video/mt6761/dispsys/ddp_rdma_ex.o
-  CC      drivers/misc/mediatek/video/mt6761/videox/mtkfb_console.o
-  CC      drivers/misc/mediatek/sspm/mt6761/sspm_ipi_timeout_cb.o
-make[3]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  CC      drivers/misc/mediatek/videocodec/mt6765/common/val/src/val.o
-  CC      drivers/misc/mediatek/video/mt6761/dispsys/ddp_wdma_ex.o
-  CC      drivers/misc/mediatek/video/mt6761/dispsys/ddp_dsi.o
-  CC      drivers/misc/mediatek/video/mt6761/videox/disp_assert_layer.o
-  CC      drivers/misc/mediatek/video/mt6761/videox/mtkfb.o
-  CC      drivers/misc/mediatek/video/common/color20/ddp_color.o
-  CC      drivers/misc/mediatek/video/mt6761/dispsys/ddp_clkmgr.o
-  CC      drivers/misc/mediatek/videocodec/mt6765/common/drv/src/drv_base.o
-  CC      drivers/misc/mediatek/video/common/corr10/ddp_dither.o
-  CC      drivers/misc/mediatek/video/mt6761/videox/mtkfb_fence.o
-  CC      drivers/misc/mediatek/video/mt6761/videox/fbconfig_kdebug.o
-  CC      drivers/misc/mediatek/video/common/layering_rule_base/v1.1/layering_rule_base.o
-  CC      drivers/misc/mediatek/video/mt6761/dispsys/ddp_rsz.o
-drivers/misc/mediatek/base/power/spm/common/mtk_idle_select.c:22:10: fatal error: teei_client_main.h: Datei oder Verzeichnis nicht gefunden
-   22 | #include <teei_client_main.h> /* is_teei_ready */
-      |          ^~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-  CC      drivers/misc/mediatek/video/common/corr10/ddp_gamma.o
-make[7]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/base/power/spm/common/mtk_idle_select.o] Fehler 1
-make[6]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/spm/common] Fehler 2
-make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/spm] Fehler 2
-make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power] Fehler 2
-make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base] Fehler 2
-  CC      drivers/misc/mediatek/video/mt6761/videox/mtkfb_vsync.o
-  CC      drivers/misc/mediatek/videocodec/mt6765/common/drv/src/dvfs_v2.o
-  CC      drivers/misc/mediatek/video/common/pwm10/ddp_pwm.o
-drivers/misc/mediatek/sspm/mt6761/../sspm_ipi_mbox.c:21:10: fatal error: sspm_define.h: Datei oder Verzeichnis nicht gefunden
-   21 | #include "sspm_define.h"
-      |          ^~~~~~~~~~~~~~~
-compilation terminated.
-make[5]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/sspm/mt6761/../sspm_ipi_mbox.o] Fehler 1
-make[5]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  CC      drivers/misc/mediatek/video/mt6761/dispsys/ddp_drv.o
-drivers/misc/mediatek/timer/timesync/mtk_sys_timer.c:35:10: fatal error: mtk_sys_timer_typedefs.h: Datei oder Verzeichnis nicht gefunden
-   35 | #include <mtk_sys_timer_typedefs.h>
-      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[5]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/timer/timesync/mtk_sys_timer.o] Fehler 1
-make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/timer/timesync] Fehler 2
-make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/timer] Fehler 2
-drivers/misc/mediatek/sspm/mt6761/../sspm_mbox.c:26:10: fatal error: sspm_define.h: Datei oder Verzeichnis nicht gefunden
-   26 | #include "sspm_define.h"
-      |          ^~~~~~~~~~~~~~~
-compilation terminated.
-  CC      drivers/misc/mediatek/video/mt6761/videox/disp_cust.o
-In file included from drivers/misc/mediatek/video/mt6761/dispsys/ddp_dsi.c:24:
-./drivers/misc/mediatek/video/mt6761/videox/debug.h:31:10: fatal error: ddp_info.h: Datei oder Verzeichnis nicht gefunden
-   31 | #include "ddp_info.h"
-      |          ^~~~~~~~~~~~
-compilation terminated.
-make[5]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/sspm/mt6761/../sspm_mbox.o] Fehler 1
-make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/video/mt6761/dispsys/ddp_dsi.o] Fehler 1
-make[6]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  CC      drivers/misc/mediatek/video/mt6761/dispsys/ddp_path.o
-  CC      drivers/misc/mediatek/video/mt6761/videox/debug.o
+  CC      drivers/misc/mediatek/video/mt6761/dispsys/ddp_debug.o
 In file included from drivers/misc/mediatek/sspm/sspm_reservedmem.c:43:
 ./drivers/misc/mediatek/sspm/mt6761/sspm_reservedmem_define.h:15:10: fatal error: sspm_reservedmem.h: Datei oder Verzeichnis nicht gefunden
    15 | #include <sspm_reservedmem.h>
       |          ^~~~~~~~~~~~~~~~~~~~
 compilation terminated.
-In file included from drivers/misc/mediatek/video/common/layering_rule_base/v1.1/layering_rule_base.c:32:
-./drivers/misc/mediatek/video/mt6761/videox/layering_rule.h:16:10: fatal error: layering_rule_base.h: Datei oder Verzeichnis nicht gefunden
-   16 | #include "layering_rule_base.h"
-      |          ^~~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-In file included from drivers/misc/mediatek/video/mt6761/dispsys/ddp_log.h:21,
-                 from drivers/misc/mediatek/video/mt6761/dispsys/ddp_wdma_ex.c:15:
-./drivers/misc/mediatek/video/mt6761/videox/disp_drv_log.h:17:10: fatal error: display_recorder.h: Datei oder Verzeichnis nicht gefunden
-   17 | #include "display_recorder.h"
-      |          ^~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-In file included from drivers/misc/mediatek/video/mt6761/dispsys/ddp_log.h:21,
-                 from drivers/misc/mediatek/video/mt6761/dispsys/ddp_ovl.c:15:
-./drivers/misc/mediatek/video/mt6761/videox/disp_drv_log.h:17:10: fatal error: display_recorder.h: Datei oder Verzeichnis nicht gefunden
-   17 | #include "display_recorder.h"
-      |          ^~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-drivers/misc/mediatek/sspm/mt6761/../sspm_logger_impl.c:33:10: fatal error: sspm_define.h: Datei oder Verzeichnis nicht gefunden
-   33 | #include "sspm_define.h"
-      |          ^~~~~~~~~~~~~~~
-compilation terminated.
-make[7]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/video/common/layering_rule_base/v1.1/layering_rule_base.o] Fehler 1
 make[4]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/sspm/sspm_reservedmem.o] Fehler 1
 make[4]: *** Auf noch nicht beendete Prozesse wird gewartet …
 In file included from drivers/misc/mediatek/sspm/sspm_plt.c:46:
@@ -146,125 +59,20 @@ In file included from drivers/misc/mediatek/sspm/sspm_plt.c:46:
    15 | #include <sspm_reservedmem.h>
       |          ^~~~~~~~~~~~~~~~~~~~
 compilation terminated.
-make[6]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/video/common/layering_rule_base/v1.1] Fehler 2
-make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/video/common/layering_rule_base] Fehler 2
-make[5]: *** Auf noch nicht beendete Prozesse wird gewartet …
-make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/video/mt6761/dispsys/ddp_wdma_ex.o] Fehler 1
-  CC      drivers/misc/mediatek/video/mt6761/videox/primary_display.o
-make[5]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/sspm/mt6761/../sspm_logger_impl.o] Fehler 1
-  CC      drivers/misc/mediatek/video/mt6761/videox/disp_lowpower.o
-make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/video/mt6761/dispsys/ddp_ovl.o] Fehler 1
-  CC      drivers/misc/mediatek/video/mt6761/videox/disp_recovery.o
-  CC      drivers/misc/mediatek/video/mt6761/videox/disp_lcm.o
-  CC      drivers/misc/mediatek/video/mt6761/videox/disp_utils.o
-make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/sspm/"mt6761"] Fehler 2
-  CC      drivers/misc/mediatek/video/mt6761/videox/mtk_disp_mgr.o
 make[4]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/sspm/sspm_plt.o] Fehler 1
 make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/sspm] Fehler 2
-  CC      drivers/misc/mediatek/video/mt6761/videox/compat_mtk_disp_mgr.o
-  CC      drivers/misc/mediatek/video/mt6761/videox/disp_helper.o
-In file included from drivers/misc/mediatek/video/mt6761/videox/mtkfb.c:54:
-./drivers/misc/mediatek/video/common/mtkfb_fence.h:20:10: fatal error: disp_drv_platform.h: Datei oder Verzeichnis nicht gefunden
-   20 | #include "disp_drv_platform.h"
-      |          ^~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-In file included from drivers/misc/mediatek/video/mt6761/dispsys/ddp_log.h:21,
-                 from drivers/misc/mediatek/video/mt6761/dispsys/ddp_rdma_ex.c:15:
-./drivers/misc/mediatek/video/mt6761/videox/disp_drv_log.h:17:10: fatal error: display_recorder.h: Datei oder Verzeichnis nicht gefunden
-   17 | #include "display_recorder.h"
-      |          ^~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/video/mt6761/dispsys/ddp_rdma_ex.o] Fehler 1
-  CC      drivers/misc/mediatek/video/mt6761/videox/disp_dts_gpio.o
-make[6]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/video/mt6761/videox/mtkfb.o] Fehler 1
-make[6]: *** Auf noch nicht beendete Prozesse wird gewartet …
-In file included from drivers/misc/mediatek/video/mt6761/videox/mtkfb_fence.c:29:
-./drivers/misc/mediatek/video/common/mtkfb_fence.h:20:10: fatal error: disp_drv_platform.h: Datei oder Verzeichnis nicht gefunden
-   20 | #include "disp_drv_platform.h"
-      |          ^~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-In file included from drivers/misc/mediatek/video/mt6761/dispsys/ddp_log.h:21,
-                 from drivers/misc/mediatek/video/mt6761/dispsys/ddp_rsz.c:19:
-./drivers/misc/mediatek/video/mt6761/videox/disp_drv_log.h:17:10: fatal error: display_recorder.h: Datei oder Verzeichnis nicht gefunden
-   17 | #include "display_recorder.h"
-      |          ^~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[6]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/video/mt6761/videox/mtkfb_fence.o] Fehler 1
-make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/video/mt6761/dispsys/ddp_rsz.o] Fehler 1
-In file included from drivers/misc/mediatek/video/mt6761/dispsys/ddp_log.h:21,
-                 from drivers/misc/mediatek/video/mt6761/dispsys/ddp_clkmgr.c:21:
-./drivers/misc/mediatek/video/mt6761/videox/disp_drv_log.h:17:10: fatal error: display_recorder.h: Datei oder Verzeichnis nicht gefunden
-   17 | #include "display_recorder.h"
-      |          ^~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/video/mt6761/dispsys/ddp_clkmgr.o] Fehler 1
-  LD      drivers/misc/mediatek/zone_movable_cma/built-in.o
-In file included from drivers/misc/mediatek/video/mt6761/videox/debug.c:44:
-./drivers/misc/mediatek/video/common/mtkfb_fence.h:20:10: fatal error: disp_drv_platform.h: Datei oder Verzeichnis nicht gefunden
-   20 | #include "disp_drv_platform.h"
-      |          ^~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/video/mt6761/videox/debug.o] Fehler 1
-In file included from drivers/misc/mediatek/video/mt6761/dispsys/ddp_log.h:21,
-                 from drivers/misc/mediatek/video/mt6761/dispsys/ddp_path.c:16:
-./drivers/misc/mediatek/video/mt6761/videox/disp_drv_log.h:17:10: fatal error: display_recorder.h: Datei oder Verzeichnis nicht gefunden
-   17 | #include "display_recorder.h"
-      |          ^~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-In file included from drivers/misc/mediatek/video/mt6761/videox/disp_recovery.c:50:
-./drivers/misc/mediatek/video/mt6761/dispsys/ddp_log.h:21:10: fatal error: disp_drv_log.h: Datei oder Verzeichnis nicht gefunden
-   21 | #include "disp_drv_log.h"
-      |          ^~~~~~~~~~~~~~~~
-compilation terminated.
-make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/video/mt6761/dispsys/ddp_path.o] Fehler 1
-make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/video/mt6761/videox/disp_recovery.o] Fehler 1
-In file included from drivers/misc/mediatek/video/mt6761/dispsys/ddp_log.h:21,
-                 from drivers/misc/mediatek/video/mt6761/dispsys/ddp_drv.c:63:
-./drivers/misc/mediatek/video/mt6761/videox/disp_drv_log.h:17:10: fatal error: display_recorder.h: Datei oder Verzeichnis nicht gefunden
-   17 | #include "display_recorder.h"
-      |          ^~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-In file included from drivers/misc/mediatek/video/mt6761/videox/mtk_disp_mgr.c:75:
-./drivers/misc/mediatek/video/common/mtkfb_fence.h:20:10: fatal error: disp_drv_platform.h: Datei oder Verzeichnis nicht gefunden
-   20 | #include "disp_drv_platform.h"
-      |          ^~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/video/mt6761/dispsys/ddp_drv.o] Fehler 1
+make[3]: *** Auf noch nicht beendete Prozesse wird gewartet …
+drivers/misc/mediatek/video/mt6761/dispsys/ddp_debug.c: In function ‘process_dbg_opt’:
+drivers/misc/mediatek/video/mt6761/dispsys/ddp_debug.c:588:58: error: argument to ‘sizeof’ in ‘strncpy’ call is the same expression as the source; did you mean to use the size of the destination? [-Werror=sizeof-pointer-memaccess]
+  588 |                 strncpy((char *)fmt, (char *)temp, sizeof(temp));
+      |                                                          ^
+cc1: all warnings being treated as errors
+make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/video/mt6761/dispsys/ddp_debug.o] Fehler 1
 make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/video/mt6761/dispsys] Fehler 2
-make[5]: *** Auf noch nicht beendete Prozesse wird gewartet …
-make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/video/mt6761/videox/mtk_disp_mgr.o] Fehler 1
-In file included from drivers/misc/mediatek/video/mt6761/videox/compat_mtk_disp_mgr.c:21:
-./drivers/misc/mediatek/video/common/mtkfb_fence.h:20:10: fatal error: disp_drv_platform.h: Datei oder Verzeichnis nicht gefunden
-   20 | #include "disp_drv_platform.h"
-      |          ^~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/video/mt6761/videox/compat_mtk_disp_mgr.o] Fehler 1
-In file included from drivers/misc/mediatek/video/mt6761/videox/layering_rule.h:16,
-                 from drivers/misc/mediatek/video/mt6761/videox/disp_lowpower.c:63:
-./drivers/misc/mediatek/video/common/layering_rule_base/v1.1/layering_rule_base.h:18:10: fatal error: disp_lcm.h: Datei oder Verzeichnis nicht gefunden
-   18 | #include "disp_lcm.h"
-      |          ^~~~~~~~~~~~
-compilation terminated.
-make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/video/mt6761/videox/disp_lowpower.o] Fehler 1
-In file included from drivers/misc/mediatek/video/mt6761/videox/primary_display.c:57:
-./drivers/misc/mediatek/video/common/mtkfb_fence.h:20:10: fatal error: disp_drv_platform.h: Datei oder Verzeichnis nicht gefunden
-   20 | #include "disp_drv_platform.h"
-      |          ^~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/video/mt6761/videox/primary_display.o] Fehler 1
-  LD      drivers/misc/mediatek/video/common/pwm10/built-in.o
-  LD      drivers/misc/mediatek/video/common/color20/built-in.o
-  LD      drivers/misc/mediatek/video/common/corr10/built-in.o
-  LD      drivers/misc/mediatek/video/common/aal30/built-in.o
-make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/video/common] Fehler 2
-make[4]: *** Auf noch nicht beendete Prozesse wird gewartet …
-make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/video/mt6761/videox] Fehler 2
 make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/video/mt6761] Fehler 2
 make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/video] Fehler 2
-  LD      drivers/misc/mediatek/videocodec/mt6765/vcodec_kernel_driver.o
-  LD      drivers/misc/mediatek/videocodec/mt6765/built-in.o
-  LD      drivers/misc/mediatek/videocodec/built-in.o
 make[2]: *** [scripts/Makefile.build:648: drivers/misc/mediatek] Fehler 2
 make[1]: *** [scripts/Makefile.build:648: drivers/misc] Fehler 2
 make: *** [Makefile:1110: drivers] Fehler 2
+martin@mklinux:~/pwnagotchi-a5/8505F/devenv/linux$ 
 
