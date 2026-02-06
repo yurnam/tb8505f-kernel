@@ -25,3 +25,5 @@ scripts/sortextable
 *.order
 vdso.so*
 .version
+*.tmp
+*.merge
