@@ -662,6 +662,12 @@ KBUILD_CFLAGS	+= $(call cc-disable-warning, builtin-declaration-mismatch)
 KBUILD_CFLAGS	+= $(call cc-disable-warning, packed-not-aligned)
 KBUILD_CFLAGS	+= $(call cc-disable-warning, stringop-overread)
 KBUILD_CFLAGS	+= $(call cc-disable-warning, stringop-truncation)
+KBUILD_CFLAGS	+= $(call cc-disable-warning, dangling-pointer)
+KBUILD_CFLAGS	+= $(call cc-disable-warning, discarded-qualifiers)
+KBUILD_CFLAGS	+= $(call cc-disable-warning, format)
+KBUILD_CFLAGS	+= $(call cc-disable-warning, misleading-indentation)
+KBUILD_CFLAGS	+= $(call cc-disable-warning, missing-attributes)
+KBUILD_CFLAGS	+= $(call cc-disable-warning, restrict)
 
 ifdef CONFIG_LD_DEAD_CODE_DATA_ELIMINATION
 KBUILD_CFLAGS	+= $(call cc-option,-ffunction-sections,)
