@@ -16,7 +16,7 @@ import re
 import os
 import sys
 import string
-import ConfigParser
+import configparser as ConfigParser
 import xml.dom.minidom
 
 

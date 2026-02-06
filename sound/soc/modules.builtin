@@ -1,0 +1,5 @@
+kernel/sound/soc/snd-soc-core.ko
+kernel/sound/soc/codecs/snd-soc-rt5509.ko
+kernel/sound/soc/mediatek/ac107/ac107.ko
+kernel/sound/soc/mediatek/aw87519/aw87519_left_audio.ko
+kernel/sound/soc/mediatek/aw87519/aw87519_right_audio.ko
