@@ -1,0 +1,1073 @@
+martin@mklinux:~/pwnagotchi-a5/8505F/devenv/linux$ make -j32 
+  CHK     include/config/kernel.release
+  CHK     include/generated/uapi/linux/version.h
+make[1]: Für das Ziel „dct/DrvGen.py“ ist nichts zu tun.
+make[1]: Für das Ziel „dct/config/MT6739.fig“ ist nichts zu tun.
+make[1]: Für das Ziel „dct/config/MT6761.fig“ ist nichts zu tun.
+rm -f dtboimg.cfg.tmp
+make[1]: Für das Ziel „dct/config/MT6765.fig“ ist nichts zu tun.
+echo /home/martin/pwnagotchi-a5/8505F/devenv/linux/arch/arm64/boot/dts/mediatek/akita_row_wifi.dtb >>dtboimg.cfg.tmp; echo " id=0" >>dtboimg.cfg.tmp; 
+if ! cmp -s dtboimg.cfg.tmp dtboimg.cfg; then \
+	mv dtboimg.cfg.tmp dtboimg.cfg; \
+else \
+	rm dtboimg.cfg.tmp; \
+fi
+  CHK     include/generated/utsrelease.h
+  CHK     scripts/mod/devicetable-offsets.h
+for i in ./arch/arm64/boot/dts/mediatek/akita_row_wifi.dtb; do \
+	./scripts/dtc/ufdt_apply_overlay ./arch/arm64/boot/dts/mediatek/mt6761.dtb $i $i.merge;\
+done
+ufdt_apply_overlay: took 0.000000000 secs
+  CHK     include/generated/timeconst.h
+  CHK     include/generated/bounds.h
+  CHK     include/generated/asm-offsets.h
+  CALL    scripts/checksyscalls.sh
+  CHK     include/generated/compile.h
+  CC      kernel/sys.o
+  CC      kernel/extable.o
+  CC      security/lsm_audit.o
+  CC      kernel/params.o
+  CC      kernel/kthread.o
+  CC      kernel/sys_ni.o
+  CC      kernel/nsproxy.o
+  CC      kernel/notifier.o
+  CC      kernel/ksysfs.o
+  CC      kernel/cred.o
+  CC      drivers/devfreq/devfreq.o
+  CC      drivers/devfreq/helio-dvfsrc-opp.o
+  CC      kernel/reboot.o
+drivers/devfreq/helio-dvfsrc-opp.c:14:10: fatal error: helio-dvfsrc.h: Datei oder Verzeichnis nicht gefunden
+   14 | #include <helio-dvfsrc.h>
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+  CC      drivers/devfreq/helio-dvfsrc-sysfs.o
+make[2]: *** [scripts/Makefile.build:334: drivers/devfreq/helio-dvfsrc-opp.o] Fehler 1
+make[2]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  CC      sound/core/control.o
+  CC      net/8021q/vlan_core.o
+  CC      kernel/async.o
+  CC      kernel/range.o
+  CC      kernel/smpboot.o
+  CC      net/8021q/vlan_dev.o
+  CC      kernel/ucount.o
+  CC      mm/madvise.o
+  CC      net/core/skbuff.o
+  CC      drivers/base/regmap/regcache-rbtree.o
+  CC      net/8021q/vlan_netlink.o
+  LD      drivers/hid/hid.o
+  CC      net/ethernet/eth.o
+  CC      lib/kstrtox.o
+  CC      drivers/hid/uhid.o
+  CC      kernel/groups.o
+  LD      drivers/gpu/drm/drm_kms_helper.o
+  CC      crypto/xts.o
+  CC      mm/memblock.o
+  CC      drivers/gpu/drm/drm_irq.o
+  CC      crypto/gcm.o
+drivers/devfreq/helio-dvfsrc-sysfs.c:19:10: fatal error: helio-dvfsrc.h: Datei oder Verzeichnis nicht gefunden
+   19 | #include <helio-dvfsrc.h>
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+  CC      net/ipv4/route.o
+  CC      fs/ext4/inode.o
+make[2]: *** [scripts/Makefile.build:334: drivers/devfreq/helio-dvfsrc-sysfs.o] Fehler 1
+  CC      kernel/bpf/core.o
+In file included from ./include/linux/poll.h:11,
+                 from ./include/sound/info.h:25,
+                 from sound/core/control.c:30:
+sound/core/control_compat.c: In function ‘snd_ctl_elem_info_compat’:
+sound/core/control_compat.c:111:51: error: taking address of packed member of ‘struct snd_ctl_elem_info32’ may result in an unaligned pointer value [-Werror=address-of-packed-member]
+  111 |         if (get_user(data->value.enumerated.item, &data32->value.enumerated.item))
+./arch/arm64/include/asm/uaccess.h:326:43: note: in definition of macro ‘__get_user_check’
+  326 |         __typeof__(*(ptr)) __user *__p = (ptr);                         \
+      |                                           ^~~
+./arch/arm64/include/asm/uaccess.h:351:25: note: in expansion of macro ‘__get_user’
+  351 | #define get_user        __get_user
+      |                         ^~~~~~~~~~
+sound/core/control_compat.c:111:13: note: in expansion of macro ‘get_user’
+  111 |         if (get_user(data->value.enumerated.item, &data32->value.enumerated.item))
+      |             ^~~~~~~~
+sound/core/control_compat.c:128:35: error: taking address of packed member of ‘struct snd_ctl_elem_info32’ may result in an unaligned pointer value [-Werror=address-of-packed-member]
+  128 |         if (put_user(data->owner, &data32->owner))
+./arch/arm64/include/asm/uaccess.h:397:43: note: in definition of macro ‘__put_user_check’
+  397 |         __typeof__(*(ptr)) __user *__p = (ptr);                         \
+      |                                           ^~~
+./arch/arm64/include/asm/uaccess.h:422:25: note: in expansion of macro ‘__put_user’
+  422 | #define put_user        __put_user
+      |                         ^~~~~~~~~~
+sound/core/control_compat.c:128:13: note: in expansion of macro ‘put_user’
+  128 |         if (put_user(data->owner, &data32->owner))
+      |             ^~~~~~~~
+sound/core/control_compat.c:133:55: error: taking address of packed member of ‘struct snd_ctl_elem_info32’ may result in an unaligned pointer value [-Werror=address-of-packed-member]
+  133 |                 if (put_user(data->value.integer.min, &data32->value.integer.min) ||
+./arch/arm64/include/asm/uaccess.h:397:43: note: in definition of macro ‘__put_user_check’
+  397 |         __typeof__(*(ptr)) __user *__p = (ptr);                         \
+      |                                           ^~~
+./arch/arm64/include/asm/uaccess.h:422:25: note: in expansion of macro ‘__put_user’
+  422 | #define put_user        __put_user
+      |                         ^~~~~~~~~~
+sound/core/control_compat.c:133:21: note: in expansion of macro ‘put_user’
+  133 |                 if (put_user(data->value.integer.min, &data32->value.integer.min) ||
+      |                     ^~~~~~~~
+sound/core/control_compat.c:134:55: error: taking address of packed member of ‘struct snd_ctl_elem_info32’ may result in an unaligned pointer value [-Werror=address-of-packed-member]
+  134 |                     put_user(data->value.integer.max, &data32->value.integer.max) ||
+./arch/arm64/include/asm/uaccess.h:397:43: note: in definition of macro ‘__put_user_check’
+  397 |         __typeof__(*(ptr)) __user *__p = (ptr);                         \
+      |                                           ^~~
+./arch/arm64/include/asm/uaccess.h:422:25: note: in expansion of macro ‘__put_user’
+  422 | #define put_user        __put_user
+      |                         ^~~~~~~~~~
+sound/core/control_compat.c:134:21: note: in expansion of macro ‘put_user’
+  134 |                     put_user(data->value.integer.max, &data32->value.integer.max) ||
+      |                     ^~~~~~~~
+sound/core/control_compat.c:135:56: error: taking address of packed member of ‘struct snd_ctl_elem_info32’ may result in an unaligned pointer value [-Werror=address-of-packed-member]
+  135 |                     put_user(data->value.integer.step, &data32->value.integer.step))
+./arch/arm64/include/asm/uaccess.h:397:43: note: in definition of macro ‘__put_user_check’
+  397 |         __typeof__(*(ptr)) __user *__p = (ptr);                         \
+      |                                           ^~~
+./arch/arm64/include/asm/uaccess.h:422:25: note: in expansion of macro ‘__put_user’
+  422 | #define put_user        __put_user
+      |                         ^~~~~~~~~~
+sound/core/control_compat.c:135:21: note: in expansion of macro ‘put_user’
+  135 |                     put_user(data->value.integer.step, &data32->value.integer.step))
+      |                     ^~~~~~~~
+In file included from ./include/asm-generic/preempt.h:4,
+                 from ./arch/arm64/include/generated/asm/preempt.h:1,
+                 from ./include/linux/preempt.h:59,
+                 from ./include/linux/spinlock.h:50,
+                 from ./include/linux/mm_types.h:8,
+                 from ./include/asm-generic/pgtable.h:9,
+                 from ./arch/arm64/include/asm/pgtable.h:726,
+                 from ./arch/arm64/include/asm/kernel-pgtable.h:22,
+                 from ./arch/arm64/include/asm/uaccess.h:22,
+                 from lib/kstrtox.c:20:
+In function ‘check_object_size’,
+    inlined from ‘copy_from_user’ at ./arch/arm64/include/asm/uaccess.h:448:3,
+    inlined from ‘kstrtobool_from_user’ at lib/kstrtox.c:377:6:
+./include/linux/thread_info.h:96:17: error: ‘buf’ may be used uninitialized [-Werror=maybe-uninitialized]
+   96 |                 __check_object_size(ptr, n, to_user);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/linux/thread_info.h: In function ‘kstrtobool_from_user’:
+./include/linux/thread_info.h:89:13: note: by argument 1 of type ‘const void *’ to ‘__check_object_size’ declared here
+   89 | extern void __check_object_size(const void *ptr, unsigned long n,
+      |             ^~~~~~~~~~~~~~~~~~~
+lib/kstrtox.c:374:14: note: ‘buf’ declared here
+  374 |         char buf[4];
+      |              ^~~
+sound/core/control_compat.c: In function ‘snd_ctl_elem_add_compat’:
+sound/core/control_compat.c:403:35: error: taking address of packed member of ‘struct snd_ctl_elem_info32’ may result in an unaligned pointer value [-Werror=address-of-packed-member]
+  403 |         if (get_user(data->owner, &data32->owner))
+./arch/arm64/include/asm/uaccess.h:326:43: note: in definition of macro ‘__get_user_check’
+  326 |         __typeof__(*(ptr)) __user *__p = (ptr);                         \
+      |                                           ^~~
+./arch/arm64/include/asm/uaccess.h:351:25: note: in expansion of macro ‘__get_user’
+  351 | #define get_user        __get_user
+      |                         ^~~~~~~~~~
+sound/core/control_compat.c:403:13: note: in expansion of macro ‘get_user’
+  403 |         if (get_user(data->owner, &data32->owner))
+      |             ^~~~~~~~
+sound/core/control_compat.c:408:55: error: taking address of packed member of ‘struct snd_ctl_elem_info32’ may result in an unaligned pointer value [-Werror=address-of-packed-member]
+  408 |                 if (get_user(data->value.integer.min, &data32->value.integer.min) ||
+./arch/arm64/include/asm/uaccess.h:326:43: note: in definition of macro ‘__get_user_check’
+  326 |         __typeof__(*(ptr)) __user *__p = (ptr);                         \
+      |                                           ^~~
+./arch/arm64/include/asm/uaccess.h:351:25: note: in expansion of macro ‘__get_user’
+  351 | #define get_user        __get_user
+      |                         ^~~~~~~~~~
+sound/core/control_compat.c:408:21: note: in expansion of macro ‘get_user’
+  408 |                 if (get_user(data->value.integer.min, &data32->value.integer.min) ||
+      |                     ^~~~~~~~
+sound/core/control_compat.c:409:55: error: taking address of packed member of ‘struct snd_ctl_elem_info32’ may result in an unaligned pointer value [-Werror=address-of-packed-member]
+  409 |                     get_user(data->value.integer.max, &data32->value.integer.max) ||
+./arch/arm64/include/asm/uaccess.h:326:43: note: in definition of macro ‘__get_user_check’
+  326 |         __typeof__(*(ptr)) __user *__p = (ptr);                         \
+      |                                           ^~~
+./arch/arm64/include/asm/uaccess.h:351:25: note: in expansion of macro ‘__get_user’
+  351 | #define get_user        __get_user
+      |                         ^~~~~~~~~~
+sound/core/control_compat.c:409:21: note: in expansion of macro ‘get_user’
+  409 |                     get_user(data->value.integer.max, &data32->value.integer.max) ||
+      |                     ^~~~~~~~
+sound/core/control_compat.c:410:56: error: taking address of packed member of ‘struct snd_ctl_elem_info32’ may result in an unaligned pointer value [-Werror=address-of-packed-member]
+  410 |                     get_user(data->value.integer.step, &data32->value.integer.step))
+./arch/arm64/include/asm/uaccess.h:326:43: note: in definition of macro ‘__get_user_check’
+  326 |         __typeof__(*(ptr)) __user *__p = (ptr);                         \
+      |                                           ^~~
+./arch/arm64/include/asm/uaccess.h:351:25: note: in expansion of macro ‘__get_user’
+  351 | #define get_user        __get_user
+      |                         ^~~~~~~~~~
+sound/core/control_compat.c:410:21: note: in expansion of macro ‘get_user’
+  410 |                     get_user(data->value.integer.step, &data32->value.integer.step))
+      |                     ^~~~~~~~
+drivers/base/regmap/regcache-rbtree.c:36:1: error: alignment 1 of ‘struct regcache_rbtree_node’ is less than 8 [-Werror=packed-not-aligned]
+   36 | } __attribute__ ((packed));
+      | ^
+drivers/base/regmap/regcache-rbtree.c: In function ‘regcache_rbtree_insert’:
+drivers/base/regmap/regcache-rbtree.c:130:22: error: taking address of packed member of ‘struct regcache_rbtree_node’ may result in an unaligned pointer value [-Werror=address-of-packed-member]
+  130 |         rb_link_node(&rbnode->node, parent, new);
+      |                      ^~~~~~~~~~~~~
+drivers/base/regmap/regcache-rbtree.c:131:25: error: taking address of packed member of ‘struct regcache_rbtree_node’ may result in an unaligned pointer value [-Werror=address-of-packed-member]
+  131 |         rb_insert_color(&rbnode->node, root);
+      |                         ^~~~~~~~~~~~~
+drivers/base/regmap/regcache-rbtree.c: In function ‘regcache_rbtree_exit’:
+drivers/base/regmap/regcache-rbtree.c:243:32: error: taking address of packed member of ‘struct regcache_rbtree_node’ may result in an unaligned pointer value [-Werror=address-of-packed-member]
+  243 |                 next = rb_next(&rbtree_node->node);
+      |                                ^~~~~~~~~~~~~~~~~~
+drivers/base/regmap/regcache-rbtree.c:244:26: error: taking address of packed member of ‘struct regcache_rbtree_node’ may result in an unaligned pointer value [-Werror=address-of-packed-member]
+  244 |                 rb_erase(&rbtree_node->node, &rbtree_ctx->root);
+      |                          ^~~~~~~~~~~~~~~~~~
+In function ‘check_object_size’,
+    inlined from ‘copy_from_user’ at ./arch/arm64/include/asm/uaccess.h:448:3,
+    inlined from ‘kstrtoull_from_user’ at lib/kstrtox.c:398:1:
+./include/linux/thread_info.h:96:17: error: ‘buf’ may be used uninitialized [-Werror=maybe-uninitialized]
+   96 |                 __check_object_size(ptr, n, to_user);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/linux/thread_info.h: In function ‘kstrtoull_from_user’:
+./include/linux/thread_info.h:89:13: note: by argument 1 of type ‘const void *’ to ‘__check_object_size’ declared here
+   89 | extern void __check_object_size(const void *ptr, unsigned long n,
+      |             ^~~~~~~~~~~~~~~~~~~
+lib/kstrtox.c:388:14: note: ‘buf’ declared here
+  388 |         char buf[1 + sizeof(type) * 8 + 1 + 1];                         \
+      |              ^~~
+lib/kstrtox.c:398:1: note: in expansion of macro ‘kstrto_from_user’
+  398 | kstrto_from_user(kstrtoull_from_user,   kstrtoull,      unsigned long long);
+      | ^~~~~~~~~~~~~~~~
+In function ‘check_object_size’,
+    inlined from ‘copy_from_user’ at ./arch/arm64/include/asm/uaccess.h:448:3,
+    inlined from ‘kstrtoul_from_user’ at lib/kstrtox.c:400:1:
+./include/linux/thread_info.h:96:17: error: ‘buf’ may be used uninitialized [-Werror=maybe-uninitialized]
+   96 |                 __check_object_size(ptr, n, to_user);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/linux/thread_info.h: In function ‘kstrtoul_from_user’:
+./include/linux/thread_info.h:89:13: note: by argument 1 of type ‘const void *’ to ‘__check_object_size’ declared here
+   89 | extern void __check_object_size(const void *ptr, unsigned long n,
+      |             ^~~~~~~~~~~~~~~~~~~
+lib/kstrtox.c:388:14: note: ‘buf’ declared here
+  388 |         char buf[1 + sizeof(type) * 8 + 1 + 1];                         \
+      |              ^~~
+lib/kstrtox.c:400:1: note: in expansion of macro ‘kstrto_from_user’
+  400 | kstrto_from_user(kstrtoul_from_user,    kstrtoul,       unsigned long);
+      | ^~~~~~~~~~~~~~~~
+In function ‘check_object_size’,
+    inlined from ‘copy_from_user’ at ./arch/arm64/include/asm/uaccess.h:448:3,
+    inlined from ‘kstrtou8_from_user’ at lib/kstrtox.c:406:1:
+./include/linux/thread_info.h:96:17: error: ‘buf’ may be used uninitialized [-Werror=maybe-uninitialized]
+   96 |                 __check_object_size(ptr, n, to_user);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/linux/thread_info.h: In function ‘kstrtou8_from_user’:
+./include/linux/thread_info.h:89:13: note: by argument 1 of type ‘const void *’ to ‘__check_object_size’ declared here
+   89 | extern void __check_object_size(const void *ptr, unsigned long n,
+      |             ^~~~~~~~~~~~~~~~~~~
+lib/kstrtox.c:388:14: note: ‘buf’ declared here
+  388 |         char buf[1 + sizeof(type) * 8 + 1 + 1];                         \
+      |              ^~~
+lib/kstrtox.c:406:1: note: in expansion of macro ‘kstrto_from_user’
+  406 | kstrto_from_user(kstrtou8_from_user,    kstrtou8,       u8);
+      | ^~~~~~~~~~~~~~~~
+In function ‘check_object_size’,
+    inlined from ‘copy_from_user’ at ./arch/arm64/include/asm/uaccess.h:448:3,
+    inlined from ‘kstrtouint_from_user’ at lib/kstrtox.c:402:1:
+./include/linux/thread_info.h:96:17: error: ‘buf’ may be used uninitialized [-Werror=maybe-uninitialized]
+   96 |                 __check_object_size(ptr, n, to_user);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/linux/thread_info.h: In function ‘kstrtouint_from_user’:
+./include/linux/thread_info.h:89:13: note: by argument 1 of type ‘const void *’ to ‘__check_object_size’ declared here
+   89 | extern void __check_object_size(const void *ptr, unsigned long n,
+      |             ^~~~~~~~~~~~~~~~~~~
+lib/kstrtox.c:388:14: note: ‘buf’ declared here
+  388 |         char buf[1 + sizeof(type) * 8 + 1 + 1];                         \
+      |              ^~~
+lib/kstrtox.c:402:1: note: in expansion of macro ‘kstrto_from_user’
+  402 | kstrto_from_user(kstrtouint_from_user,  kstrtouint,     unsigned int);
+      | ^~~~~~~~~~~~~~~~
+In function ‘check_object_size’,
+    inlined from ‘copy_from_user’ at ./arch/arm64/include/asm/uaccess.h:448:3,
+    inlined from ‘kstrtou16_from_user’ at lib/kstrtox.c:404:1:
+./include/linux/thread_info.h:96:17: error: ‘buf’ may be used uninitialized [-Werror=maybe-uninitialized]
+   96 |                 __check_object_size(ptr, n, to_user);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/linux/thread_info.h: In function ‘kstrtou16_from_user’:
+./include/linux/thread_info.h:89:13: note: by argument 1 of type ‘const void *’ to ‘__check_object_size’ declared here
+   89 | extern void __check_object_size(const void *ptr, unsigned long n,
+      |             ^~~~~~~~~~~~~~~~~~~
+lib/kstrtox.c:388:14: note: ‘buf’ declared here
+  388 |         char buf[1 + sizeof(type) * 8 + 1 + 1];                         \
+      |              ^~~
+lib/kstrtox.c:404:1: note: in expansion of macro ‘kstrto_from_user’
+  404 | kstrto_from_user(kstrtou16_from_user,   kstrtou16,      u16);
+      | ^~~~~~~~~~~~~~~~
+  CC      sound/core/info_oss.o
+drivers/hid/uhid.c: In function ‘uhid_hid_get_report’:
+drivers/hid/uhid.c:253:54: error: taking address of packed member of ‘struct uhid_get_report_req’ may result in an unaligned pointer value [-Werror=address-of-packed-member]
+  253 |         ret = __uhid_report_queue_and_wait(uhid, ev, &ev->u.get_report.id);
+      |                                                      ^~~~~~~~~~~~~~~~~~~~
+drivers/hid/uhid.c: In function ‘uhid_hid_set_report’:
+drivers/hid/uhid.c:297:54: error: taking address of packed member of ‘struct uhid_set_report_req’ may result in an unaligned pointer value [-Werror=address-of-packed-member]
+  297 |         ret = __uhid_report_queue_and_wait(uhid, ev, &ev->u.set_report.id);
+      |                                                      ^~~~~~~~~~~~~~~~~~~~
+  CC      sound/core/sound_oss.o
+In function ‘check_object_size’,
+    inlined from ‘copy_from_user’ at ./arch/arm64/include/asm/uaccess.h:448:3,
+    inlined from ‘kstrtos8_from_user’ at lib/kstrtox.c:407:1:
+./include/linux/thread_info.h:96:17: error: ‘buf’ may be used uninitialized [-Werror=maybe-uninitialized]
+   96 |                 __check_object_size(ptr, n, to_user);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/linux/thread_info.h: In function ‘kstrtos8_from_user’:
+./include/linux/thread_info.h:89:13: note: by argument 1 of type ‘const void *’ to ‘__check_object_size’ declared here
+   89 | extern void __check_object_size(const void *ptr, unsigned long n,
+      |             ^~~~~~~~~~~~~~~~~~~
+lib/kstrtox.c:388:14: note: ‘buf’ declared here
+  388 |         char buf[1 + sizeof(type) * 8 + 1 + 1];                         \
+      |              ^~~
+lib/kstrtox.c:407:1: note: in expansion of macro ‘kstrto_from_user’
+  407 | kstrto_from_user(kstrtos8_from_user,    kstrtos8,       s8);
+      | ^~~~~~~~~~~~~~~~
+In function ‘check_object_size’,
+    inlined from ‘copy_from_user’ at ./arch/arm64/include/asm/uaccess.h:448:3,
+    inlined from ‘kstrtoint_from_user’ at lib/kstrtox.c:403:1:
+./include/linux/thread_info.h:96:17: error: ‘buf’ may be used uninitialized [-Werror=maybe-uninitialized]
+   96 |                 __check_object_size(ptr, n, to_user);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/linux/thread_info.h: In function ‘kstrtoint_from_user’:
+./include/linux/thread_info.h:89:13: note: by argument 1 of type ‘const void *’ to ‘__check_object_size’ declared here
+   89 | extern void __check_object_size(const void *ptr, unsigned long n,
+      |             ^~~~~~~~~~~~~~~~~~~
+lib/kstrtox.c:388:14: note: ‘buf’ declared here
+  388 |         char buf[1 + sizeof(type) * 8 + 1 + 1];                         \
+      |              ^~~
+lib/kstrtox.c:403:1: note: in expansion of macro ‘kstrto_from_user’
+  403 | kstrto_from_user(kstrtoint_from_user,   kstrtoint,      int);
+      | ^~~~~~~~~~~~~~~~
+crypto/xts.c:332:13: error: conflicting types for built-in function ‘free’; expected ‘void(void *)’ [-Werror=builtin-declaration-mismatch]
+  332 | static void free(struct crypto_instance *inst)
+      |             ^~~~
+crypto/xts.c:27:1: note: ‘free’ is declared in header ‘<stdlib.h>’
+   26 | #include <crypto/gf128mul.h>
+  +++ |+#include <stdlib.h>
+   27 | 
+In function ‘check_object_size’,
+    inlined from ‘copy_from_user’ at ./arch/arm64/include/asm/uaccess.h:448:3,
+    inlined from ‘kstrtos16_from_user’ at lib/kstrtox.c:405:1:
+./include/linux/thread_info.h:96:17: error: ‘buf’ may be used uninitialized [-Werror=maybe-uninitialized]
+   96 |                 __check_object_size(ptr, n, to_user);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/linux/thread_info.h: In function ‘kstrtos16_from_user’:
+./include/linux/thread_info.h:89:13: note: by argument 1 of type ‘const void *’ to ‘__check_object_size’ declared here
+   89 | extern void __check_object_size(const void *ptr, unsigned long n,
+      |             ^~~~~~~~~~~~~~~~~~~
+lib/kstrtox.c:388:14: note: ‘buf’ declared here
+  388 |         char buf[1 + sizeof(type) * 8 + 1 + 1];                         \
+      |              ^~~
+lib/kstrtox.c:405:1: note: in expansion of macro ‘kstrto_from_user’
+  405 | kstrto_from_user(kstrtos16_from_user,   kstrtos16,      s16);
+      | ^~~~~~~~~~~~~~~~
+  CC      drivers/gpu/drm/drm_lock.o
+In function ‘check_object_size’,
+    inlined from ‘copy_from_user’ at ./arch/arm64/include/asm/uaccess.h:448:3,
+    inlined from ‘kstrtoll_from_user’ at lib/kstrtox.c:399:1:
+./include/linux/thread_info.h:96:17: error: ‘buf’ may be used uninitialized [-Werror=maybe-uninitialized]
+   96 |                 __check_object_size(ptr, n, to_user);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/linux/thread_info.h: In function ‘kstrtoll_from_user’:
+./include/linux/thread_info.h:89:13: note: by argument 1 of type ‘const void *’ to ‘__check_object_size’ declared here
+   89 | extern void __check_object_size(const void *ptr, unsigned long n,
+      |             ^~~~~~~~~~~~~~~~~~~
+lib/kstrtox.c:388:14: note: ‘buf’ declared here
+  388 |         char buf[1 + sizeof(type) * 8 + 1 + 1];                         \
+      |              ^~~
+lib/kstrtox.c:399:1: note: in expansion of macro ‘kstrto_from_user’
+  399 | kstrto_from_user(kstrtoll_from_user,    kstrtoll,       long long);
+      | ^~~~~~~~~~~~~~~~
+net/8021q/vlan_core.c: In function ‘vlan_do_receive’:
+net/8021q/vlan_core.c:29:21: error: ‘ether_addr_equal_64bits’ reading 8 bytes from a region of size 6 [-Werror=stringop-overread]
+   29 |                 if (ether_addr_equal_64bits(eth_hdr(skb)->h_dest, vlan_dev->dev_addr))
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+net/8021q/vlan_core.c:29:21: note: referencing argument 1 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+net/8021q/vlan_core.c:29:21: note: referencing argument 2 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+In file included from ./include/linux/if_vlan.h:16,
+                 from net/8021q/vlan_core.c:3:
+./include/linux/etherdevice.h:342:20: note: in a call to function ‘ether_addr_equal_64bits’
+  342 | static inline bool ether_addr_equal_64bits(const u8 addr1[6+2],
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~
+./include/linux/thread_info.h: In function ‘kstrtol_from_user’:
+./include/linux/thread_info.h:96:17: error: ‘buf’ may be used uninitialized [-Werror=maybe-uninitialized]
+   96 |                 __check_object_size(ptr, n, to_user);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/linux/thread_info.h:89:13: note: by argument 1 of type ‘const void *’ to ‘__check_object_size’ declared here
+   89 | extern void __check_object_size(const void *ptr, unsigned long n,
+      |             ^~~~~~~~~~~~~~~~~~~
+lib/kstrtox.c:388:14: note: ‘buf’ declared here
+  388 |         char buf[1 + sizeof(type) * 8 + 1 + 1];                         \
+      |              ^~~
+lib/kstrtox.c:399:1: note: in expansion of macro ‘kstrto_from_user’
+  399 | kstrto_from_user(kstrtoll_from_user,    kstrtoll,       long long);
+      | ^~~~~~~~~~~~~~~~
+In function ‘regcache_rbtree_insert_to_block’,
+    inlined from ‘regcache_rbtree_write’ at drivers/base/regmap/regcache-rbtree.c:455:10:
+drivers/base/regmap/regcache-rbtree.c:290:20: error: ‘new_base_reg’ may be used uninitialized [-Werror=maybe-uninitialized]
+  290 |         pos = (reg - base_reg) / map->reg_stride;
+      |               ~~~~~^~~~~~~~~~~
+drivers/base/regmap/regcache-rbtree.c: In function ‘regcache_rbtree_write’:
+drivers/base/regmap/regcache-rbtree.c:404:30: note: ‘new_base_reg’ was declared here
+  404 |                 unsigned int new_base_reg, new_top_reg;
+      |                              ^~~~~~~~~~~~
+In function ‘regcache_rbtree_insert_to_block’,
+    inlined from ‘regcache_rbtree_write’ at drivers/base/regmap/regcache-rbtree.c:455:10:
+drivers/base/regmap/regcache-rbtree.c:289:27: error: ‘new_top_reg’ may be used uninitialized [-Werror=maybe-uninitialized]
+  289 |         blklen = (top_reg - base_reg) / map->reg_stride + 1;
+      |                  ~~~~~~~~~^~~~~~~~~~~
+drivers/base/regmap/regcache-rbtree.c: In function ‘regcache_rbtree_write’:
+drivers/base/regmap/regcache-rbtree.c:404:44: note: ‘new_top_reg’ was declared here
+  404 |                 unsigned int new_base_reg, new_top_reg;
+      |                                            ^~~~~~~~~~~
+  CC      kernel/bpf/syscall.o
+cc1: all warnings being treated as errors
+make[1]: *** [scripts/Makefile.build:334: lib/kstrtox.o] Fehler 1
+make: *** [Makefile:1091: lib] Fehler 2
+make: *** Auf noch nicht beendete Prozesse wird gewartet …
+  CC      net/ipv4/inetpeer.o
+In file included from ./include/linux/sctp.h:57,
+                 from security/lsm_audit.c:31:
+./include/uapi/linux/sctp.h:331:1: error: alignment 4 of ‘struct sctp_paddr_change’ is less than 8 [-Werror=packed-not-aligned]
+  331 | } __attribute__((packed, aligned(4)));
+      | ^
+./include/uapi/linux/sctp.h:605:1: error: alignment 4 of ‘struct sctp_setpeerprim’ is less than 8 [-Werror=packed-not-aligned]
+  605 | } __attribute__((packed, aligned(4)));
+      | ^
+./include/uapi/linux/sctp.h:604:33: error: ‘sspp_addr’ offset 4 in ‘struct sctp_setpeerprim’ isn’t aligned to 8 [-Werror=packed-not-aligned]
+  604 |         struct sockaddr_storage sspp_addr;
+      |                                 ^~~~~~~~~
+./include/uapi/linux/sctp.h:618:1: error: alignment 4 of ‘struct sctp_prim’ is less than 8 [-Werror=packed-not-aligned]
+  618 | } __attribute__((packed, aligned(4)));
+      | ^
+./include/uapi/linux/sctp.h:617:33: error: ‘ssp_addr’ offset 4 in ‘struct sctp_prim’ isn’t aligned to 8 [-Werror=packed-not-aligned]
+  617 |         struct sockaddr_storage ssp_addr;
+      |                                 ^~~~~~~~
+./include/uapi/linux/sctp.h:665:1: error: alignment 4 of ‘struct sctp_paddrparams’ is less than 8 [-Werror=packed-not-aligned]
+  665 | } __attribute__((packed, aligned(4)));
+      | ^
+./include/uapi/linux/sctp.h:659:33: error: ‘spp_address’ offset 4 in ‘struct sctp_paddrparams’ isn’t aligned to 8 [-Werror=packed-not-aligned]
+  659 |         struct sockaddr_storage spp_address;
+      |                                 ^~~~~~~~~~~
+./include/uapi/linux/sctp.h:772:1: error: alignment 4 of ‘struct sctp_paddrinfo’ is less than 8 [-Werror=packed-not-aligned]
+  772 | } __attribute__((packed, aligned(4)));
+      | ^
+./include/uapi/linux/sctp.h:766:33: error: ‘spinfo_address’ offset 4 in ‘struct sctp_paddrinfo’ isn’t aligned to 8 [-Werror=packed-not-aligned]
+  766 |         struct sockaddr_storage spinfo_address;
+      |                                 ^~~~~~~~~~~~~~
+drivers/hid/uhid.c: In function ‘uhid_dev_create2’:
+drivers/hid/uhid.c:512:9: error: ‘strncpy’ output may be truncated copying 127 bytes from a string of length 127 [-Werror=stringop-truncation]
+  512 |         strncpy(hid->name, ev->u.create2.name, len);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/hid/uhid.c:514:9: error: ‘strncpy’ output may be truncated copying 63 bytes from a string of length 63 [-Werror=stringop-truncation]
+  514 |         strncpy(hid->phys, ev->u.create2.phys, len);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/hid/uhid.c:516:9: error: ‘strncpy’ output may be truncated copying 63 bytes from a string of length 63 [-Werror=stringop-truncation]
+  516 |         strncpy(hid->uniq, ev->u.create2.uniq, len);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devfreq/devfreq.c: In function ‘devfreq_add_device.part.0’:
+drivers/devfreq/devfreq.c:561:9: error: ‘strncpy’ specified bound 16 equals destination size [-Werror=stringop-truncation]
+  561 |         strncpy(devfreq->governor_name, governor_name, DEVFREQ_NAME_LEN);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+In file included from ./include/asm-generic/preempt.h:4,
+                 from ./arch/arm64/include/generated/asm/preempt.h:1,
+                 from ./include/linux/preempt.h:59,
+                 from ./include/linux/spinlock.h:50,
+                 from ./include/linux/mmzone.h:7,
+                 from ./include/linux/gfp.h:5,
+                 from ./include/linux/mm.h:9,
+                 from kernel/sys.c:8:
+In function ‘check_object_size’,
+    inlined from ‘copy_from_user’ at ./arch/arm64/include/asm/uaccess.h:448:3,
+    inlined from ‘prctl_set_auxv’ at kernel/sys.c:1923:6:
+./include/linux/thread_info.h:96:17: error: ‘user_auxv’ may be used uninitialized [-Werror=maybe-uninitialized]
+   96 |                 __check_object_size(ptr, n, to_user);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/linux/thread_info.h: In function ‘prctl_set_auxv’:
+./include/linux/thread_info.h:89:13: note: by argument 1 of type ‘const void *’ to ‘__check_object_size’ declared here
+   89 | extern void __check_object_size(const void *ptr, unsigned long n,
+      |             ^~~~~~~~~~~~~~~~~~~
+kernel/sys.c:1918:23: note: ‘user_auxv’ declared here
+ 1918 |         unsigned long user_auxv[AT_VECTOR_SIZE];
+      |                       ^~~~~~~~~
+cc1: all warnings being treated as errors
+In file included from ./include/linux/sctp.h:57,
+                 from net/core/skbuff.c:52:
+./include/uapi/linux/sctp.h:331:1: error: alignment 4 of ‘struct sctp_paddr_change’ is less than 8 [-Werror=packed-not-aligned]
+  331 | } __attribute__((packed, aligned(4)));
+      | ^
+./include/uapi/linux/sctp.h:605:1: error: alignment 4 of ‘struct sctp_setpeerprim’ is less than 8 [-Werror=packed-not-aligned]
+  605 | } __attribute__((packed, aligned(4)));
+      | ^
+./include/uapi/linux/sctp.h:604:33: error: ‘sspp_addr’ offset 4 in ‘struct sctp_setpeerprim’ isn’t aligned to 8 [-Werror=packed-not-aligned]
+  604 |         struct sockaddr_storage sspp_addr;
+      |                                 ^~~~~~~~~
+./include/uapi/linux/sctp.h:618:1: error: alignment 4 of ‘struct sctp_prim’ is less than 8 [-Werror=packed-not-aligned]
+  618 | } __attribute__((packed, aligned(4)));
+      | ^
+./include/uapi/linux/sctp.h:617:33: error: ‘ssp_addr’ offset 4 in ‘struct sctp_prim’ isn’t aligned to 8 [-Werror=packed-not-aligned]
+  617 |         struct sockaddr_storage ssp_addr;
+      |                                 ^~~~~~~~
+./include/uapi/linux/sctp.h:665:1: error: alignment 4 of ‘struct sctp_paddrparams’ is less than 8 [-Werror=packed-not-aligned]
+  665 | } __attribute__((packed, aligned(4)));
+      | ^
+./include/uapi/linux/sctp.h:659:33: error: ‘spp_address’ offset 4 in ‘struct sctp_paddrparams’ isn’t aligned to 8 [-Werror=packed-not-aligned]
+  659 |         struct sockaddr_storage spp_address;
+      |                                 ^~~~~~~~~~~
+make[3]: *** [scripts/Makefile.build:334: drivers/base/regmap/regcache-rbtree.o] Fehler 1
+./include/uapi/linux/sctp.h:772:1: error: alignment 4 of ‘struct sctp_paddrinfo’ is less than 8 [-Werror=packed-not-aligned]
+  772 | } __attribute__((packed, aligned(4)));
+      | ^
+./include/uapi/linux/sctp.h:766:33: error: ‘spinfo_address’ offset 4 in ‘struct sctp_paddrinfo’ isn’t aligned to 8 [-Werror=packed-not-aligned]
+  766 |         struct sockaddr_storage spinfo_address;
+      |                                 ^~~~~~~~~~~~~~
+make[2]: *** [scripts/Makefile.build:648: drivers/base/regmap] Fehler 2
+make[1]: *** [scripts/Makefile.build:648: drivers/base] Fehler 2
+make[1]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  CC      fs/ext4/namei.o
+make[1]: *** [scripts/Makefile.build:334: crypto/xts.o] Fehler 1
+make[1]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  CC      net/ipv4/protocol.o
+In file included from ./include/uapi/linux/stddef.h:1,
+                 from ./include/linux/stddef.h:4,
+                 from ./include/uapi/linux/posix_types.h:4,
+                 from ./include/uapi/linux/types.h:13,
+                 from ./include/linux/types.h:5,
+                 from ./include/linux/list.h:4,
+                 from ./include/linux/module.h:9,
+                 from net/ethernet/eth.c:40:
+net/ethernet/eth.c: In function ‘eth_type_trans’:
+  CC      net/ipv4/ip_input.o
+net/ethernet/eth.c:167:22: error: ‘is_multicast_ether_addr_64bits’ reading 8 bytes from a region of size 6 [-Werror=stringop-overread]
+  167 |         if (unlikely(is_multicast_ether_addr_64bits(eth->h_dest))) {
+./include/linux/compiler.h:168:45: note: in definition of macro ‘unlikely’
+  168 | # define unlikely(x)    __builtin_expect(!!(x), 0)
+      |                                             ^
+net/ethernet/eth.c:167:22: note: referencing argument 1 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+  167 |         if (unlikely(is_multicast_ether_addr_64bits(eth->h_dest))) {
+./include/linux/compiler.h:168:45: note: in definition of macro ‘unlikely’
+  168 | # define unlikely(x)    __builtin_expect(!!(x), 0)
+      |                                             ^
+In file included from net/ethernet/eth.c:50:
+./include/linux/etherdevice.h:128:20: note: in a call to function ‘is_multicast_ether_addr_64bits’
+  128 | static inline bool is_multicast_ether_addr_64bits(const u8 addr[6+2])
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+net/ethernet/eth.c:168:21: error: ‘ether_addr_equal_64bits’ reading 8 bytes from a region of size 6 [-Werror=stringop-overread]
+  168 |                 if (ether_addr_equal_64bits(eth->h_dest, dev->broadcast))
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+net/ethernet/eth.c:168:21: note: referencing argument 1 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+net/ethernet/eth.c:168:21: note: referencing argument 2 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+./include/linux/etherdevice.h:342:20: note: in a call to function ‘ether_addr_equal_64bits’
+  342 | static inline bool ether_addr_equal_64bits(const u8 addr1[6+2],
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~
+net/ethernet/eth.c:173:28: error: ‘ether_addr_equal_64bits’ reading 8 bytes from a region of size 6 [-Werror=stringop-overread]
+  173 |         else if (unlikely(!ether_addr_equal_64bits(eth->h_dest,
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  174 |                                                    dev->dev_addr)))
+      |                                                    ~~~~~~~~~~~~~~
+./include/linux/compiler.h:168:45: note: in definition of macro ‘unlikely’
+  168 | # define unlikely(x)    __builtin_expect(!!(x), 0)
+      |                                             ^
+net/ethernet/eth.c:173:28: note: referencing argument 1 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+  173 |         else if (unlikely(!ether_addr_equal_64bits(eth->h_dest,
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  174 |                                                    dev->dev_addr)))
+      |                                                    ~~~~~~~~~~~~~~
+./include/linux/compiler.h:168:45: note: in definition of macro ‘unlikely’
+  168 | # define unlikely(x)    __builtin_expect(!!(x), 0)
+      |                                             ^
+net/ethernet/eth.c:173:28: note: referencing argument 2 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+  173 |         else if (unlikely(!ether_addr_equal_64bits(eth->h_dest,
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  174 |                                                    dev->dev_addr)))
+      |                                                    ~~~~~~~~~~~~~~
+./include/linux/compiler.h:168:45: note: in definition of macro ‘unlikely’
+  168 | # define unlikely(x)    __builtin_expect(!!(x), 0)
+      |                                             ^
+./include/linux/etherdevice.h:342:20: note: in a call to function ‘ether_addr_equal_64bits’
+  342 | static inline bool ether_addr_equal_64bits(const u8 addr1[6+2],
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~
+  CC      fs/ext4/super.o
+  CC      drivers/gpu/drm/drm_memory.o
+cc1: all warnings being treated as errors
+make[2]: *** [scripts/Makefile.build:334: net/8021q/vlan_core.o] Fehler 1
+make[2]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  CC      drivers/gpu/drm/drm_drv.o
+cc1: all warnings being treated as errors
+make[2]: *** [scripts/Makefile.build:334: drivers/devfreq/devfreq.o] Fehler 1
+make[1]: *** [scripts/Makefile.build:648: drivers/devfreq] Fehler 2
+  CC      sound/core/ctljack.o
+  CC      kernel/events/core.o
+cc1: all warnings being treated as errors
+cc1: all warnings being treated as errors
+make[2]: *** [scripts/Makefile.build:334: drivers/hid/uhid.o] Fehler 1
+make[1]: *** [scripts/Makefile.build:648: drivers/hid] Fehler 2
+cc1: all warnings being treated as errors
+  CC      mm/page_io.o
+  CC      net/ipv6/af_inet6.o
+make[1]: *** [scripts/Makefile.build:335: security/lsm_audit.o] Fehler 1
+make[2]: *** [scripts/Makefile.build:335: net/ethernet/eth.o] Fehler 1
+make: *** [Makefile:1091: security] Fehler 2
+make[1]: *** [scripts/Makefile.build:648: net/ethernet] Fehler 2
+make[1]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  CC      mm/swap_state.o
+  CC      kernel/bpf/verifier.o
+  CC      net/ipv6/anycast.o
+make[1]: *** [scripts/Makefile.build:648: net/8021q] Fehler 2
+  CC      kernel/bpf/inode.o
+  CC      fs/fuse/file.o
+  CC      mm/swapfile.o
+  CC      kernel/events/ring_buffer.o
+  CC      fs/ext4/symlink.o
+make: *** [Makefile:1091: crypto] Fehler 2
+  CC      fs/jbd2/transaction.o
+  CC      fs/isofs/compress.o
+  CC      fs/kernfs/dir.o
+  CC      fs/nls/nls_utf8.o
+  CC      fs/notify/mark.o
+  CC      fs/kernfs/file.o
+  CC      fs/overlayfs/super.o
+cc1: all warnings being treated as errors
+make[1]: *** [scripts/Makefile.build:334: kernel/sys.o] Fehler 1
+make[1]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  CC      fs/ext4/hash.o
+cc1: all warnings being treated as errors
+make[2]: *** [scripts/Makefile.build:334: sound/core/control.o] Fehler 1
+make[1]: *** [scripts/Makefile.build:648: sound/core] Fehler 2
+make: *** [Makefile:1091: sound] Fehler 2
+  CC      fs/ext4/resize.o
+  LD      fs/nls/built-in.o
+  CC      kernel/bpf/helpers.o
+  CC      kernel/bpf/hashtab.o
+  CC      net/ipv4/ip_fragment.o
+  CC      mm/dmapool.o
+  CC      fs/notify/vfsmount_mark.o
+  CC      fs/proc/task_mmu.o
+  CC      fs/proc/inode.o
+  CC      net/ipv4/ip_forward.o
+  LD      fs/isofs/isofs.o
+  LD      fs/isofs/built-in.o
+  CC      mm/sparse.o
+  CC      drivers/gpu/drm/drm_vm.o
+  CC      fs/overlayfs/dir.o
+  CC      fs/ext4/extents.o
+  CC      net/ipv4/ip_options.o
+  CC      fs/overlayfs/readdir.o
+  CC      fs/notify/fdinfo.o
+  CC      fs/proc/root.o
+  CC      drivers/gpu/drm/drm_scatter.o
+  CC      fs/jbd2/checkpoint.o
+  CC      net/ipv6/ip6_output.o
+  CC      fs/notify/dnotify/dnotify.o
+  LD      fs/notify/fanotify/built-in.o
+  CC      net/ipv4/ip_output.o
+  CC      kernel/bpf/arraymap.o
+  CC      net/ipv6/ip6_input.o
+  CC      mm/sparse-vmemmap.o
+  LD      fs/kernfs/built-in.o
+  CC      mm/slub.o
+  CC      fs/notify/inotify/inotify_fsnotify.o
+  CC      net/ipv4/ip_sockglue.o
+  CC      fs/notify/inotify/inotify_user.o
+  CC      fs/proc/base.o
+  CC      kernel/events/callchain.o
+  CC      fs/jbd2/revoke.o
+  LD      fs/pstore/pstore.o
+  CC      fs/overlayfs/copy_up.o
+  CC      fs/pstore/ram.o
+  CC      kernel/bpf/percpu_freelist.o
+  CC      drivers/gpu/drm/drm_pci.o
+  LD      fs/notify/dnotify/built-in.o
+  CC      fs/proc/generic.o
+  CC      kernel/events/hw_breakpoint.o
+  CC      mm/migrate.o
+  CC      fs/pstore/ram_core.o
+  CC      fs/proc/array.o
+  CC      drivers/gpu/drm/drm_platform.o
+  CC      fs/ext4/ext4_jbd2.o
+  CC      net/ipv4/inet_hashtables.o
+  CC      fs/jbd2/journal.o
+  CC      fs/ext4/migrate.o
+  CC      fs/proc/fd.o
+  LD      fs/overlayfs/overlay.o
+  LD      fs/overlayfs/built-in.o
+  CC      kernel/bpf/stackmap.o
+  LD      fs/notify/inotify/built-in.o
+  LD      fs/notify/built-in.o
+  CC      net/ipv6/addrconf.o
+  CC      drivers/gpu/drm/drm_sysfs.o
+cc1: all warnings being treated as errors
+make[2]: *** [scripts/Makefile.build:334: net/core/skbuff.o] Fehler 1
+make[1]: *** [scripts/Makefile.build:648: net/core] Fehler 2
+  CC      net/ipv4/inet_timewait_sock.o
+  CC      fs/proc/proc_tty.o
+  CC      kernel/bpf/cgroup.o
+  CC      fs/quota/dquot.o
+  CC      net/ipv6/addrlabel.o
+  LD      fs/pstore/ramoops.o
+  LD      fs/fuse/fuse.o
+  LD      fs/pstore/built-in.o
+  LD      fs/fuse/built-in.o
+  CC      fs/ramfs/inode.o
+  CC      fs/proc/cmdline.o
+  CC      net/ipv6/route.o
+  CC      net/ipv6/ip6_fib.o
+  CC      net/ipv6/ipv6_sockglue.o
+  CC      fs/quota/quota_tree.o
+  CC      fs/ramfs/file-mmu.o
+  CC      fs/ext4/mballoc.o
+  CC      net/ipv4/inet_connection_sock.o
+  CC      fs/sdcardfs/dentry.o
+  CC      drivers/gpu/drm/drm_hashtab.o
+  CC      net/ipv4/tcp.o
+  CC      fs/sysfs/file.o
+  CC      mm/page_isolation.o
+  CC      fs/quota/quota.o
+  CC      fs/proc/consoles.o
+  CC      net/ipv4/tcp_input.o
+  CC      fs/sdcardfs/file.o
+  CC      fs/sdcardfs/inode.o
+  LD      fs/ramfs/ramfs.o
+  LD      fs/ramfs/built-in.o
+  CC      fs/ext4/block_validity.o
+  CC      fs/sdcardfs/main.o
+  LD      kernel/bpf/built-in.o
+  CC      fs/ext4/move_extent.o
+  CC      drivers/gpu/drm/drm_mm.o
+  CC      fs/proc/cpuinfo.o
+  CC      mm/zsmalloc.o
+  CC      net/ipv6/ndisc.o
+  CC      fs/proc/devices.o
+  CC      fs/sysfs/dir.o
+  CC      drivers/gpu/drm/drm_crtc.o
+  CC      fs/sdcardfs/super.o
+In function ‘ext4_zeroout_es’,
+    inlined from ‘ext4_ext_convert_to_initialized’ at fs/ext4/extents.c:3643:9,
+    inlined from ‘ext4_ext_handle_unwritten_extents’ at fs/ext4/extents.c:4106:8,
+    inlined from ‘ext4_ext_map_blocks’ at fs/ext4/extents.c:4365:10:
+fs/ext4/extents.c:3141:16: warning: ‘zero_ex1.ee_block’ may be used uninitialized [-Wmaybe-uninitialized]
+ 3141 |         return ext4_es_insert_extent(inode, ee_block, ee_len, ee_pblock,
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 3142 |                                      EXTENT_STATUS_WRITTEN);
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~
+fs/ext4/extents.c: In function ‘ext4_ext_map_blocks’:
+fs/ext4/extents.c:3422:28: note: ‘zero_ex1.ee_block’ was declared here
+ 3422 |         struct ext4_extent zero_ex1, zero_ex2;
+      |                            ^~~~~~~~
+In file included from fs/ext4/extents.c:44:
+In function ‘ext4_ext_pblock’,
+    inlined from ‘ext4_zeroout_es’ at fs/ext4/extents.c:3136:14,
+    inlined from ‘ext4_ext_convert_to_initialized’ at fs/ext4/extents.c:3643:9,
+    inlined from ‘ext4_ext_handle_unwritten_extents’ at fs/ext4/extents.c:4106:8,
+    inlined from ‘ext4_ext_map_blocks’ at fs/ext4/extents.c:4365:10:
+fs/ext4/ext4_extents.h:226:19: warning: ‘zero_ex1.ee_start_hi’ may be used uninitialized [-Wmaybe-uninitialized]
+  226 |         block |= ((ext4_fsblk_t) le16_to_cpu(ex->ee_start_hi) << 31) << 1;
+fs/ext4/extents.c: In function ‘ext4_ext_map_blocks’:
+fs/ext4/extents.c:3422:28: note: ‘zero_ex1.ee_start_hi’ was declared here
+ 3422 |         struct ext4_extent zero_ex1, zero_ex2;
+      |                            ^~~~~~~~
+In function ‘ext4_ext_pblock’,
+    inlined from ‘ext4_zeroout_es’ at fs/ext4/extents.c:3136:14,
+    inlined from ‘ext4_ext_convert_to_initialized’ at fs/ext4/extents.c:3643:9,
+    inlined from ‘ext4_ext_handle_unwritten_extents’ at fs/ext4/extents.c:4106:8,
+    inlined from ‘ext4_ext_map_blocks’ at fs/ext4/extents.c:4365:10:
+fs/ext4/ext4_extents.h:225:15: warning: ‘zero_ex1.ee_start_lo’ may be used uninitialized [-Wmaybe-uninitialized]
+  225 |         block = le32_to_cpu(ex->ee_start_lo);
+fs/ext4/extents.c: In function ‘ext4_ext_map_blocks’:
+fs/ext4/extents.c:3422:28: note: ‘zero_ex1.ee_start_lo’ was declared here
+ 3422 |         struct ext4_extent zero_ex1, zero_ex2;
+      |                            ^~~~~~~~
+  CC      drivers/gpu/drm/drm_fourcc.o
+  CC      drivers/gpu/drm/drm_modes.o
+  CC      fs/ext4/mmp.o
+  CC      fs/proc/interrupts.o
+  CC      fs/sysfs/symlink.o
+  CC      net/ipv6/udp.o
+  CC      fs/quota/kqid.o
+  CC      fs/tracefs/inode.o
+  CC      net/ipv6/udplite.o
+fs/sdcardfs/super.c: In function ‘sdcardfs_statfs’:
+fs/sdcardfs/super.c:75:34: warning: unused variable ‘sbi’ [-Wunused-variable]
+   75 |         struct sdcardfs_sb_info *sbi = SDCARDFS_SB(dentry->d_sb);
+      |                                  ^~~
+fs/sdcardfs/super.c:74:13: warning: unused variable ‘min_blocks’ [-Wunused-variable]
+   74 |         u32 min_blocks;
+      |             ^~~~~~~~~~
+  CC      fs/eventpoll.o
+  CC      fs/sysfs/mount.o
+  CC      fs/proc/loadavg.o
+  CC      drivers/gpu/drm/drm_edid.o
+net/ipv6/ndisc.c: In function ‘ndisc_router_discovery’:
+net/ipv6/ndisc.c:1408:57: error: converting a packed ‘struct nd_opt_hdr’ pointer (alignment 1) to a ‘struct route_info’ pointer (alignment 4) may result in an unaligned pointer value [-Werror=address-of-packed-member]
+ 1408 |                         struct route_info *ri = (struct route_info *)p;
+      |                                                         ^~~~~~~~~~
+In file included from ./include/net/ipv6.h:20,
+                 from net/ipv6/ndisc.c:57:
+./include/net/ndisc.h:99:8: note: defined here
+   99 | struct nd_opt_hdr {
+      |        ^~~~~~~~~~
+In file included from net/ipv6/ndisc.c:60:
+./include/net/ip6_route.h:4:8: note: defined here
+    4 | struct route_info {
+      |        ^~~~~~~~~~
+  CC      fs/sdcardfs/lookup.o
+  CC      net/ipv6/raw.o
+  CC      mm/early_ioremap.o
+  CC      net/ipv4/tcp_output.o
+  CC      fs/sysfs/group.o
+  CC      fs/anon_inodes.o
+  CC      fs/proc/meminfo.o
+  CC      mm/cma.o
+  CC      fs/proc/stat.o
+  CC      net/ipv6/icmp.o
+  CC      fs/quota/netlink.o
+  CC      drivers/gpu/drm/drm_info.o
+  LD      fs/tracefs/tracefs.o
+  CC      fs/ext4/indirect.o
+  LD      fs/tracefs/built-in.o
+  CC      mm/usercopy.o
+fs/ext4/super.c: In function ‘__save_error_info’:
+fs/ext4/super.c:325:9: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+  325 |         strncpy(es->s_last_error_func, func, sizeof(es->s_last_error_func));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+fs/ext4/super.c:329:17: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+  329 |                 strncpy(es->s_first_error_func, func,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  330 |                         sizeof(es->s_first_error_func));
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CC      fs/proc/uptime.o
+  LD      fs/jbd2/jbd2.o
+  LD      fs/jbd2/built-in.o
+  CC      fs/sdcardfs/mmap.o
+  CC      net/ipv4/tcp_timer.o
+  CC      drivers/gpu/drm/drm_debugfs.o
+  CC      net/ipv6/mcast.o
+  CC      fs/proc/version.o
+  CC      fs/signalfd.o
+  LD      fs/sysfs/built-in.o
+  CC      drivers/gpu/drm/drm_encoder_slave.o
+  CC      fs/sdcardfs/packagelist.o
+  CC      fs/ext4/extents_status.o
+  CC      fs/sdcardfs/derived_perm.o
+  CC      fs/ext4/xattr.o
+  CC      net/ipv6/reassembly.o
+  CC      fs/ext4/xattr_user.o
+  CC      net/ipv4/tcp_ipv4.o
+  CC      fs/proc/softirqs.o
+  CC      fs/timerfd.o
+cc1: all warnings being treated as errors
+  CC      fs/ext4/xattr_trusted.o
+make[2]: *** [scripts/Makefile.build:334: net/ipv6/ndisc.o] Fehler 1
+  CC      net/ipv4/tcp_minisocks.o
+make[2]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  LD      mm/built-in.o
+  CC      drivers/gpu/drm/drm_trace_points.o
+In file included from ./include/asm-generic/preempt.h:4,
+                 from ./arch/arm64/include/generated/asm/preempt.h:1,
+                 from ./include/linux/preempt.h:59,
+                 from ./include/linux/spinlock.h:50,
+                 from ./include/linux/wait.h:8,
+                 from ./include/linux/fs.h:5,
+                 from ./include/linux/debugfs.h:15,
+                 from drivers/gpu/drm/drm_debugfs.c:33:
+In function ‘check_object_size’,
+    inlined from ‘copy_from_user’ at ./arch/arm64/include/asm/uaccess.h:448:3,
+    inlined from ‘connector_write’ at drivers/gpu/drm/drm_debugfs.c:285:6:
+./include/linux/thread_info.h:96:17: error: ‘buf’ may be used uninitialized [-Werror=maybe-uninitialized]
+   96 |                 __check_object_size(ptr, n, to_user);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/linux/thread_info.h: In function ‘connector_write’:
+./include/linux/thread_info.h:89:13: note: by argument 1 of type ‘const void *’ to ‘__check_object_size’ declared here
+   89 | extern void __check_object_size(const void *ptr, unsigned long n,
+      |             ^~~~~~~~~~~~~~~~~~~
+drivers/gpu/drm/drm_debugfs.c:280:14: note: ‘buf’ declared here
+  280 |         char buf[12];
+      |              ^~~
+  CC      fs/ext4/inline.o
+cc1: all warnings being treated as errors
+make[3]: *** [scripts/Makefile.build:334: drivers/gpu/drm/drm_debugfs.o] Fehler 1
+  CC      fs/proc/namespaces.o
+  CC      net/ipv4/tcp_cong.o
+make[3]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  LD      fs/quota/built-in.o
+  CC      fs/ext4/readpage.o
+  CC      fs/ext4/sysfs.o
+  LD      kernel/events/built-in.o
+  CC      fs/eventfd.o
+make: *** [Makefile:1091: kernel] Fehler 2
+  CC      fs/aio.o
+  CC      net/ipv4/tcp_metrics.o
+  CC      fs/proc/self.o
+In function ‘do_hdmi_vsdb_modes’,
+    inlined from ‘add_cea_modes’ at drivers/gpu/drm/drm_edid.c:3217:12,
+    inlined from ‘drm_add_edid_modes’ at drivers/gpu/drm/drm_edid.c:4104:15,
+    inlined from ‘drm_add_edid_modes’ at drivers/gpu/drm/drm_edid.c:4070:5:
+drivers/gpu/drm/drm_edid.c:3025:17: error: ‘hdmi_len’ may be used uninitialized [-Werror=maybe-uninitialized]
+ 3025 |         if (len < (8 + offset + 2))
+      |             ~~~~^~~~~~~~~~~~~~~~~~
+drivers/gpu/drm/drm_edid.c: In function ‘drm_add_edid_modes’:
+drivers/gpu/drm/drm_edid.c:3187:17: note: ‘hdmi_len’ was declared here
+ 3187 |         u8 dbl, hdmi_len, video_len = 0;
+      |                 ^~~~~~~~
+  CC      fs/locks.o
+  CC      net/ipv4/tcp_fastopen.o
+  CC      fs/compat.o
+  CC      fs/proc/thread_self.o
+  CC      net/ipv4/tcp_rate.o
+  CC      fs/ext4/xattr_security.o
+cc1: all warnings being treated as errors
+make[3]: *** [scripts/Makefile.build:334: drivers/gpu/drm/drm_edid.o] Fehler 1
+make[2]: *** [scripts/Makefile.build:648: drivers/gpu/drm] Fehler 2
+make[1]: *** [scripts/Makefile.build:648: drivers/gpu] Fehler 2
+make: *** [Makefile:1091: drivers] Fehler 2
+  CC      fs/compat_ioctl.o
+  CC      fs/proc/uid.o
+  CC      net/ipv4/tcp_recovery.o
+  CC      fs/binfmt_script.o
+  CC      net/ipv4/tcp_offload.o
+  CC      net/ipv4/datagram.o
+  CC      fs/proc/proc_sysctl.o
+  CC      fs/binfmt_elf.o
+  CC      net/ipv4/raw.o
+In file included from ./include/linux/poll.h:11,
+                 from ./include/linux/ring_buffer.h:7,
+                 from ./include/linux/trace_events.h:5,
+                 from ./include/trace/syscall.h:6,
+                 from ./include/linux/syscalls.h:81,
+                 from fs/compat.c:34:
+fs/compat.c: In function ‘put_compat_statfs64’:
+fs/compat.c:272:40: warning: taking address of packed member of ‘struct compat_statfs64’ may result in an unaligned pointer value [-Waddress-of-packed-member]
+  272 |             __put_user(kbuf->f_blocks, &ubuf->f_blocks) ||
+./arch/arm64/include/asm/uaccess.h:397:43: note: in definition of macro ‘__put_user_check’
+  397 |         __typeof__(*(ptr)) __user *__p = (ptr);                         \
+      |                                           ^~~
+fs/compat.c:272:13: note: in expansion of macro ‘__put_user’
+  272 |             __put_user(kbuf->f_blocks, &ubuf->f_blocks) ||
+      |             ^~~~~~~~~~
+fs/compat.c:273:39: warning: taking address of packed member of ‘struct compat_statfs64’ may result in an unaligned pointer value [-Waddress-of-packed-member]
+  273 |             __put_user(kbuf->f_bfree, &ubuf->f_bfree) ||
+./arch/arm64/include/asm/uaccess.h:397:43: note: in definition of macro ‘__put_user_check’
+  397 |         __typeof__(*(ptr)) __user *__p = (ptr);                         \
+      |                                           ^~~
+fs/compat.c:273:13: note: in expansion of macro ‘__put_user’
+  273 |             __put_user(kbuf->f_bfree, &ubuf->f_bfree) ||
+      |             ^~~~~~~~~~
+fs/compat.c:274:40: warning: taking address of packed member of ‘struct compat_statfs64’ may result in an unaligned pointer value [-Waddress-of-packed-member]
+  274 |             __put_user(kbuf->f_bavail, &ubuf->f_bavail) ||
+./arch/arm64/include/asm/uaccess.h:397:43: note: in definition of macro ‘__put_user_check’
+  397 |         __typeof__(*(ptr)) __user *__p = (ptr);                         \
+      |                                           ^~~
+fs/compat.c:274:13: note: in expansion of macro ‘__put_user’
+  274 |             __put_user(kbuf->f_bavail, &ubuf->f_bavail) ||
+      |             ^~~~~~~~~~
+fs/compat.c:275:39: warning: taking address of packed member of ‘struct compat_statfs64’ may result in an unaligned pointer value [-Waddress-of-packed-member]
+  275 |             __put_user(kbuf->f_files, &ubuf->f_files) ||
+./arch/arm64/include/asm/uaccess.h:397:43: note: in definition of macro ‘__put_user_check’
+  397 |         __typeof__(*(ptr)) __user *__p = (ptr);                         \
+      |                                           ^~~
+fs/compat.c:275:13: note: in expansion of macro ‘__put_user’
+  275 |             __put_user(kbuf->f_files, &ubuf->f_files) ||
+      |             ^~~~~~~~~~
+fs/compat.c:276:39: warning: taking address of packed member of ‘struct compat_statfs64’ may result in an unaligned pointer value [-Waddress-of-packed-member]
+  276 |             __put_user(kbuf->f_ffree, &ubuf->f_ffree) ||
+./arch/arm64/include/asm/uaccess.h:397:43: note: in definition of macro ‘__put_user_check’
+  397 |         __typeof__(*(ptr)) __user *__p = (ptr);                         \
+      |                                           ^~~
+fs/compat.c:276:13: note: in expansion of macro ‘__put_user’
+  276 |             __put_user(kbuf->f_ffree, &ubuf->f_ffree) ||
+      |             ^~~~~~~~~~
+  CC      fs/compat_binfmt_elf.o
+  CC      fs/proc/proc_net.o
+  CC      net/ipv4/udp.o
+  CC      fs/mbcache.o
+  CC      fs/posix_acl.o
+  CC      fs/proc/kmsg.o
+  CC      net/ipv4/udplite.o
+  CC      fs/proc/page.o
+  CC      net/ipv4/udp_offload.o
+  CC      fs/coredump.o
+  CC      net/ipv4/arp.o
+  CC      fs/drop_caches.o
+  CC      fs/dcookies.o
+  CC      net/ipv4/icmp.o
+  CC      net/ipv4/devinet.o
+  CC      net/ipv4/af_inet.o
+  LD      fs/sdcardfs/sdcardfs.o
+  CC      net/ipv4/igmp.o
+  LD      fs/sdcardfs/built-in.o
+  CC      net/ipv4/fib_frontend.o
+  CC      net/ipv4/fib_semantics.o
+  CC      net/ipv4/fib_trie.o
+  CC      net/ipv4/inet_fragment.o
+  CC      net/ipv4/ping.o
+  CC      net/ipv4/ip_tunnel_core.o
+  CC      net/ipv4/gre_offload.o
+  CC      net/ipv4/ip_tunnel.o
+  CC      net/ipv4/sysctl_net_ipv4.o
+  CC      net/ipv4/sysfs_net_ipv4.o
+  LD      fs/proc/proc.o
+  CC      net/ipv4/proc.o
+  CC      net/ipv4/fib_rules.o
+  CC      net/ipv4/ipmr.o
+  LD      fs/proc/built-in.o
+  CC      net/ipv4/ipip.o
+  CC      net/ipv4/gre_demux.o
+  CC      net/ipv4/udp_tunnel.o
+  CC      net/ipv4/ip_vti.o
+make[1]: *** [scripts/Makefile.build:648: net/ipv6] Fehler 2
+  CC      net/ipv4/syncookies.o
+  LD      fs/ext4/ext4.o
+  LD      fs/ext4/built-in.o
+  CC      net/ipv4/ah4.o
+  CC      net/ipv4/esp4.o
+  CC      net/ipv4/ipcomp.o
+  CC      net/ipv4/xfrm4_tunnel.o
+net/ipv4/ip_tunnel.c: In function ‘__ip_tunnel_create’:
+net/ipv4/ip_tunnel.c:265:17: error: ‘strncat’ specified bound 2 equals source length [-Werror=stringop-overflow=]
+  265 |                 strncat(name, "%d", 2);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+  CC      net/ipv4/xfrm4_mode_beet.o
+  CC      net/ipv4/tunnel4.o
+  CC      net/ipv4/xfrm4_mode_transport.o
+  CC      net/ipv4/xfrm4_mode_tunnel.o
+  CC      net/ipv4/ipconfig.o
+  CC      net/ipv4/netfilter.o
+  LD      fs/built-in.o
+  CC      net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.o
+  CC      net/ipv4/netfilter/nf_conntrack_proto_icmp.o
+  CC      net/ipv4/inet_diag.o
+  CC      net/ipv4/netfilter/nf_nat_l3proto_ipv4.o
+  CC      net/ipv4/tcp_diag.o
+  CC      net/ipv4/netfilter/nf_nat_proto_icmp.o
+  CC      net/ipv4/udp_diag.o
+  CC      net/ipv4/tcp_bic.o
+  CC      net/ipv4/tcp_cubic.o
+  CC      net/ipv4/netfilter/nf_defrag_ipv4.o
+  CC      net/ipv4/xfrm4_policy.o
+  CC      net/ipv4/netfilter/nf_reject_ipv4.o
+cc1: all warnings being treated as errors
+  CC      net/ipv4/netfilter/nf_nat_h323.o
+make[2]: *** [scripts/Makefile.build:334: net/ipv4/ip_tunnel.o] Fehler 1
+make[2]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  CC      net/ipv4/netfilter/nf_nat_pptp.o
+  CC      net/ipv4/netfilter/nf_nat_masquerade_ipv4.o
+  CC      net/ipv4/netfilter/nf_nat_proto_gre.o
+  CC      net/ipv4/netfilter/ip_tables.o
+  CC      net/ipv4/netfilter/iptable_filter.o
+  CC      net/ipv4/netfilter/iptable_mangle.o
+  CC      net/ipv4/netfilter/iptable_nat.o
+  CC      net/ipv4/netfilter/iptable_raw.o
+  CC      net/ipv4/netfilter/iptable_security.o
+  CC      net/ipv4/netfilter/ipt_ah.o
+  CC      net/ipv4/netfilter/ipt_MASQUERADE.o
+  CC      net/ipv4/netfilter/ipt_REJECT.o
+  CC      net/ipv4/netfilter/arp_tables.o
+  CC      net/ipv4/netfilter/arpt_mangle.o
+  CC      net/ipv4/netfilter/arptable_filter.o
+  LD      net/ipv4/netfilter/nf_conntrack_ipv4.o
+  LD      net/ipv4/netfilter/nf_nat_ipv4.o
+  LD      net/ipv4/netfilter/built-in.o
+make[1]: *** [scripts/Makefile.build:648: net/ipv4] Fehler 2
+make: *** [Makefile:1091: net] Fehler 2
+martin@mklinux:~/pwnagotchi-a5/8505F/devenv/linux$ 
