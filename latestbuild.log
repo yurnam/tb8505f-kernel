@@ -1,3 +1,4 @@
+martin@mklinux:~/pwnagotchi-a5/8505F/devenv/linux$ 
 martin@mklinux:~/pwnagotchi-a5/8505F/devenv/linux$ make -j32 
   CHK     include/config/kernel.release
   CHK     include/generated/uapi/linux/version.h
@@ -23,286 +24,299 @@ ufdt_apply_overlay: took 0.000000000 secs
   CHK     include/generated/asm-offsets.h
   CALL    scripts/checksyscalls.sh
   CHK     include/generated/compile.h
-  LD      drivers/nfc/built-in.o
-  LD      drivers/nvme/host/built-in.o
-  LD      drivers/nvme/target/built-in.o
-  LD      drivers/nvme/built-in.o
-  CC      kernel/sched/core.o
-  CC      kernel/profile.o
-  CC      drivers/of/base.o
-  CC      kernel/futex.o
-  CC      drivers/mmc/host/mediatek/ComboA/sd.o
-  CC      kernel/futex_compat.o
-  CC      drivers/misc/mediatek/aee/mrdump/mrdump_panic_wdt.o
-  CC      drivers/perf/arm_pmu.o
-  CC      drivers/mmc/host/mediatek/ComboA/dbg.o
-  CC      drivers/misc/mediatek/base/power/cm_mgr_v1/mtk_cm_mgr.o
-  CC      drivers/misc/mediatek/base/power/cpuidle_v3/mtk_cpuidle.o
-  CC      drivers/misc/mediatek/base/power/dcm_v1/mtk_dcm.o
-  CC      drivers/misc/mediatek/base/power/dcm_v1/mt6761/mtk_dcm_autogen.o
-  CC      drivers/misc/mediatek/base/power/cpufreq_v1/src/mtk_cpufreq_api.o
-  CC      drivers/input/touchscreen/mediatek/focaltech_touch/focaltech_test/focaltech_test_ini.o
-  CC      drivers/pinctrl/core.o
-  LD      drivers/platform/built-in.o
-  CC      drivers/of/device.o
-  CC      drivers/of/platform.o
-  CC      drivers/of/fdt.o
-  CC      drivers/misc/mediatek/base/power/cpufreq_v1/src/mtk_cpufreq_debug.o
-  CC      drivers/misc/mediatek/base/power/dcm_v1/mt6761/mtk_dcm_internal.o
-  CC      drivers/pinctrl/pinctrl-utils.o
-  LD      drivers/power/reset/built-in.o
-  CC      drivers/power/supply/power_supply_core.o
-  CC      kernel/smp.o
-  CC      drivers/of/fdt_address.o
-  CC      drivers/misc/mediatek/base/power/eem_v2/mt6761/mtk_eem.o
-  LD      drivers/pwm/built-in.o
-  CC      drivers/misc/mediatek/base/power/cpufreq_v1/src/mtk_cpufreq_hybrid.o
-drivers/misc/mediatek/aee/mrdump/mrdump_panic_wdt.c:43:10: fatal error: mrdump_panic.h: Datei oder Verzeichnis nicht gefunden
-   43 | #include <mrdump_panic.h>
-      |          ^~~~~~~~~~~~~~~~
+.
+FDVT: Drv use 3.5 folder
+  CC      drivers/misc/mediatek/base/power/mt6761/mtk_gpufreq_core.o
+.
+.
+  CC      drivers/misc/mediatek/base/power/udi_v1/mtk_udi.o
+  CC      drivers/misc/mediatek/base/power/spm/common/mtk_idle.o
+cameraisp drv by platform 
+  CC      drivers/misc/mediatek/base/power/spm/mt6761/mtk_spm.o
+  CC      drivers/misc/mediatek/base/power/spm/common/mtk_idle_select.o
+.
+  CC      drivers/misc/mediatek/base/power/spm/common/mtk_idle_internal.o
+  CC      drivers/misc/mediatek/base/power/spm/common/mtk_idle_profile.o
+  CC      drivers/misc/mediatek/base/power/spm/mt6761/mtk_spm_twam.o
+PLATFORM = mt6761
+DEVAPC platform code exists...
+  CC      drivers/misc/mediatek/base/power/spm/common/mtk_idle_twam.o
+  CC      drivers/misc/mediatek/base/power/spm/common/mtk_dpidle.o
+  CC      drivers/misc/mediatek/base/power/upower_v2/mtk_unified_power.o
+  CC      drivers/misc/mediatek/base/power/upower_v2/mtk_unified_power_internal.o
+  CC      drivers/misc/mediatek/cmdq/v3/mt6765/cmdq_mdp.o
+  CC      drivers/misc/mediatek/debug_latch/plat_dbg_info/plat_dbg_info.o
+  CC      drivers/misc/mediatek/base/power/spm/mt6761/mtk_spm_irq.o
+  CC      drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_platform.o
+  CC      drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_power_data.o
+  CC      drivers/misc/mediatek/base/power/upower_v2/mtk_unified_power_api.o
+  CC      drivers/misc/mediatek/base/power/upower_v2/mtk_unified_power_mt6761.o
+  CC      drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_cobra_algo.o
+  CHK     kernel/config_data.h
+  CC      drivers/misc/mediatek/emi/mt6761/bwl_platform.o
+  CC      drivers/misc/mediatek/ext_disp/mt6765/external_display.o
+  CC      drivers/misc/mediatek/emi/mt6761/mpu_platform.o
+  CC      drivers/misc/mediatek/emi/mt6761/plat_debug_api.o
+  CC      drivers/misc/mediatek/emi/mt6761/../emi_ctrl_v1.o
+  CC      drivers/misc/mediatek/base/power/spm/mt6761/mtk_spm_dram.o
+  CC      drivers/misc/mediatek/base/power/spm/common/mtk_sodi.o
+  CC      drivers/misc/mediatek/base/power/spm/common/mtk_spm_resource_req.o
+drivers/misc/mediatek/base/power/spm/mt6761/mtk_spm_twam.c:18:10: fatal error: mtk_spm_internal.h: Datei oder Verzeichnis nicht gefunden
+   18 | #include <mtk_spm_internal.h>
+      |          ^~~~~~~~~~~~~~~~~~~~
 compilation terminated.
-make[5]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/aee/mrdump/mrdump_panic_wdt.o] Fehler 1
-make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/aee/mrdump] Fehler 2
-make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/aee] Fehler 2
-make[3]: *** Auf noch nicht beendete Prozesse wird gewartet …
-kernel/profile.c: In function ‘profile_dead_cpu’:
-kernel/profile.c:336:27: error: the comparison will always evaluate as ‘true’ for the address of ‘prof_cpu_mask’ will never be NULL [-Werror=address]
-  336 |         if (prof_cpu_mask != NULL)
-      |                           ^~
-kernel/profile.c:46:22: note: ‘prof_cpu_mask’ declared here
-   46 | static cpumask_var_t prof_cpu_mask;
-      |                      ^~~~~~~~~~~~~
-kernel/profile.c: In function ‘profile_online_cpu’:
-kernel/profile.c:373:27: error: the comparison will always evaluate as ‘true’ for the address of ‘prof_cpu_mask’ will never be NULL [-Werror=address]
-  373 |         if (prof_cpu_mask != NULL)
-      |                           ^~
-kernel/profile.c:46:22: note: ‘prof_cpu_mask’ declared here
-   46 | static cpumask_var_t prof_cpu_mask;
-      |                      ^~~~~~~~~~~~~
-kernel/profile.c: In function ‘profile_tick’:
-kernel/profile.c:403:47: error: the comparison will always evaluate as ‘true’ for the address of ‘prof_cpu_mask’ will never be NULL [-Werror=address]
-  403 |         if (!user_mode(regs) && prof_cpu_mask != NULL &&
-      |                                               ^~
-kernel/profile.c:46:22: note: ‘prof_cpu_mask’ declared here
-   46 | static cpumask_var_t prof_cpu_mask;
-      |                      ^~~~~~~~~~~~~
-  CC      drivers/pinctrl/pinmux.o
-  CC      drivers/pinctrl/pinconf.o
-drivers/misc/mediatek/base/power/cpufreq_v1/src/mtk_cpufreq_api.c:263:14: error: conflicting types for ‘mt_cpufreq_get_cur_freq_idx’ due to enum/integer mismatch; have ‘unsigned int(enum mt_cpu_dvfs_id)’ [-Werror=enum-int-mismatch]
-  263 | unsigned int mt_cpufreq_get_cur_freq_idx(enum mt_cpu_dvfs_id id)
-      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from ./drivers/misc/mediatek/base/power/cpufreq_v1/inc/mtk_cpufreq_internal.h:51,
-                 from drivers/misc/mediatek/base/power/cpufreq_v1/src/mtk_cpufreq_api.c:14:
-./drivers/misc/mediatek/include/mt-plat/mt6761/include/mach/mtk_cpufreq_api.h:78:21: note: previous declaration of ‘mt_cpufreq_get_cur_freq_idx’ with type ‘unsigned int(unsigned int)’
-   78 | extern unsigned int mt_cpufreq_get_cur_freq_idx(unsigned int cluster_id);
-      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-drivers/misc/mediatek/base/power/cpufreq_v1/src/mtk_cpufreq_api.c:346:14: error: conflicting types for ‘mt_cpufreq_get_cur_phy_freq_idx_no_lock’ due to enum/integer mismatch; have ‘unsigned int(enum mt_cpu_dvfs_id)’ [-Werror=enum-int-mismatch]
-  346 | unsigned int mt_cpufreq_get_cur_phy_freq_idx_no_lock(enum mt_cpu_dvfs_id id)
-      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./drivers/misc/mediatek/include/mt-plat/mt6761/include/mach/mtk_cpufreq_api.h:80:1: note: previous declaration of ‘mt_cpufreq_get_cur_phy_freq_idx_no_lock’ with type ‘unsigned int(unsigned int)’
-   80 | mt_cpufreq_get_cur_phy_freq_idx_no_lock(unsigned int cluster_id);
-      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  LD      drivers/misc/mediatek/base/power/cpuidle_v3/built-in.o
-  CC      drivers/misc/mediatek/base/power/cpufreq_v1/src/mach/mt6761/mtk_cpufreq_platform.o
-drivers/misc/mediatek/base/power/cm_mgr_v1/mtk_cm_mgr.c: In function ‘check_cm_mgr_status_internal’:
-drivers/misc/mediatek/base/power/cm_mgr_v1/mtk_cm_mgr.c:466:17: error: ‘memset’ used with length equal to number of elements without multiplication by element size [-Werror=memset-elt-size]
-  466 |                 memset(count_ack, 0, ARRAY_SIZE(count_ack));
-      |                 ^~~~~~
-drivers/misc/mediatek/base/power/cm_mgr_v1/mtk_cm_mgr.c:481:17: error: ‘memset’ used with length equal to number of elements without multiplication by element size [-Werror=memset-elt-size]
-  481 |                 memset(max_load, 0, ARRAY_SIZE(count_ack));
-      |                 ^~~~~~
-In file included from drivers/mmc/host/mediatek/ComboA/mtk_sd.h:33,
-                 from drivers/mmc/host/mediatek/ComboA/dbg.c:32:
-./drivers/mmc/host/mediatek/ComboA/mt6765/autok_dvfs.h:17:10: fatal error: autok.h: Datei oder Verzeichnis nicht gefunden
-   17 | #include "autok.h"
-      |          ^~~~~~~~~
-compilation terminated.
-make[5]: *** [scripts/Makefile.build:334: drivers/mmc/host/mediatek/ComboA/dbg.o] Fehler 1
-make[5]: *** Auf noch nicht beendete Prozesse wird gewartet …
-In file included from drivers/mmc/host/mediatek/ComboA/mtk_sd.h:33,
-                 from drivers/mmc/host/mediatek/ComboA/sd.c:44:
-./drivers/mmc/host/mediatek/ComboA/mt6765/autok_dvfs.h:17:10: fatal error: autok.h: Datei oder Verzeichnis nicht gefunden
-   17 | #include "autok.h"
-      |          ^~~~~~~~~
-compilation terminated.
-  CC      kernel/uid16.o
-make[5]: *** [scripts/Makefile.build:334: drivers/mmc/host/mediatek/ComboA/sd.o] Fehler 1
-make[4]: *** [scripts/Makefile.build:648: drivers/mmc/host/mediatek/ComboA] Fehler 2
-  CC      drivers/misc/mediatek/base/power/hps_v3/mtk_hotplug_cb.o
-make[3]: *** [scripts/Makefile.build:648: drivers/mmc/host/mediatek] Fehler 2
-make[2]: *** [scripts/Makefile.build:648: drivers/mmc/host] Fehler 2
-make[1]: *** [scripts/Makefile.build:648: drivers/mmc] Fehler 2
-make[1]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  CC      drivers/of/address.o
-cc1: all warnings being treated as errors
-drivers/input/touchscreen/mediatek/focaltech_touch/focaltech_test/focaltech_test_ini.c: In function ‘fts_strncmp’:
-drivers/input/touchscreen/mediatek/focaltech_touch/focaltech_test/focaltech_test_ini.c:121:18: error: comparison between pointer and zero character constant [-Werror=pointer-compare]
-  121 |         if  ((cs == '\0') || (ct == '\0'))
-      |                  ^~
-drivers/input/touchscreen/mediatek/focaltech_touch/focaltech_test/focaltech_test_ini.c:121:15: note: did you mean to dereference the pointer?
-  121 |         if  ((cs == '\0') || (ct == '\0'))
-      |               ^
-drivers/input/touchscreen/mediatek/focaltech_touch/focaltech_test/focaltech_test_ini.c:121:34: error: comparison between pointer and zero character constant [-Werror=pointer-compare]
-  121 |         if  ((cs == '\0') || (ct == '\0'))
-      |                                  ^~
-drivers/input/touchscreen/mediatek/focaltech_touch/focaltech_test/focaltech_test_ini.c:121:31: note: did you mean to dereference the pointer?
-  121 |         if  ((cs == '\0') || (ct == '\0'))
-      |                               ^
-make[7]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/base/power/cpufreq_v1/src/mtk_cpufreq_api.o] Fehler 1
+  CC      drivers/misc/mediatek/base/power/spm/mt6761/mtk_spm_internal.o
+make[7]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/base/power/spm/mt6761/mtk_spm_twam.o] Fehler 1
 make[7]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  CC      drivers/pinctrl/devicetree.o
-  CC      drivers/power/supply/power_supply_sysfs.o
-  CC      drivers/misc/mediatek/base/power/eem_v2/mt6761/mtk_eem_platform.o
-  CC      drivers/pinctrl/pinconf-generic.o
-  CC      kernel/module.o
-  CC      drivers/misc/mediatek/base/power/hps_v3/mtk_hps_main.o
-  CC      kernel/kallsyms.o
-cc1: all warnings being treated as errors
-make[1]: *** [scripts/Makefile.build:334: kernel/profile.o] Fehler 1
-make[1]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  CC      drivers/power/supply/power_supply_leds.o
-  CC      drivers/misc/mediatek/base/power/hps_v3/mtk_hps_core.o
-  LD      drivers/misc/mediatek/base/power/dcm_v1/mt6761/built-in.o
-  LD      drivers/misc/mediatek/base/power/dcm_v1/built-in.o
-kernel/sched/core.c: In function ‘sched_init’:
-kernel/sched/core.c:8596:30: error: the comparison will always evaluate as ‘false’ for the address of ‘cpu_isolated_map’ will never be NULL [-Werror=address]
- 8596 |         if (cpu_isolated_map == NULL)
-      |                              ^~
-kernel/sched/core.c:185:15: note: ‘cpu_isolated_map’ declared here
-  185 | cpumask_var_t cpu_isolated_map;
-      |               ^~~~~~~~~~~~~~~~
-  CC      drivers/misc/mediatek/base/power/eem_v2/mt6761/mtk_eem_internal.o
-  LD      drivers/pinctrl/bcm/built-in.o
-  CC      drivers/of/irq.o
-  CC      kernel/sched/deadline.o
-  CC      drivers/power/supply/mediatek/battery/mtk_battery.o
-cc1: all warnings being treated as errors
-  CC      drivers/misc/mediatek/base/power/eem_v2/mt6761/mtk_eem_api.o
-  CC      drivers/power/supply/mediatek/charger/charger_class.o
-make[6]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/base/power/cm_mgr_v1/mtk_cm_mgr.o] Fehler 1
-make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/cm_mgr_v1] Fehler 2
-  CC      kernel/sched/stop_task.o
+  CC      drivers/misc/mediatek/ext_disp/mt6765/mtk_extd_mgr.o
+drivers/misc/mediatek/base/power/spm/common/mtk_idle_select.c:22:10: fatal error: teei_client_main.h: Datei oder Verzeichnis nicht gefunden
+   22 | #include <teei_client_main.h> /* is_teei_ready */
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_power_data.c:20:
+./drivers/misc/mediatek/base/power/ppm_v3/inc/mtk_ppm_internal.h:35:10: fatal error: mtk_ppm_platform.h: Datei oder Verzeichnis nicht gefunden
+   35 | #include "mtk_ppm_platform.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from drivers/misc/mediatek/emi/mt6761/bwl_platform.c:19:
+drivers/misc/mediatek/emi/mt6761/mt_emi.h:60:10: fatal error: mt_emi_api.h: Datei oder Verzeichnis nicht gefunden
+   60 | #include <mt_emi_api.h>
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+In file included from drivers/misc/mediatek/base/power/mt6761/mtk_gpufreq_core.c:46:
+./drivers/misc/mediatek/thermal/mt6761/inc/mach/mtk_thermal.h:26:10: fatal error: mtk_gpufreq.h: Datei oder Verzeichnis nicht gefunden
+   26 | #include "mtk_gpufreq.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+make[7]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/base/power/spm/common/mtk_idle_select.o] Fehler 1
+make[7]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  CC      drivers/misc/mediatek/emi/mt6761/../submodule/bwl_v1.o
+make[9]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_power_data.o] Fehler 1
+make[9]: *** Auf noch nicht beendete Prozesse wird gewartet …
+make[5]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/emi/mt6761/bwl_platform.o] Fehler 1
 make[5]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  CC      drivers/power/supply/mediatek/misc/mtk_gauge_time_service.o
-  CC      drivers/power/supply/mediatek/charger/mtk_charger.o
-  CC      kernel/sched/wait.o
-  CC      drivers/misc/mediatek/base/power/hps_v3/mtk_hps_procfs.o
-  LD      drivers/misc/mediatek/base/power/cpufreq_v1/src/mach/mt6761/built-in.o
-  CC      kernel/sched/swait.o
-  CC      drivers/power/supply/mediatek/battery/mtk_power_misc.o
-  LD      drivers/misc/mediatek/base/power/cpufreq_v1/src/mach/built-in.o
-  LD      drivers/pinctrl/freescale/built-in.o
-  CC      drivers/misc/mediatek/base/power/hps_v3/mtk_hps_cpu.o
-  CC      drivers/power/supply/mediatek/battery/mtk_gauge_coulomb_service.o
-  CC      drivers/pinctrl/mediatek/pinctrl-mtk-common.o
-make[6]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/cpufreq_v1/src] Fehler 2
-make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/cpufreq_v1] Fehler 2
-  CC      drivers/of/of_net.o
-  LD      drivers/pinctrl/nomadik/built-in.o
-  CC      drivers/power/supply/mediatek/battery/mtk_gauge_class.o
-  CC      drivers/pinctrl/mediatek/pinctrl-mt6761.o
-  CC      drivers/of/of_mdio.o
-cc1: all warnings being treated as errors
-  CC      kernel/sched/completion.o
-make[6]: *** [scripts/Makefile.build:335: drivers/input/touchscreen/mediatek/focaltech_touch/focaltech_test/focaltech_test_ini.o] Fehler 1
-make[5]: *** [scripts/Makefile.build:648: drivers/input/touchscreen/mediatek/focaltech_touch/focaltech_test] Fehler 2
-make[4]: *** [scripts/Makefile.build:648: drivers/input/touchscreen/mediatek/focaltech_touch] Fehler 2
-make[3]: *** [scripts/Makefile.build:648: drivers/input/touchscreen/mediatek] Fehler 2
-make[2]: *** [scripts/Makefile.build:648: drivers/input/touchscreen] Fehler 2
-make[1]: *** [scripts/Makefile.build:648: drivers/input] Fehler 2
-  CC      drivers/power/supply/mediatek/charger/mtk_switch_charging.o
-In file included from drivers/power/supply/mediatek/battery/mtk_power_misc.c:31:
-drivers/power/supply/mediatek/battery/mtk_battery_internal.h:26:10: fatal error: mtk_gauge_class.h: Datei oder Verzeichnis nicht gefunden
-   26 | #include <mtk_gauge_class.h>
-      |          ^~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[5]: *** [scripts/Makefile.build:334: drivers/power/supply/mediatek/battery/mtk_power_misc.o] Fehler 1
+make[6]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/base/power/mt6761/mtk_gpufreq_core.o] Fehler 1
+make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/mt6761] Fehler 2
 make[5]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  CC      kernel/sched/idle.o
-  CC      drivers/misc/mediatek/base/power/hps_v3/mtk_hps_api.o
-  LD      drivers/perf/built-in.o
-  CC      drivers/misc/mediatek/base/power/hps_v3/mtk_hps_algo.o
-In file included from drivers/pinctrl/mediatek/pinctrl-mtk-common.c:41:
-drivers/pinctrl/mediatek/pinctrl-mtk-common.h:367:15: error: duplicate ‘const’ declaration specifier [-Werror=duplicate-decl-specifier]
-  367 |         const const struct mtk_pin_drv_grp      *pin_drv_grp;
-      |               ^~~~~
-  CC      drivers/of/of_reserved_mem.o
-  LD      drivers/power/supply/power_supply.o
-  CC      drivers/power/supply/mediatek/charger/mtk_pdc_intf.o
-  CC      drivers/power/supply/mediatek/charger/mtk_chg_type_det.o
-  CC      drivers/power/supply/mediatek/charger/mtk_pe40_intf.o
-  CC      kernel/sched/cpupri.o
-drivers/power/supply/mediatek/battery/mtk_battery.c:64:10: fatal error: mtk_gauge_class.h: Datei oder Verzeichnis nicht gefunden
-   64 | #include <mtk_gauge_class.h>
-      |          ^~~~~~~~~~~~~~~~~~~
+  CC      drivers/misc/mediatek/ext_disp/mt6765/extd_utils.o
+  CC      drivers/misc/mediatek/ext_gic/mtk-gic-v3-extend.o
+  CC      drivers/misc/mediatek/fiq_cache/mtk-fiq-cache.o
+  CC      drivers/staging/android/ion/ion.o
+drivers/misc/mediatek/base/power/spm/mt6761/mtk_spm_irq.c:27:10: fatal error: mtk_spm_irq.h: Datei oder Verzeichnis nicht gefunden
+   27 | #include <mtk_spm_irq.h>
+      |          ^~~~~~~~~~~~~~~
 compilation terminated.
-In file included from drivers/pinctrl/mediatek/pinctrl-mt6761.c:23:
-drivers/pinctrl/mediatek/pinctrl-mtk-common.h:367:15: error: duplicate ‘const’ declaration specifier [-Werror=duplicate-decl-specifier]
-  367 |         const const struct mtk_pin_drv_grp      *pin_drv_grp;
-      |               ^~~~~
-make[5]: *** [scripts/Makefile.build:334: drivers/power/supply/mediatek/battery/mtk_battery.o] Fehler 1
-  CC      drivers/power/supply/mediatek/charger/bq2560x_charger.o
-  CC      drivers/misc/mediatek/base/power/hps_v3/mtk_hps_ops.o
-  CC      drivers/power/supply/mediatek/charger/pogo_charger.o
-  CC      kernel/sched/cpudeadline.o
-  CC      drivers/power/supply/mediatek/charger/rt9471.o
-drivers/power/supply/mediatek/battery/mtk_gauge_coulomb_service.c:23:10: fatal error: mtk_battery_internal.h: Datei oder Verzeichnis nicht gefunden
-   23 | #include <mtk_battery_internal.h>
-      |          ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_cobra_algo.c:22:
+./drivers/misc/mediatek/base/power/ppm_v3/inc/mtk_ppm_internal.h:35:10: fatal error: mtk_ppm_platform.h: Datei oder Verzeichnis nicht gefunden
+   35 | #include "mtk_ppm_platform.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
 compilation terminated.
-make[5]: *** [scripts/Makefile.build:334: drivers/power/supply/mediatek/battery/mtk_gauge_coulomb_service.o] Fehler 1
-  CC      kernel/sched/energy.o
-cc1: all warnings being treated as errors
-  LD      drivers/power/supply/mediatek/misc/built-in.o
-  CC      kernel/sched/walt.o
-make[3]: *** [scripts/Makefile.build:335: drivers/pinctrl/mediatek/pinctrl-mt6761.o] Fehler 1
+make[7]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/base/power/spm/mt6761/mtk_spm_irq.o] Fehler 1
+drivers/misc/mediatek/debug_latch/plat_dbg_info/plat_dbg_info.c:23:10: fatal error: plat_dbg_info.h: Datei oder Verzeichnis nicht gefunden
+   23 | #include <plat_dbg_info.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make[9]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_cobra_algo.o] Fehler 1
+In file included from ./drivers/misc/mediatek/cmdq/v3/cmdq_helper_ext.h:23,
+                 from ./drivers/misc/mediatek/cmdq/v3/cmdq_reg.h:20,
+                 from drivers/misc/mediatek/cmdq/v3/mt6765/cmdq_mdp.c:13:
+./drivers/misc/mediatek/cmdq/v3/cmdq_def.h:29:10: fatal error: cmdq_engine.h: Datei oder Verzeichnis nicht gefunden
+   29 | #include "cmdq_engine.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+make[5]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/debug_latch/plat_dbg_info/plat_dbg_info.o] Fehler 1
+make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/debug_latch/plat_dbg_info] Fehler 2
+make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/debug_latch] Fehler 2
 make[3]: *** Auf noch nicht beendete Prozesse wird gewartet …
-In file included from drivers/power/supply/mediatek/battery/mtk_gauge_class.c:27:
-drivers/power/supply/mediatek/battery/mtk_battery_internal.h:26:10: fatal error: mtk_gauge_class.h: Datei oder Verzeichnis nicht gefunden
-   26 | #include <mtk_gauge_class.h>
-      |          ^~~~~~~~~~~~~~~~~~~
+  CC      drivers/misc/mediatek/flashlight/flashlight-core.o
+  CC      drivers/misc/mediatek/ext_disp/mt6765/extd_multi_control.o
+In file included from drivers/misc/mediatek/emi/mt6761/mpu_platform.c:16:
+drivers/misc/mediatek/emi/mt6761/mt_emi.h:60:10: fatal error: mt_emi_api.h: Datei oder Verzeichnis nicht gefunden
+   60 | #include <mt_emi_api.h>
+      |          ^~~~~~~~~~~~~~
 compilation terminated.
-  CC      kernel/sched/stats.o
-  CC      kernel/sched/debug.o
-make[5]: *** [scripts/Makefile.build:334: drivers/power/supply/mediatek/battery/mtk_gauge_class.o] Fehler 1
-make[4]: *** [scripts/Makefile.build:648: drivers/power/supply/mediatek/battery] Fehler 2
-make[4]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  CC      kernel/sched/tune.o
-In file included from drivers/power/supply/mediatek/charger/mtk_switch_charging.c:66:
-drivers/power/supply/mediatek/charger/mtk_switch_charging.c: In function ‘mtk_switch_charging_run’:
-drivers/power/supply/mediatek/charger/mtk_charger_intf.h:51:13: error: statement will never be executed [-Werror=switch-unreachable]
-   51 |         if (chr_get_debug_level() >= CHRLOG_ERROR_LEVEL) {      \
-      |             ^~~~~~~~~~~~~~~~~~~~~
-drivers/power/supply/mediatek/charger/mtk_switch_charging.c:663:25: note: in expansion of macro ‘chr_err’
-  663 |                         chr_err("%s_2 [%d] %d\n", __func__, swchgalg->state,
-      |                         ^~~~~~~
-  CC      kernel/sched/cpuacct.o
-  CC      kernel/sched/cpufreq.o
-  CC      kernel/sched/cpufreq_schedplus.o
-cc1: all warnings being treated as errors
-make[5]: *** [scripts/Makefile.build:334: drivers/power/supply/mediatek/charger/mtk_switch_charging.o] Fehler 1
+make[6]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/cmdq/v3/mt6765/cmdq_mdp.o] Fehler 1
+make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/cmdq/v3/mt6765] Fehler 2
+make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/cmdq/v3] Fehler 2
+make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/cmdq] Fehler 2
+drivers/misc/mediatek/base/power/spm/mt6761/mtk_spm.c:31:10: fatal error: mtk_spm_irq.h: Datei oder Verzeichnis nicht gefunden
+   31 | #include <mtk_spm_irq.h>
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+make[5]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/emi/mt6761/mpu_platform.o] Fehler 1
+make[7]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/base/power/spm/mt6761/mtk_spm.o] Fehler 1
+  CC      drivers/misc/mediatek/ext_disp/mt6765/extd_factory.o
+  CC      drivers/staging/android/ion/ion-ioctl.o
+drivers/misc/mediatek/base/power/spm/mt6761/mtk_spm_dram.c:22:10: fatal error: mtk_spm_internal.h: Datei oder Verzeichnis nicht gefunden
+   22 | #include <mtk_spm_internal.h>
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+  CC      drivers/staging/android/ion/ion_heap.o
+make[7]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/base/power/spm/mt6761/mtk_spm_dram.o] Fehler 1
+In file included from drivers/misc/mediatek/emi/mt6761/plat_debug_api.c:23:
+drivers/misc/mediatek/emi/mt6761/mt_emi.h:60:10: fatal error: mt_emi_api.h: Datei oder Verzeichnis nicht gefunden
+   60 | #include <mt_emi_api.h>
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+  CC      drivers/misc/mediatek/flashlight/flashlight-device.o
+In file included from drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_platform.c:25:
+./drivers/misc/mediatek/base/power/ppm_v3/inc/mtk_ppm_internal.h:35:10: fatal error: mtk_ppm_platform.h: Datei oder Verzeichnis nicht gefunden
+   35 | #include "mtk_ppm_platform.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[5]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/emi/mt6761/plat_debug_api.o] Fehler 1
+make[9]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_platform.o] Fehler 1
+make[8]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761] Fehler 2
+make[7]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/ppm_v3/src/mach] Fehler 2
+make[6]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/ppm_v3/src] Fehler 2
+make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/ppm_v3] Fehler 2
+  CC      drivers/staging/android/ion/ion_page_pool.o
+drivers/misc/mediatek/emi/mt6761/../emi_ctrl_v1.c:24:10: fatal error: mt_emi.h: Datei oder Verzeichnis nicht gefunden
+   24 | #include <mt_emi.h>
+      |          ^~~~~~~~~~
+drivers/misc/mediatek/base/power/spm/mt6761/mtk_spm_internal.c:18:10: fatal error: mtk_spm_internal.h: Datei oder Verzeichnis nicht gefunden
+   18 | #include <mtk_spm_internal.h>
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+compilation terminated.
+  CC      drivers/staging/android/ion/ion_system_heap.o
+make[7]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/base/power/spm/mt6761/mtk_spm_internal.o] Fehler 1
+make[5]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/emi/mt6761/../emi_ctrl_v1.o] Fehler 1
+  CC      drivers/watchdog/mediatek/wdt/common/wdt_v2/mtk_wdt_v2.o
+make[6]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/spm/mt6761] Fehler 2
+make[6]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  CC      drivers/staging/android/ion/ion_carveout_heap.o
+  CC      drivers/staging/android/ion/ion_chunk_heap.o
+In file included from drivers/misc/mediatek/ext_disp/mt6765/extd_utils.h:18,
+                 from drivers/misc/mediatek/ext_disp/mt6765/extd_utils.c:20:
+./drivers/misc/mediatek/ext_disp/include/mtk_extd_mgr.h:21:10: fatal error: extd_hdmi.h: Datei oder Verzeichnis nicht gefunden
+   21 | #include "extd_hdmi.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+make[5]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/ext_disp/mt6765/extd_utils.o] Fehler 1
 make[5]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  LD      drivers/misc/mediatek/base/power/hps_v3/built-in.o
-  LD      drivers/misc/mediatek/base/power/eem_v2/mt6761/built-in.o
-  LD      drivers/misc/mediatek/base/power/eem_v2/built-in.o
+  CC      drivers/misc/mediatek/flashlight/flashlights-mt6370.o
+  LD      drivers/misc/mediatek/base/power/udi_v1/built-in.o
+  CC      drivers/staging/android/ion/ion_cma_heap.o
+  CC      drivers/staging/android/ion/compat_ion.o
+  CC      drivers/staging/android/ion/mtk/ion_drv.o
+  CC      drivers/staging/android/ion/mtk/ion_mm_heap.o
+  CC      drivers/staging/android/ion/mtk/ion_fb_heap.o
+  CC      drivers/staging/android/ion/mtk/ion_sec_heap.o
+  CC      drivers/staging/android/ion/mtk/ion_profile.o
+In file included from drivers/misc/mediatek/ext_disp/mt6765/extd_utils.h:18,
+                 from drivers/misc/mediatek/ext_disp/mt6765/external_display.c:47:
+./drivers/misc/mediatek/ext_disp/include/mtk_extd_mgr.h:21:10: fatal error: extd_hdmi.h: Datei oder Verzeichnis nicht gefunden
+   21 | #include "extd_hdmi.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+make[5]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/ext_disp/mt6765/external_display.o] Fehler 1
+  CC      drivers/staging/android/ion/mtk/ion_history.o
+  CC      drivers/staging/android/ion/mtk/ion_comm.o
+  LD      drivers/misc/mediatek/base/power/upower_v2/built-in.o
+drivers/misc/mediatek/emi/mt6761/../submodule/bwl_v1.c:23:10: fatal error: mt_emi.h: Datei oder Verzeichnis nicht gefunden
+   23 | #include <mt_emi.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+  LD      drivers/misc/mediatek/fiq_cache/built-in.o
+make[5]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/emi/mt6761/../submodule/bwl_v1.o] Fehler 1
+make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/emi/mt6761] Fehler 2
+make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/emi] Fehler 2
+In file included from drivers/misc/mediatek/ext_disp/mt6765/extd_utils.h:18,
+                 from drivers/misc/mediatek/ext_disp/mt6765/mtk_extd_mgr.c:34:
+./drivers/misc/mediatek/ext_disp/include/mtk_extd_mgr.h:21:10: fatal error: extd_hdmi.h: Datei oder Verzeichnis nicht gefunden
+   21 | #include "extd_hdmi.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from drivers/staging/android/ion/ion_priv.h:30,
+                 from drivers/staging/android/ion/ion-ioctl.c:22:
+drivers/staging/android/ion/mtk/ion_drv.h:18:10: fatal error: ion.h: Datei oder Verzeichnis nicht gefunden
+   18 | #include <ion.h>
+      |          ^~~~~~~
+compilation terminated.
+make[5]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/ext_disp/mt6765/mtk_extd_mgr.o] Fehler 1
+make[4]: *** [scripts/Makefile.build:335: drivers/staging/android/ion/ion-ioctl.o] Fehler 1
+make[4]: *** Auf noch nicht beendete Prozesse wird gewartet …
+In file included from drivers/staging/android/ion/ion_priv.h:30,
+                 from drivers/staging/android/ion/ion.c:41:
+drivers/staging/android/ion/mtk/ion_drv.h:18:10: fatal error: ion.h: Datei oder Verzeichnis nicht gefunden
+   18 | #include <ion.h>
+      |          ^~~~~~~
+compilation terminated.
+make[4]: *** [scripts/Makefile.build:335: drivers/staging/android/ion/ion.o] Fehler 1
+In file included from drivers/staging/android/ion/ion_priv.h:30,
+                 from drivers/staging/android/ion/ion_system_heap.c:27:
+drivers/staging/android/ion/mtk/ion_drv.h:18:10: fatal error: ion.h: Datei oder Verzeichnis nicht gefunden
+   18 | #include <ion.h>
+      |          ^~~~~~~
+compilation terminated.
+drivers/watchdog/mediatek/wdt/common/wdt_v2/mtk_wdt_v2.c:32:10: fatal error: mtk_wdt.h: Datei oder Verzeichnis nicht gefunden
+   32 | #include <mtk_wdt.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+make[4]: *** [scripts/Makefile.build:335: drivers/staging/android/ion/ion_system_heap.o] Fehler 1
+In file included from drivers/staging/android/ion/ion_priv.h:30,
+                 from drivers/staging/android/ion/ion_carveout_heap.c:26:
+drivers/staging/android/ion/mtk/ion_drv.h:18:10: fatal error: ion.h: Datei oder Verzeichnis nicht gefunden
+   18 | #include <ion.h>
+      |          ^~~~~~~
+compilation terminated.
+make[6]: *** [scripts/Makefile.build:335: drivers/watchdog/mediatek/wdt/common/wdt_v2/mtk_wdt_v2.o] Fehler 1
+make[5]: *** [scripts/Makefile.build:648: drivers/watchdog/mediatek/wdt/common/wdt_v2] Fehler 2
+make[4]: *** [scripts/Makefile.build:648: drivers/watchdog/mediatek/wdt/common] Fehler 2
+make[3]: *** [scripts/Makefile.build:648: drivers/watchdog/mediatek/wdt] Fehler 2
+In file included from drivers/staging/android/ion/ion_priv.h:30,
+                 from drivers/staging/android/ion/ion_chunk_heap.c:25:
+drivers/staging/android/ion/mtk/ion_drv.h:18:10: fatal error: ion.h: Datei oder Verzeichnis nicht gefunden
+   18 | #include <ion.h>
+      |          ^~~~~~~
+compilation terminated.
+make[2]: *** [scripts/Makefile.build:648: drivers/watchdog/mediatek] Fehler 2
+make[1]: *** [scripts/Makefile.build:648: drivers/watchdog] Fehler 2
+make[1]: *** Auf noch nicht beendete Prozesse wird gewartet …
+In file included from drivers/staging/android/ion/ion_priv.h:30,
+                 from drivers/staging/android/ion/ion_cma_heap.c:25:
+drivers/staging/android/ion/mtk/ion_drv.h:18:10: fatal error: ion.h: Datei oder Verzeichnis nicht gefunden
+   18 | #include <ion.h>
+      |          ^~~~~~~
+compilation terminated.
+make[4]: *** [scripts/Makefile.build:335: drivers/staging/android/ion/ion_carveout_heap.o] Fehler 1
+In file included from drivers/staging/android/ion/ion_priv.h:30,
+                 from drivers/staging/android/ion/ion_heap.c:26:
+drivers/staging/android/ion/mtk/ion_drv.h:18:10: fatal error: ion.h: Datei oder Verzeichnis nicht gefunden
+   18 | #include <ion.h>
+      |          ^~~~~~~
+compilation terminated.
+make[4]: *** [scripts/Makefile.build:335: drivers/staging/android/ion/ion_chunk_heap.o] Fehler 1
+make[4]: *** [scripts/Makefile.build:335: drivers/staging/android/ion/ion_cma_heap.o] Fehler 1
+In file included from drivers/staging/android/ion/ion_priv.h:30,
+                 from drivers/staging/android/ion/ion_page_pool.c:25:
+drivers/staging/android/ion/mtk/ion_drv.h:18:10: fatal error: ion.h: Datei oder Verzeichnis nicht gefunden
+   18 | #include <ion.h>
+      |          ^~~~~~~
+compilation terminated.
+make[4]: *** [scripts/Makefile.build:335: drivers/staging/android/ion/ion_heap.o] Fehler 1
+make[4]: *** [scripts/Makefile.build:335: drivers/staging/android/ion/ion_page_pool.o] Fehler 1
+In file included from drivers/staging/android/ion/compat_ion.c:23:
+drivers/staging/android/ion/mtk/ion_drv.h:18:10: fatal error: ion.h: Datei oder Verzeichnis nicht gefunden
+   18 | #include <ion.h>
+      |          ^~~~~~~
+compilation terminated.
+make[4]: *** [scripts/Makefile.build:335: drivers/staging/android/ion/compat_ion.o] Fehler 1
+make[6]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/spm/common] Fehler 2
+make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/spm] Fehler 2
 make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power] Fehler 2
 make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base] Fehler 2
+make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/ext_disp/mt6765] Fehler 2
+make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/ext_disp] Fehler 2
+  LD      drivers/misc/mediatek/ext_gic/built-in.o
+  LD      drivers/staging/android/ion/mtk/built-in.o
+make[3]: *** [scripts/Makefile.build:648: drivers/staging/android/ion] Fehler 2
+make[2]: *** [scripts/Makefile.build:648: drivers/staging/android] Fehler 2
+make[1]: *** [scripts/Makefile.build:648: drivers/staging] Fehler 2
+  LD      drivers/misc/mediatek/flashlight/flashlight.o
+  LD      drivers/misc/mediatek/flashlight/built-in.o
 make[2]: *** [scripts/Makefile.build:648: drivers/misc/mediatek] Fehler 2
 make[1]: *** [scripts/Makefile.build:648: drivers/misc] Fehler 2
-  LD      drivers/of/built-in.o
-cc1: all warnings being treated as errors
-make[3]: *** [scripts/Makefile.build:335: drivers/pinctrl/mediatek/pinctrl-mtk-common.o] Fehler 1
-make[2]: *** [scripts/Makefile.build:648: drivers/pinctrl/mediatek] Fehler 2
-make[1]: *** [scripts/Makefile.build:648: drivers/pinctrl] Fehler 2
-make[4]: *** [scripts/Makefile.build:648: drivers/power/supply/mediatek/charger] Fehler 2
-make[3]: *** [scripts/Makefile.build:648: drivers/power/supply/mediatek] Fehler 2
-make[2]: *** [scripts/Makefile.build:648: drivers/power/supply] Fehler 2
-make[1]: *** [scripts/Makefile.build:648: drivers/power] Fehler 2
-make: *** [Makefile:1104: drivers] Fehler 2
-make: *** Auf noch nicht beendete Prozesse wird gewartet …
-cc1: all warnings being treated as errors
-make[2]: *** [scripts/Makefile.build:334: kernel/sched/core.o] Fehler 1
-make[1]: *** [scripts/Makefile.build:648: kernel/sched] Fehler 2
-make: *** [Makefile:1104: kernel] Fehler 2
-martin@mklinux:~/pwnagotchi-a5/8505F/devenv/linux$ 
+make: *** [Makefile:1110: drivers] Fehler 2
 
