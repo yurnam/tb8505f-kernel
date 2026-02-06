@@ -14,10 +14,10 @@
 
 import re
 import string
-import ConfigParser
+import configparser as ConfigParser
 import xml.dom.minidom
 
-from ModuleObj import ModuleObj
+from .ModuleObj import ModuleObj
 from utility.util import LogLevel
 from utility.util import log
 from data.KpdData import KpdData
@@ -34,15 +34,15 @@ class KpdObj(ModuleObj):
 
         ops = cp.options('Key_definition')
         for op in ops:
-            KpdData._keyValueMap[op.upper()] = string.atoi(cp.get('Key_definition', op))
+            KpdData._keyValueMap[op.upper()] = int(cp.get('Key_definition', op))
 
         KpdData._keyValueMap['NC'] = 0
 
         cp.read(ModuleObj.get_figPath())
         if cp.has_option('KEYPAD_EXTEND_TYPE', 'KEY_ROW'):
-            KpdData.set_row_ext(string.atoi(cp.get('KEYPAD_EXTEND_TYPE', 'KEY_ROW')))
+            KpdData.set_row_ext(int(cp.get('KEYPAD_EXTEND_TYPE', 'KEY_ROW')))
         if cp.has_option('KEYPAD_EXTEND_TYPE', 'KEY_COLUMN'):
-            KpdData.set_col_ext(string.atoi(cp.get('KEYPAD_EXTEND_TYPE', 'KEY_COLUMN')))
+            KpdData.set_col_ext(int(cp.get('KEYPAD_EXTEND_TYPE', 'KEY_COLUMN')))
 
         return True
 
@@ -51,11 +51,11 @@ class KpdObj(ModuleObj):
         for node in nodes:
             if node.nodeType == xml.dom.Node.ELEMENT_NODE:
                 if node.nodeName == 'row':
-                    row = string.atoi(node.childNodes[0].nodeValue)
+                    row = int(node.childNodes[0].nodeValue)
                     KpdData.set_row(row)
 
                 if node.nodeName == 'column':
-                    col = string.atoi(node.childNodes[0].nodeValue)
+                    col = int(node.childNodes[0].nodeValue)
                     KpdData.set_col(col)
 
                 if node.nodeName == 'keyMatrix':
@@ -94,7 +94,7 @@ class KpdObj(ModuleObj):
                     KpdData._modeKeys['FACTORY'] = keys[2]
 
                 if node.nodeName == 'pwrKeyEint_gpioNum':
-                    num = string.atoi(node.childNodes[0].nodeValue)
+                    num = int(node.childNodes[0].nodeValue)
                     KpdData.set_gpioNum(num)
 
                 if node.nodeName == 'pwrKeyUtility':
@@ -127,7 +127,7 @@ class KpdObj(ModuleObj):
                     KpdData.set_gpioDinHigh(flag)
 
                 if node.nodeName == 'pressPeriod':
-                    time = string.atoi(node.childNodes[0].nodeValue)
+                    time = int(node.childNodes[0].nodeValue)
                     KpdData.set_pressTime(time)
 
                 if node.nodeName == 'keyType':
@@ -231,14 +231,14 @@ class KpdObj(ModuleObj):
 
     def get_matrixIdx(self, value):
         if KpdData.get_keyType() == 'NORMAL_TYPE':
-            if cmp(value, 'POWER') == 0:
+            if value == 'POWER':
                 return KpdData.get_col() - 1
             elif cmp(value, KpdData.get_homeKey()) == 0:
                 return 2 * KpdData.get_col() - 1
             else:
                 return KpdData.get_matrix().index(value)
         elif KpdData.get_keyType() == 'EXTEND_TYPE':
-            if cmp(value, 'POWER') == 0:
+            if value == 'POWER':
                 return KpdData.get_col_ext() - 1
             elif cmp(value, KpdData.get_homeKey()) == 0:
                 return 2 * KpdData.get_col_ext() - 1
@@ -285,12 +285,12 @@ class KpdObj(ModuleObj):
         gen_str += '''\tmediatek,kpd-pwrkey-eint-gpio = <%d>;\n''' %(KpdData.get_gpioNum())
         gen_str += '''\tmediatek,kpd-pwkey-gpio-din  = <%d>;\n''' %(int(KpdData.get_gpioDinHigh()))
         for key in KpdData.get_downloadKeys():
-            if cmp(key, 'NC') == 0:
+            if key == 'NC':
                 continue
             gen_str += '''\tmediatek,kpd-hw-dl-key%d = <%s>;\n''' %(KpdData.get_downloadKeys().index(key), self.get_matrixIdx(key))
 
         for (key, value) in KpdData.get_modeKeys().items():
-            if cmp(value, 'NC') == 0:
+            if value == 'NC':
                 continue
             gen_str += '''\tmediatek,kpd-hw-%s-key = <%d>;\n''' %(key.lower(), self.get_matrixIdx(value))
 
