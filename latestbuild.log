@@ -1,0 +1,78 @@
+martin@mklinux:~/pwnagotchi-a5/8505F/devenv/linux$ 
+martin@mklinux:~/pwnagotchi-a5/8505F/devenv/linux$ make -j32 
+  CHK     include/config/kernel.release
+  CHK     include/generated/uapi/linux/version.h
+make[1]: Für das Ziel „dct/DrvGen.py“ ist nichts zu tun.
+make[1]: Für das Ziel „dct/config/MT6739.fig“ ist nichts zu tun.
+make[1]: Für das Ziel „dct/config/MT6761.fig“ ist nichts zu tun.
+rm -f dtboimg.cfg.tmp
+make[1]: Für das Ziel „dct/config/MT6765.fig“ ist nichts zu tun.
+echo /home/martin/pwnagotchi-a5/8505F/devenv/linux/arch/arm64/boot/dts/mediatek/akita_row_wifi.dtb >>dtboimg.cfg.tmp; echo " id=0" >>dtboimg.cfg.tmp; 
+if ! cmp -s dtboimg.cfg.tmp dtboimg.cfg; then \
+	mv dtboimg.cfg.tmp dtboimg.cfg; \
+else \
+	rm dtboimg.cfg.tmp; \
+fi
+  CHK     include/generated/utsrelease.h
+  CHK     scripts/mod/devicetable-offsets.h
+  CHK     include/generated/timeconst.h
+  CHK     include/generated/bounds.h
+  CHK     include/generated/asm-offsets.h
+for i in ./arch/arm64/boot/dts/mediatek/akita_row_wifi.dtb; do \
+	./scripts/dtc/ufdt_apply_overlay ./arch/arm64/boot/dts/mediatek/mt6761.dtb $i $i.merge;\
+done
+  CALL    scripts/checksyscalls.sh
+ufdt_apply_overlay: took 0.000000000 secs
+  CHK     include/generated/compile.h
+.
+FDVT: Drv use 3.5 folder
+.
+.
+cameraisp drv by platform 
+.
+  CHK     kernel/config_data.h
+PLATFORM = mt6761
+DEVAPC platform code exists...
+*MTK_GPU_VERSION 2 = clark
+imgsensor drv by common ../common/v1/gc5035_mipi_raw/ ../common/v1/gc5035b_mipi_raw/ ../common/v1/hi556_mipi_raw/ ../common/v1/hi556txd_mipi_raw/ ../common/v1/sc500cs_mipi_raw/ ../common/v1/s5k4h7_mipi_raw/ ../common/v1/gc2375h_mipi_raw/ ../common/v1/gc2375_mipi_raw/ ../common/v1/sc201cs_mipi_raw/ ../common/v1/s5k4h7_qtech_mipi_raw/ ../common/v1/gc02m1_mipi_raw/
+"CONFIG_MICROTRUST_TEE_VERSION="300""
+build trng...
+"CONFIG_MICROTRUST_TEE_SUPPORT=y"
+"CONFIG_MICROTRUST_TZ_DRIVER=y"
+"CONFIG_MICROTRUST_VFS_DRIVER=y"
+"CONFIG_MICROTRUST_FP_DRIVER=y"
+"CONFIG_MICROTRUST_TUI_DRIVER="
+"CONFIG_MICROTRUST_DEBUG="
+"CONFIG_MICROTRUST_TEST_DRIVERS="
+  CC      drivers/misc/mediatek/sspm/sspm_reservedmem.o
+  CC      drivers/misc/mediatek/sspm/sspm_plt.o
+  CC      drivers/misc/mediatek/video/mt6761/dispsys/ddp_debug.o
+In file included from drivers/misc/mediatek/sspm/sspm_reservedmem.c:43:
+./drivers/misc/mediatek/sspm/mt6761/sspm_reservedmem_define.h:15:10: fatal error: sspm_reservedmem.h: Datei oder Verzeichnis nicht gefunden
+   15 | #include <sspm_reservedmem.h>
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[4]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/sspm/sspm_reservedmem.o] Fehler 1
+make[4]: *** Auf noch nicht beendete Prozesse wird gewartet …
+In file included from drivers/misc/mediatek/sspm/sspm_plt.c:46:
+./drivers/misc/mediatek/sspm/mt6761/sspm_reservedmem_define.h:15:10: fatal error: sspm_reservedmem.h: Datei oder Verzeichnis nicht gefunden
+   15 | #include <sspm_reservedmem.h>
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[4]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/sspm/sspm_plt.o] Fehler 1
+make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/sspm] Fehler 2
+make[3]: *** Auf noch nicht beendete Prozesse wird gewartet …
+drivers/misc/mediatek/video/mt6761/dispsys/ddp_debug.c: In function ‘process_dbg_opt’:
+drivers/misc/mediatek/video/mt6761/dispsys/ddp_debug.c:588:58: error: argument to ‘sizeof’ in ‘strncpy’ call is the same expression as the source; did you mean to use the size of the destination? [-Werror=sizeof-pointer-memaccess]
+  588 |                 strncpy((char *)fmt, (char *)temp, sizeof(temp));
+      |                                                          ^
+cc1: all warnings being treated as errors
+make[6]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/video/mt6761/dispsys/ddp_debug.o] Fehler 1
+make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/video/mt6761/dispsys] Fehler 2
+make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/video/mt6761] Fehler 2
+make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/video] Fehler 2
+make[2]: *** [scripts/Makefile.build:648: drivers/misc/mediatek] Fehler 2
+make[1]: *** [scripts/Makefile.build:648: drivers/misc] Fehler 2
+make: *** [Makefile:1110: drivers] Fehler 2
+martin@mklinux:~/pwnagotchi-a5/8505F/devenv/linux$ 
+

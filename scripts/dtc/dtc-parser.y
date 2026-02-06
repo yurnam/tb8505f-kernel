@@ -25,6 +25,7 @@
 
 extern int yylex(void);
 extern void yyerror(char const *s);
+extern YYLTYPE yylloc;
 #define ERROR(loc, ...) \
 	do { \
 		srcpos_error((loc), "Error", __VA_ARGS__); \
