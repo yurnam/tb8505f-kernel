@@ -15,7 +15,7 @@
 # Makefile for LCM driver (stub for missing driver)
 #
 
-# Empty stub - driver source not available
-# obj-y += nt36523b_wxga_vdo_incell_inx.o
+# Stub object file to satisfy linker
+obj-y += nt36523b_stub.o
 
 ccflags-$(CONFIG_MTK_LCM) += -I$(srctree)/drivers/misc/mediatek/lcm/inc

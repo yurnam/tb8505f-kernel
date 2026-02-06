@@ -1,2 +1,3 @@
 #include $(srctree)/drivers/misc/mediatek/Makefile.custom
-# Empty stub - driver source not available
+# Stub object file to satisfy linker
+obj-y += sc500cs_stub.o

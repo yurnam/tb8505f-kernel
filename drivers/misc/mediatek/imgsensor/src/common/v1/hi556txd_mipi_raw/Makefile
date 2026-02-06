@@ -1,3 +1,3 @@
 #include $(srctree)/drivers/misc/mediatek/Makefile.custom
-# Empty stub - driver source not available
-# obj-y += hi556txdmipi_Sensor.o
+# Stub object file to satisfy linker
+obj-y += hi556txd_stub.o
