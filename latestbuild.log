@@ -17,586 +17,292 @@ fi
 for i in ./arch/arm64/boot/dts/mediatek/akita_row_wifi.dtb; do \
 	./scripts/dtc/ufdt_apply_overlay ./arch/arm64/boot/dts/mediatek/mt6761.dtb $i $i.merge;\
 done
-ufdt_apply_overlay: took 0.000000000 secs
   CHK     include/generated/timeconst.h
+ufdt_apply_overlay: took 0.000000000 secs
   CHK     include/generated/bounds.h
   CHK     include/generated/asm-offsets.h
   CALL    scripts/checksyscalls.sh
   CHK     include/generated/compile.h
-  CC      drivers/devfreq/helio-dvfsrc-opp.o
-  CC      drivers/iio/industrialio-core.o
-  CC      drivers/devfreq/helio-dvfsrc-sysfs.o
-  CC      drivers/i2c/i2c-boardinfo.o
-  CC      drivers/input/input.o
-  CC      drivers/dma/dmaengine.o
-  CC      drivers/gpio/devres.o
-  CC      drivers/firmware/psci.o
-  CC      drivers/devfreq/helio-dvfsrc-ipi.o
-  CC      drivers/input/input-compat.o
-  CC      drivers/dma-buf/dma-buf.o
-drivers/devfreq/helio-dvfsrc-opp.c:14:10: fatal error: helio-dvfsrc.h: Datei oder Verzeichnis nicht gefunden
-   14 | #include <helio-dvfsrc.h>
+  LD      drivers/nfc/built-in.o
+  LD      drivers/nvme/host/built-in.o
+  LD      drivers/nvme/target/built-in.o
+  LD      drivers/nvme/built-in.o
+  CC      kernel/sched/core.o
+  CC      kernel/profile.o
+  CC      drivers/of/base.o
+  CC      kernel/futex.o
+  CC      drivers/mmc/host/mediatek/ComboA/sd.o
+  CC      kernel/futex_compat.o
+  CC      drivers/misc/mediatek/aee/mrdump/mrdump_panic_wdt.o
+  CC      drivers/perf/arm_pmu.o
+  CC      drivers/mmc/host/mediatek/ComboA/dbg.o
+  CC      drivers/misc/mediatek/base/power/cm_mgr_v1/mtk_cm_mgr.o
+  CC      drivers/misc/mediatek/base/power/cpuidle_v3/mtk_cpuidle.o
+  CC      drivers/misc/mediatek/base/power/dcm_v1/mtk_dcm.o
+  CC      drivers/misc/mediatek/base/power/dcm_v1/mt6761/mtk_dcm_autogen.o
+  CC      drivers/misc/mediatek/base/power/cpufreq_v1/src/mtk_cpufreq_api.o
+  CC      drivers/input/touchscreen/mediatek/focaltech_touch/focaltech_test/focaltech_test_ini.o
+  CC      drivers/pinctrl/core.o
+  LD      drivers/platform/built-in.o
+  CC      drivers/of/device.o
+  CC      drivers/of/platform.o
+  CC      drivers/of/fdt.o
+  CC      drivers/misc/mediatek/base/power/cpufreq_v1/src/mtk_cpufreq_debug.o
+  CC      drivers/misc/mediatek/base/power/dcm_v1/mt6761/mtk_dcm_internal.o
+  CC      drivers/pinctrl/pinctrl-utils.o
+  LD      drivers/power/reset/built-in.o
+  CC      drivers/power/supply/power_supply_core.o
+  CC      kernel/smp.o
+  CC      drivers/of/fdt_address.o
+  CC      drivers/misc/mediatek/base/power/eem_v2/mt6761/mtk_eem.o
+  LD      drivers/pwm/built-in.o
+  CC      drivers/misc/mediatek/base/power/cpufreq_v1/src/mtk_cpufreq_hybrid.o
+drivers/misc/mediatek/aee/mrdump/mrdump_panic_wdt.c:43:10: fatal error: mrdump_panic.h: Datei oder Verzeichnis nicht gefunden
+   43 | #include <mrdump_panic.h>
       |          ^~~~~~~~~~~~~~~~
 compilation terminated.
-  CC      drivers/hid/hid-core.o
-make[2]: *** [scripts/Makefile.build:334: drivers/devfreq/helio-dvfsrc-opp.o] Fehler 1
-make[2]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  CC      drivers/input/input-mt.o
-  CC      drivers/i2c/i2c-core.o
-  CC      drivers/iio/industrialio-event.o
-  CC      drivers/dma/virt-dma.o
-  CC      drivers/gpio/gpiolib.o
-  CC      drivers/input/ff-core.o
-  CC      drivers/input/ff-memless.o
-  CC      drivers/iommu/iommu.o
-  CC      drivers/i2c/algos/i2c-algo-bit.o
-  CC      drivers/gpu/drm/drm_crtc_helper.o
-  CC      drivers/gpu/drm/drm_dp_helper.o
-  CC      drivers/gpio/gpiolib-legacy.o
-  CC      drivers/iommu/iommu-traces.o
-  GEN     lib/crc32table.h
-  CC      drivers/dma-buf/fence.o
-  CC      drivers/i2c/busses/i2c-mtk.o
-  CC      kernel/locking/semaphore.o
-drivers/devfreq/helio-dvfsrc-ipi.c:16:10: fatal error: helio-dvfsrc-ipi.h: Datei oder Verzeichnis nicht gefunden
-   16 | #include <helio-dvfsrc-ipi.h>
-      |          ^~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[2]: *** [scripts/Makefile.build:334: drivers/devfreq/helio-dvfsrc-ipi.o] Fehler 1
-  CC      drivers/input/input-leds.o
-  CC      lib/reed_solomon/reed_solomon.o
-  CC      drivers/input/evdev.o
-drivers/devfreq/helio-dvfsrc-sysfs.c:19:10: fatal error: helio-dvfsrc.h: Datei oder Verzeichnis nicht gefunden
-   19 | #include <helio-dvfsrc.h>
-      |          ^~~~~~~~~~~~~~~~
-compilation terminated.
-make[2]: *** [scripts/Makefile.build:334: drivers/devfreq/helio-dvfsrc-sysfs.o] Fehler 1
-make[1]: *** [scripts/Makefile.build:648: drivers/devfreq] Fehler 2
-make[1]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  CC      drivers/dma-buf/reservation.o
-In file included from ./include/linux/preempt.h:10,
-                 from ./include/linux/spinlock.h:50,
-                 from ./include/linux/seqlock.h:35,
-                 from ./include/linux/time.h:5,
-                 from ./include/uapi/linux/timex.h:56,
-                 from ./include/linux/timex.h:56,
-                 from ./include/linux/sched.h:18,
-                 from kernel/locking/semaphore.c:31:
-In function ‘__list_add’,
-    inlined from ‘list_add_tail’ at ./include/linux/list.h:77:2,
-    inlined from ‘__down_common’ at kernel/locking/semaphore.c:210:2,
-    inlined from ‘__down’ at kernel/locking/semaphore.c:238:2:
-./include/linux/list.h:42:20: error: storing the address of local variable ‘waiter’ in ‘*(struct list_head *)((char *)sem + 8).prev’ [-Werror=dangling-pointer=]
-   42 |         next->prev = new;
-      |         ~~~~~~~~~~~^~~~~
-kernel/locking/semaphore.c: In function ‘__down’:
-kernel/locking/semaphore.c:208:33: note: ‘waiter’ declared here
-  208 |         struct semaphore_waiter waiter;
-      |                                 ^~~~~~
-kernel/locking/semaphore.c:236:55: note: ‘sem’ declared here
-  236 | static noinline void __sched __down(struct semaphore *sem)
-      |                                     ~~~~~~~~~~~~~~~~~~^~~
-In function ‘__list_add’,
-    inlined from ‘list_add_tail’ at ./include/linux/list.h:77:2,
-    inlined from ‘__down_common’ at kernel/locking/semaphore.c:210:2,
-    inlined from ‘__down_interruptible’ at kernel/locking/semaphore.c:243:9:
-./include/linux/list.h:42:20: error: storing the address of local variable ‘waiter’ in ‘*(struct list_head *)((char *)sem + 8).prev’ [-Werror=dangling-pointer=]
-   42 |         next->prev = new;
-      |         ~~~~~~~~~~~^~~~~
-kernel/locking/semaphore.c: In function ‘__down_interruptible’:
-kernel/locking/semaphore.c:208:33: note: ‘waiter’ declared here
-  208 |         struct semaphore_waiter waiter;
-      |                                 ^~~~~~
-kernel/locking/semaphore.c:241:68: note: ‘sem’ declared here
-  241 | static noinline int __sched __down_interruptible(struct semaphore *sem)
-      |                                                  ~~~~~~~~~~~~~~~~~~^~~
-In function ‘__list_add’,
-    inlined from ‘list_add_tail’ at ./include/linux/list.h:77:2,
-    inlined from ‘__down_common’ at kernel/locking/semaphore.c:210:2,
-    inlined from ‘__down_killable’ at kernel/locking/semaphore.c:248:9:
-./include/linux/list.h:42:20: error: storing the address of local variable ‘waiter’ in ‘*(struct list_head *)((char *)sem + 8).prev’ [-Werror=dangling-pointer=]
-   42 |         next->prev = new;
-      |         ~~~~~~~~~~~^~~~~
-kernel/locking/semaphore.c: In function ‘__down_killable’:
-kernel/locking/semaphore.c:208:33: note: ‘waiter’ declared here
-  208 |         struct semaphore_waiter waiter;
-      |                                 ^~~~~~
-kernel/locking/semaphore.c:246:63: note: ‘sem’ declared here
-  246 | static noinline int __sched __down_killable(struct semaphore *sem)
-      |                                             ~~~~~~~~~~~~~~~~~~^~~
-In function ‘__list_add’,
-    inlined from ‘list_add_tail’ at ./include/linux/list.h:77:2,
-    inlined from ‘__down_common’ at kernel/locking/semaphore.c:210:2,
-    inlined from ‘__down_timeout’ at kernel/locking/semaphore.c:253:9:
-./include/linux/list.h:42:20: error: storing the address of local variable ‘waiter’ in ‘*(struct list_head *)((char *)sem + 8).prev’ [-Werror=dangling-pointer=]
-   42 |         next->prev = new;
-      |         ~~~~~~~~~~~^~~~~
-kernel/locking/semaphore.c: In function ‘__down_timeout’:
-kernel/locking/semaphore.c:208:33: note: ‘waiter’ declared here
-  208 |         struct semaphore_waiter waiter;
-      |                                 ^~~~~~
-kernel/locking/semaphore.c:251:62: note: ‘sem’ declared here
-  251 | static noinline int __sched __down_timeout(struct semaphore *sem, long timeout)
-      |                                            ~~~~~~~~~~~~~~~~~~^~~
-  CC      drivers/i2c/busses/i2c-mtk_debug.o
-cc1: all warnings being treated as errors
-make[2]: *** [scripts/Makefile.build:334: kernel/locking/semaphore.o] Fehler 1
-make[1]: *** [scripts/Makefile.build:648: kernel/locking] Fehler 2
-make[1]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  CC      drivers/iommu/iommu-sysfs.o
-  LD      drivers/firmware/built-in.o
-make: *** [Makefile:1098: kernel] Fehler 2
-make: *** Auf noch nicht beendete Prozesse wird gewartet …
-  CC      drivers/iio/inkern.o
-  CC      drivers/dma/of-dma.o
-  CC      drivers/dma-buf/seqno-fence.o
-In file included from lib/reed_solomon/reed_solomon.c:328:
-lib/reed_solomon/decode_rs.c: In function ‘decode_rs8’:
-lib/reed_solomon/decode_rs.c:179:9: error: ‘memcpy’ accessing 18446744069414584320 or more bytes at offsets 2 and 2 overlaps 9223372028264841217 bytes at offset -9223372032559808513 [-Werror=restrict]
-  179 |         memcpy(&reg[1], &lambda[1], nroots * sizeof(reg[0]));
-      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  CC      drivers/input/joystick/xpad.o
-  LD      sound/soc/snd-soc-core.o
-  CC      drivers/dma-buf/fence-array.o
-  CC      drivers/dma/8250_mtk_dma.o
-  CC      lib/zlib_inflate/inffast.o
-  LD      drivers/i2c/algos/built-in.o
-  CC      lib/textsearch.o
-  CC      drivers/iommu/dma-iommu.o
-  CC      drivers/iommu/iova.o
-  CC [M]  net/ipv4/tcp_westwood.o
-  CC      drivers/iommu/of_iommu.o
-  CC      sound/soc/mediatek/ac107/ac107.o
-cc1: all warnings being treated as errors
-make[2]: *** [scripts/Makefile.build:335: lib/reed_solomon/reed_solomon.o] Fehler 1
-make[1]: *** [scripts/Makefile.build:648: lib/reed_solomon] Fehler 2
-make[1]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  CC      lib/zlib_inflate/inflate.o
-  CC      lib/zlib_inflate/infutil.o
-  CC      drivers/hid/hid-input.o
-  LD      drivers/iio/accel/built-in.o
-  CC [M]  net/ipv4/tcp_htcp.o
-  CC      drivers/hid/hid-debug.o
-  CC      drivers/input/keyboard/mediatek/kpd.o
-  CC      drivers/input/keyboard/mediatek/mt6765/hal_kpd.o
-  CC      drivers/input/misc/uinput.o
-  CC      drivers/gpio/gpiolib-of.o
-  CC      drivers/input/misc/sx9311/sx9310.o
-sound/soc/mediatek/ac107/ac107.c: In function ‘ac107_i2c_probe’:
-sound/soc/mediatek/ac107/ac107.c:1782:91: error: passing argument 3 of ‘snd_soc_register_codec’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
- 1782 |                 ret = snd_soc_register_codec(&i2c->dev, &ac107_soc_codec_driver, ac107_dai[i2c_id->driver_data], 1);//(struct snd_soc_dai_driver *)
-      |                                                                                  ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
-In file included from sound/soc/mediatek/ac107/ac107.c:28:
-./include/sound/soc.h:467:44: note: expected ‘struct snd_soc_dai_driver *’ but argument is of type ‘const struct snd_soc_dai_driver *’
-  467 |                 struct snd_soc_dai_driver *dai_drv, int num_dai);
-      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
-  CC      drivers/gpu/drm/drm_probe_helper.o
-  CC      drivers/input/touchscreen/of_touchscreen.o
-  CC      drivers/dma-buf/sync_file.o
-  CC      sound/soc/mediatek/codec/mt6357/mtk-soc-codec-6357.o
-  CC      drivers/hid/hidraw.o
-  CC      drivers/gpu/drm/drm_plane_helper.o
-  CC      drivers/gpu/drm/drm_dp_mst_topology.o
-  CC      lib/zlib_inflate/inftrees.o
-  LD      sound/soc/omap/built-in.o
-  LD      sound/soc/pxa/built-in.o
-In file included from net/ipv4/tcp_westwood.c:25:
-./include/linux/module.h:133:13: error: ‘init_module’ specifies less restrictive attribute than its target ‘tcp_westwood_register’: ‘cold’ [-Werror=missing-attributes]
-  133 |         int init_module(void) __attribute__((alias(#initfn)));
-      |             ^~~~~~~~~~~
-net/ipv4/tcp_westwood.c:301:1: note: in expansion of macro ‘module_init’
-  301 | module_init(tcp_westwood_register);
-      | ^~~~~~~~~~~
-net/ipv4/tcp_westwood.c:290:19: note: ‘init_module’ target declared here
-  290 | static int __init tcp_westwood_register(void)
-      |                   ^~~~~~~~~~~~~~~~~~~~~
-./include/linux/module.h:139:14: error: ‘cleanup_module’ specifies less restrictive attribute than its target ‘tcp_westwood_unregister’: ‘cold’ [-Werror=missing-attributes]
-  139 |         void cleanup_module(void) __attribute__((alias(#exitfn)));
-      |              ^~~~~~~~~~~~~~
-net/ipv4/tcp_westwood.c:302:1: note: in expansion of macro ‘module_exit’
-  302 | module_exit(tcp_westwood_unregister);
-      | ^~~~~~~~~~~
-net/ipv4/tcp_westwood.c:296:20: note: ‘cleanup_module’ target declared here
-  296 | static void __exit tcp_westwood_unregister(void)
-      |                    ^~~~~~~~~~~~~~~~~~~~~~~
-  CC      drivers/input/touchscreen/mediatek/mtk_tpd.o
-  LD      drivers/input/joystick/built-in.o
-drivers/input/keyboard/mediatek/mt6765/hal_kpd.c: In function ‘kpd_init_keymap_state’:
-drivers/input/keyboard/mediatek/mt6765/hal_kpd.c:154:9: error: this ‘for’ clause does not guard... [-Werror=misleading-indentation]
-  154 |         for (i = 0; i < KPD_NUM_MEMS; i++)
-      |         ^~~
-In file included from drivers/input/keyboard/mediatek/mt6765/hal_kpd.c:20:
-./drivers/input/keyboard/mediatek/kpd.h:68:33: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
-   68 | #define kpd_info(fmt, arg...)   do { \
-      |                                 ^~
-drivers/input/keyboard/mediatek/mt6765/hal_kpd.c:156:17: note: in expansion of macro ‘kpd_info’
-  156 |                 kpd_info("init_keymap_state done: %x %x %x %x %x!\n",
-      |                 ^~~~~~~~
-  CC      lib/zlib_inflate/inflate_syms.o
-  LD      drivers/iio/adc/built-in.o
-  CC      drivers/input/touchscreen/mediatek/tpd_button.o
-  CC      drivers/gpu/drm/drm_atomic_helper.o
-  LD      drivers/iio/amplifiers/built-in.o
-  CC      sound/soc/mediatek/common_int/mtk-auddrv-devtree-parser.o
-  LD      drivers/iio/buffer/built-in.o
-cc1: all warnings being treated as errors
-  LD      drivers/iio/chemical/built-in.o
-make[2]: *** [scripts/Makefile.build:341: net/ipv4/tcp_westwood.o] Fehler 1
-In file included from net/ipv4/tcp_htcp.c:10:
-./include/linux/module.h:133:13: error: ‘init_module’ specifies less restrictive attribute than its target ‘htcp_register’: ‘cold’ [-Werror=missing-attributes]
-  133 |         int init_module(void) __attribute__((alias(#initfn)));
-      |             ^~~~~~~~~~~
-net/ipv4/tcp_htcp.c:312:1: note: in expansion of macro ‘module_init’
-  312 | module_init(htcp_register);
-      | ^~~~~~~~~~~
-net/ipv4/tcp_htcp.c:300:19: note: ‘init_module’ target declared here
-  300 | static int __init htcp_register(void)
-      |                   ^~~~~~~~~~~~~
-./include/linux/module.h:139:14: error: ‘cleanup_module’ specifies less restrictive attribute than its target ‘htcp_unregister’: ‘cold’ [-Werror=missing-attributes]
-  139 |         void cleanup_module(void) __attribute__((alias(#exitfn)));
-      |              ^~~~~~~~~~~~~~
-net/ipv4/tcp_htcp.c:313:1: note: in expansion of macro ‘module_exit’
-  313 | module_exit(htcp_unregister);
-      | ^~~~~~~~~~~
-make[2]: *** Auf noch nicht beendete Prozesse wird gewartet …
-net/ipv4/tcp_htcp.c:307:20: note: ‘cleanup_module’ target declared here
-  307 | static void __exit htcp_unregister(void)
-      |                    ^~~~~~~~~~~~~~~
-  LD      sound/soc/qcom/built-in.o
-  LD      drivers/iio/common/hid-sensors/built-in.o
-  LD      drivers/iio/dac/built-in.o
-  LD      drivers/iio/common/ms_sensors/built-in.o
-  CC      drivers/dma-buf/sw_sync.o
-  LD      drivers/iio/common/ssp_sensors/built-in.o
-cc1: all warnings being treated as errors
-make[5]: *** [scripts/Makefile.build:335: drivers/input/keyboard/mediatek/mt6765/hal_kpd.o] Fehler 1
-make[4]: *** [scripts/Makefile.build:648: drivers/input/keyboard/mediatek/mt6765] Fehler 2
-make[4]: *** Auf noch nicht beendete Prozesse wird gewartet …
-cc1: all warnings being treated as errors
-  CC      sound/soc/mediatek/common_int/mtk-auddrv-underflow-mach.o
-make[4]: *** [scripts/Makefile.build:335: sound/soc/mediatek/ac107/ac107.o] Fehler 1
-  LD      drivers/iio/common/st_sensors/built-in.o
-make[3]: *** [scripts/Makefile.build:648: sound/soc/mediatek/ac107] Fehler 2
+make[5]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/aee/mrdump/mrdump_panic_wdt.o] Fehler 1
+make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/aee/mrdump] Fehler 2
+make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/aee] Fehler 2
 make[3]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  LD      drivers/iio/dummy/built-in.o
-  LD      drivers/iio/common/built-in.o
-  CC      drivers/dma-buf/sync_debug.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-btcvsd.o
-  LD      drivers/iio/frequency/built-in.o
-cc1: all warnings being treated as errors
-  LD      drivers/iio/gyro/built-in.o
-  CC      drivers/input/touchscreen/mediatek/tpd_calibrate.o
-make[2]: *** [scripts/Makefile.build:341: net/ipv4/tcp_htcp.o] Fehler 1
-make[1]: *** [scripts/Makefile.build:648: net/ipv4] Fehler 2
+kernel/profile.c: In function ‘profile_dead_cpu’:
+kernel/profile.c:336:27: error: the comparison will always evaluate as ‘true’ for the address of ‘prof_cpu_mask’ will never be NULL [-Werror=address]
+  336 |         if (prof_cpu_mask != NULL)
+      |                           ^~
+kernel/profile.c:46:22: note: ‘prof_cpu_mask’ declared here
+   46 | static cpumask_var_t prof_cpu_mask;
+      |                      ^~~~~~~~~~~~~
+kernel/profile.c: In function ‘profile_online_cpu’:
+kernel/profile.c:373:27: error: the comparison will always evaluate as ‘true’ for the address of ‘prof_cpu_mask’ will never be NULL [-Werror=address]
+  373 |         if (prof_cpu_mask != NULL)
+      |                           ^~
+kernel/profile.c:46:22: note: ‘prof_cpu_mask’ declared here
+   46 | static cpumask_var_t prof_cpu_mask;
+      |                      ^~~~~~~~~~~~~
+kernel/profile.c: In function ‘profile_tick’:
+kernel/profile.c:403:47: error: the comparison will always evaluate as ‘true’ for the address of ‘prof_cpu_mask’ will never be NULL [-Werror=address]
+  403 |         if (!user_mode(regs) && prof_cpu_mask != NULL &&
+      |                                               ^~
+kernel/profile.c:46:22: note: ‘prof_cpu_mask’ declared here
+   46 | static cpumask_var_t prof_cpu_mask;
+      |                      ^~~~~~~~~~~~~
+  CC      drivers/pinctrl/pinmux.o
+  CC      drivers/pinctrl/pinconf.o
+drivers/misc/mediatek/base/power/cpufreq_v1/src/mtk_cpufreq_api.c:263:14: error: conflicting types for ‘mt_cpufreq_get_cur_freq_idx’ due to enum/integer mismatch; have ‘unsigned int(enum mt_cpu_dvfs_id)’ [-Werror=enum-int-mismatch]
+  263 | unsigned int mt_cpufreq_get_cur_freq_idx(enum mt_cpu_dvfs_id id)
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ./drivers/misc/mediatek/base/power/cpufreq_v1/inc/mtk_cpufreq_internal.h:51,
+                 from drivers/misc/mediatek/base/power/cpufreq_v1/src/mtk_cpufreq_api.c:14:
+./drivers/misc/mediatek/include/mt-plat/mt6761/include/mach/mtk_cpufreq_api.h:78:21: note: previous declaration of ‘mt_cpufreq_get_cur_freq_idx’ with type ‘unsigned int(unsigned int)’
+   78 | extern unsigned int mt_cpufreq_get_cur_freq_idx(unsigned int cluster_id);
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/misc/mediatek/base/power/cpufreq_v1/src/mtk_cpufreq_api.c:346:14: error: conflicting types for ‘mt_cpufreq_get_cur_phy_freq_idx_no_lock’ due to enum/integer mismatch; have ‘unsigned int(enum mt_cpu_dvfs_id)’ [-Werror=enum-int-mismatch]
+  346 | unsigned int mt_cpufreq_get_cur_phy_freq_idx_no_lock(enum mt_cpu_dvfs_id id)
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./drivers/misc/mediatek/include/mt-plat/mt6761/include/mach/mtk_cpufreq_api.h:80:1: note: previous declaration of ‘mt_cpufreq_get_cur_phy_freq_idx_no_lock’ with type ‘unsigned int(unsigned int)’
+   80 | mt_cpufreq_get_cur_phy_freq_idx_no_lock(unsigned int cluster_id);
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  LD      drivers/misc/mediatek/base/power/cpuidle_v3/built-in.o
+  CC      drivers/misc/mediatek/base/power/cpufreq_v1/src/mach/mt6761/mtk_cpufreq_platform.o
+drivers/misc/mediatek/base/power/cm_mgr_v1/mtk_cm_mgr.c: In function ‘check_cm_mgr_status_internal’:
+drivers/misc/mediatek/base/power/cm_mgr_v1/mtk_cm_mgr.c:466:17: error: ‘memset’ used with length equal to number of elements without multiplication by element size [-Werror=memset-elt-size]
+  466 |                 memset(count_ack, 0, ARRAY_SIZE(count_ack));
+      |                 ^~~~~~
+drivers/misc/mediatek/base/power/cm_mgr_v1/mtk_cm_mgr.c:481:17: error: ‘memset’ used with length equal to number of elements without multiplication by element size [-Werror=memset-elt-size]
+  481 |                 memset(max_load, 0, ARRAY_SIZE(count_ack));
+      |                 ^~~~~~
+In file included from drivers/mmc/host/mediatek/ComboA/mtk_sd.h:33,
+                 from drivers/mmc/host/mediatek/ComboA/dbg.c:32:
+./drivers/mmc/host/mediatek/ComboA/mt6765/autok_dvfs.h:17:10: fatal error: autok.h: Datei oder Verzeichnis nicht gefunden
+   17 | #include "autok.h"
+      |          ^~~~~~~~~
+compilation terminated.
+make[5]: *** [scripts/Makefile.build:334: drivers/mmc/host/mediatek/ComboA/dbg.o] Fehler 1
+make[5]: *** Auf noch nicht beendete Prozesse wird gewartet …
+In file included from drivers/mmc/host/mediatek/ComboA/mtk_sd.h:33,
+                 from drivers/mmc/host/mediatek/ComboA/sd.c:44:
+./drivers/mmc/host/mediatek/ComboA/mt6765/autok_dvfs.h:17:10: fatal error: autok.h: Datei oder Verzeichnis nicht gefunden
+   17 | #include "autok.h"
+      |          ^~~~~~~~~
+compilation terminated.
+  CC      kernel/uid16.o
+make[5]: *** [scripts/Makefile.build:334: drivers/mmc/host/mediatek/ComboA/sd.o] Fehler 1
+make[4]: *** [scripts/Makefile.build:648: drivers/mmc/host/mediatek/ComboA] Fehler 2
+  CC      drivers/misc/mediatek/base/power/hps_v3/mtk_hotplug_cb.o
+make[3]: *** [scripts/Makefile.build:648: drivers/mmc/host/mediatek] Fehler 2
+make[2]: *** [scripts/Makefile.build:648: drivers/mmc/host] Fehler 2
+make[1]: *** [scripts/Makefile.build:648: drivers/mmc] Fehler 2
 make[1]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  CC      drivers/hid/uhid.o
-  LD      drivers/iio/health/built-in.o
-  LD      drivers/iio/humidity/built-in.o
-  LD      drivers/dma/built-in.o
-  CC      drivers/input/touchscreen/mediatek/tpd_debug.o
-  LD      drivers/iio/imu/bmi160/built-in.o
-make[3]: *** [scripts/Makefile.build:648: drivers/input/keyboard/mediatek] Fehler 2
-make[2]: *** [scripts/Makefile.build:648: drivers/input/keyboard] Fehler 2
-make[2]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  LD      drivers/iio/imu/inv_mpu6050/built-in.o
-  CC      drivers/input/touchscreen/mediatek/tpd_default.o
-  CC      drivers/hid/hid-generic.o
-drivers/input/touchscreen/mediatek/tpd_button.c: In function ‘mtk_virtual_keys_show’:
-drivers/input/touchscreen/mediatek/tpd_button.c:29:22: error: ‘snprintf’ argument 4 may overlap destination object ‘buf’ [-Werror=restrict]
-   29 |                 j += snprintf(buf+j, PAGE_SIZE-j, "%s%s:%d:%d:%d:%d:%d%s", buf,
-      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   30 |                              __stringify(EV_KEY), tpd_keys[i],
-      |                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   31 |                              tpd_keys_dim[i][0], tpd_keys_dim[i][1],
-      |                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   32 |                              tpd_keys_dim[i][2], tpd_keys_dim[i][3],
-      |                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   33 |                              (i == tpd_keycnt - 1 ? "\n" : ":"));
-      |                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-drivers/input/touchscreen/mediatek/tpd_button.c:24:60: note: destination object referenced by ‘restrict’-qualified argument 1 was declared here
-   24 |                         struct kobj_attribute *attr, char *buf)
-      |                                                      ~~~~~~^~~
-  LD      drivers/iio/imu/built-in.o
-  LD      drivers/iio/light/built-in.o
-In file included from ./include/linux/kernel.h:13,
-                 from ./include/linux/delay.h:10,
-                 from sound/soc/mediatek/codec/mt6357/mtk-soc-codec-6357.c:45:
-sound/soc/mediatek/codec/mt6357/mtk-soc-codec-6357.c: In function ‘Audio_ADC1_Set’:
-./include/linux/printk.h:37:33: error: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘long int’ [-Werror=format=]
-   37 | #define KLOG_MODNAME            ""
-      |                                 ^~
-./include/linux/printk.h:293:21: note: in definition of macro ‘pr_fmt’
-  293 | #define pr_fmt(fmt) fmt
-      |                     ^~~
-./include/linux/printk.h:442:9: note: in expansion of macro ‘dynamic_pr_debug’
-  442 |         dynamic_pr_debug(KLOG_MODNAME fmt, ##__VA_ARGS__)
-      |         ^~~~~~~~~~~~~~~~
-./include/linux/printk.h:442:26: note: in expansion of macro ‘KLOG_MODNAME’
-  442 |         dynamic_pr_debug(KLOG_MODNAME fmt, ##__VA_ARGS__)
-      |                          ^~~~~~~~~~~~
-sound/soc/mediatek/codec/mt6357/mtk-soc-codec-6357.c:4954:9: note: in expansion of macro ‘pr_debug’
- 4954 |         pr_debug("%s ucontrol->value.integer.value[0] %d, GetAdcStatus = %d \n", __func__, ucontrol->value.integer.value[0], GetAdcStatus());
-      |         ^~~~~~~~
-./include/linux/printk.h:37:33: error: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘long int’ [-Werror=format=]
-   37 | #define KLOG_MODNAME            ""
-      |                                 ^~
-./include/linux/printk.h:293:21: note: in definition of macro ‘pr_fmt’
-  293 | #define pr_fmt(fmt) fmt
-      |                     ^~~
-./include/linux/printk.h:442:9: note: in expansion of macro ‘dynamic_pr_debug’
-  442 |         dynamic_pr_debug(KLOG_MODNAME fmt, ##__VA_ARGS__)
-      |         ^~~~~~~~~~~~~~~~
-./include/linux/printk.h:442:26: note: in expansion of macro ‘KLOG_MODNAME’
-  442 |         dynamic_pr_debug(KLOG_MODNAME fmt, ##__VA_ARGS__)
-      |                          ^~~~~~~~~~~~
-sound/soc/mediatek/codec/mt6357/mtk-soc-codec-6357.c:4975:17: note: in expansion of macro ‘pr_debug’
- 4975 |                 pr_debug("%s ucontrol->value.integer.value[0] %d, GetAdcStatus = %d \n", __func__, ucontrol->value.integer.value[0], GetAdcStatus());
-      |                 ^~~~~~~~
-./include/linux/printk.h:37:33: error: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘long int’ [-Werror=format=]
-   37 | #define KLOG_MODNAME            ""
-      |                                 ^~
-./include/linux/printk.h:293:21: note: in definition of macro ‘pr_fmt’
-  293 | #define pr_fmt(fmt) fmt
-      |                     ^~~
-./include/linux/printk.h:442:9: note: in expansion of macro ‘dynamic_pr_debug’
-  442 |         dynamic_pr_debug(KLOG_MODNAME fmt, ##__VA_ARGS__)
-      |         ^~~~~~~~~~~~~~~~
-./include/linux/printk.h:442:26: note: in expansion of macro ‘KLOG_MODNAME’
-  442 |         dynamic_pr_debug(KLOG_MODNAME fmt, ##__VA_ARGS__)
-      |                          ^~~~~~~~~~~~
-sound/soc/mediatek/codec/mt6357/mtk-soc-codec-6357.c:4995:17: note: in expansion of macro ‘pr_debug’
- 4995 |                 pr_debug("%s ucontrol->value.integer.value[0] %d, GetAdcStatus = %d \n", __func__, ucontrol->value.integer.value[0], GetAdcStatus());
-      |                 ^~~~~~~~
-sound/soc/mediatek/codec/mt6357/mtk-soc-codec-6357.c: In function ‘Audio_ADC2_Set’:
-./include/linux/printk.h:37:33: error: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘long int’ [-Werror=format=]
-   37 | #define KLOG_MODNAME            ""
-      |                                 ^~
-./include/linux/printk.h:293:21: note: in definition of macro ‘pr_fmt’
-  293 | #define pr_fmt(fmt) fmt
-      |                     ^~~
-./include/linux/printk.h:442:9: note: in expansion of macro ‘dynamic_pr_debug’
-  442 |         dynamic_pr_debug(KLOG_MODNAME fmt, ##__VA_ARGS__)
-      |         ^~~~~~~~~~~~~~~~
-./include/linux/printk.h:442:26: note: in expansion of macro ‘KLOG_MODNAME’
-  442 |         dynamic_pr_debug(KLOG_MODNAME fmt, ##__VA_ARGS__)
-      |                          ^~~~~~~~~~~~
-sound/soc/mediatek/codec/mt6357/mtk-soc-codec-6357.c:5016:9: note: in expansion of macro ‘pr_debug’
- 5016 |         pr_debug("%s ucontrol->value.integer.value[0] %d, GetAdcStatus = %d \n", __func__, ucontrol->value.integer.value[0], GetAdcStatus());
-      |         ^~~~~~~~
-./include/linux/printk.h:37:33: error: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘long int’ [-Werror=format=]
-   37 | #define KLOG_MODNAME            ""
-      |                                 ^~
-./include/linux/printk.h:293:21: note: in definition of macro ‘pr_fmt’
-  293 | #define pr_fmt(fmt) fmt
-      |                     ^~~
-./include/linux/printk.h:442:9: note: in expansion of macro ‘dynamic_pr_debug’
-  442 |         dynamic_pr_debug(KLOG_MODNAME fmt, ##__VA_ARGS__)
-      |         ^~~~~~~~~~~~~~~~
-./include/linux/printk.h:442:26: note: in expansion of macro ‘KLOG_MODNAME’
-  442 |         dynamic_pr_debug(KLOG_MODNAME fmt, ##__VA_ARGS__)
-      |                          ^~~~~~~~~~~~
-sound/soc/mediatek/codec/mt6357/mtk-soc-codec-6357.c:5036:17: note: in expansion of macro ‘pr_debug’
- 5036 |                 pr_debug("%s ucontrol->value.integer.value[0] %d, GetAdcStatus = %d \n", __func__, ucontrol->value.integer.value[0], GetAdcStatus());
-      |                 ^~~~~~~~
-  LD      drivers/iio/magnetometer/built-in.o
-./include/linux/printk.h:37:33: error: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘long int’ [-Werror=format=]
-   37 | #define KLOG_MODNAME            ""
-      |                                 ^~
-./include/linux/printk.h:293:21: note: in definition of macro ‘pr_fmt’
-  293 | #define pr_fmt(fmt) fmt
-      |                     ^~~
-./include/linux/printk.h:442:9: note: in expansion of macro ‘dynamic_pr_debug’
-  442 |         dynamic_pr_debug(KLOG_MODNAME fmt, ##__VA_ARGS__)
-      |         ^~~~~~~~~~~~~~~~
-./include/linux/printk.h:442:26: note: in expansion of macro ‘KLOG_MODNAME’
-  442 |         dynamic_pr_debug(KLOG_MODNAME fmt, ##__VA_ARGS__)
-      |                          ^~~~~~~~~~~~
-sound/soc/mediatek/codec/mt6357/mtk-soc-codec-6357.c:5056:17: note: in expansion of macro ‘pr_debug’
- 5056 |                 pr_debug("%s ucontrol->value.integer.value[0] %d, GetAdcStatus = %d \n", __func__, ucontrol->value.integer.value[0], GetAdcStatus());
-      |                 ^~~~~~~~
-  LD      drivers/iio/orientation/built-in.o
-  LD      lib/zlib_inflate/zlib_inflate.o
+  CC      drivers/of/address.o
 cc1: all warnings being treated as errors
-  LD      lib/zlib_inflate/built-in.o
-  CC      drivers/input/touchscreen/mediatek/tpd_misc.o
-make: *** [Makefile:1098: lib] Fehler 2
-make[4]: *** [scripts/Makefile.build:334: drivers/input/touchscreen/mediatek/tpd_button.o] Fehler 1
-  CC      drivers/hid/hid-a4tech.o
-  LD      drivers/iio/potentiometer/built-in.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-btcvsd-rx.o
-make[4]: *** Auf noch nicht beendete Prozesse wird gewartet …
-  LD      sound/soc/rockchip/built-in.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-btcvsd-tx.o
-  LD      drivers/iio/pressure/built-in.o
-  CC      drivers/hid/hid-apple.o
-  LD      drivers/iio/proximity/built-in.o
-  LD      drivers/iommu/built-in.o
-  LD      drivers/iio/temperature/built-in.o
-  CC      drivers/gpu/drm/drm_kms_helper_common.o
-  LD      drivers/iio/trigger/built-in.o
-  LD      drivers/iio/industrialio.o
-  CC      drivers/hid/hid-belkin.o
-  LD      drivers/iio/built-in.o
-  CC      drivers/hid/hid-betopff.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-speaker-amp.o
-  LD      sound/soc/samsung/built-in.o
-  CC      drivers/gpu/drm/drm_dp_dual_mode_helper.o
-  CC      sound/soc/mediatek/common_int/mtk-auddrv-afe.o
-  LD      drivers/input/misc/sx9311/built-in.o
-  CC      drivers/hid/hid-cherry.o
-  CC      drivers/gpu/drm/drm_simple_kms_helper.o
-  LD      sound/soc/sh/built-in.o
-  LD      drivers/input/misc/built-in.o
-  CC      drivers/gpu/drm/drm_modeset_helper.o
-  LD      sound/soc/sirf/built-in.o
-  CC      drivers/gpu/drm/drm_fb_helper.o
-  LD      sound/soc/spear/built-in.o
-  CC      sound/soc/mediatek/common_int/mtk-auddrv-gpio.o
-make: *** [Makefile:1098: net] Fehler 2
-  CC      drivers/hid/hid-chicony.o
-  CC      drivers/hid/hid-cypress.o
-  LD      drivers/i2c/busses/built-in.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-afe-control.o
-  LD      sound/soc/sti/built-in.o
-  LD      sound/soc/sunxi/built-in.o
-  LD      drivers/dma-buf/built-in.o
-  CC      drivers/gpu/drm/drm_auth.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-common.o
-  LD      sound/soc/tegra/built-in.o
-  CC      drivers/gpu/drm/drm_bufs.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-capture.o
-  CC      drivers/hid/hid-dr.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-dl1.o
-  LD      sound/soc/txx9/built-in.o
-  LD      sound/soc/ux500/built-in.o
-  CC      drivers/hid/hid-ezkey.o
-  CC      drivers/hid/hid-gyration.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-dummy.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-routing.o
-  LD      drivers/gpio/built-in.o
-  CC      drivers/hid/hid-kensington.o
-  CC      drivers/gpu/drm/drm_cache.o
-  CC      drivers/hid/hid-kye.o
-  CC      drivers/hid/hid-lg.o
-  LD      drivers/i2c/built-in.o
-  CC      drivers/hid/hid-magicmouse.o
-  LD      sound/soc/xtensa/built-in.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-capture2.o
-  CC      drivers/hid/hid-microsoft.o
-  CC      drivers/gpu/drm/drm_context.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-i2s2-adc2.o
-  CC      drivers/hid/hid-monterey.o
-  LD      sound/soc/zte/built-in.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-voice-md1.o
-  CC      drivers/hid/hid-multitouch.o
-  CC      drivers/hid/hid-pl.o
-  CC      drivers/hid/hid-petalynx.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-voice-md1-bt.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-voice-md2.o
-  CC      drivers/gpu/drm/drm_dma.o
-  CC      drivers/gpu/drm/drm_fops.o
+drivers/input/touchscreen/mediatek/focaltech_touch/focaltech_test/focaltech_test_ini.c: In function ‘fts_strncmp’:
+drivers/input/touchscreen/mediatek/focaltech_touch/focaltech_test/focaltech_test_ini.c:121:18: error: comparison between pointer and zero character constant [-Werror=pointer-compare]
+  121 |         if  ((cs == '\0') || (ct == '\0'))
+      |                  ^~
+drivers/input/touchscreen/mediatek/focaltech_touch/focaltech_test/focaltech_test_ini.c:121:15: note: did you mean to dereference the pointer?
+  121 |         if  ((cs == '\0') || (ct == '\0'))
+      |               ^
+drivers/input/touchscreen/mediatek/focaltech_touch/focaltech_test/focaltech_test_ini.c:121:34: error: comparison between pointer and zero character constant [-Werror=pointer-compare]
+  121 |         if  ((cs == '\0') || (ct == '\0'))
+      |                                  ^~
+drivers/input/touchscreen/mediatek/focaltech_touch/focaltech_test/focaltech_test_ini.c:121:31: note: did you mean to dereference the pointer?
+  121 |         if  ((cs == '\0') || (ct == '\0'))
+      |                               ^
+make[7]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/base/power/cpufreq_v1/src/mtk_cpufreq_api.o] Fehler 1
+make[7]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  CC      drivers/pinctrl/devicetree.o
+  CC      drivers/power/supply/power_supply_sysfs.o
+  CC      drivers/misc/mediatek/base/power/eem_v2/mt6761/mtk_eem_platform.o
+  CC      drivers/pinctrl/pinconf-generic.o
+  CC      kernel/module.o
+  CC      drivers/misc/mediatek/base/power/hps_v3/mtk_hps_main.o
+  CC      kernel/kallsyms.o
+cc1: all warnings being treated as errors
+make[1]: *** [scripts/Makefile.build:334: kernel/profile.o] Fehler 1
+make[1]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  CC      drivers/power/supply/power_supply_leds.o
+  CC      drivers/misc/mediatek/base/power/hps_v3/mtk_hps_core.o
+  LD      drivers/misc/mediatek/base/power/dcm_v1/mt6761/built-in.o
+  LD      drivers/misc/mediatek/base/power/dcm_v1/built-in.o
+kernel/sched/core.c: In function ‘sched_init’:
+kernel/sched/core.c:8596:30: error: the comparison will always evaluate as ‘false’ for the address of ‘cpu_isolated_map’ will never be NULL [-Werror=address]
+ 8596 |         if (cpu_isolated_map == NULL)
+      |                              ^~
+kernel/sched/core.c:185:15: note: ‘cpu_isolated_map’ declared here
+  185 | cpumask_var_t cpu_isolated_map;
+      |               ^~~~~~~~~~~~~~~~
+  CC      drivers/misc/mediatek/base/power/eem_v2/mt6761/mtk_eem_internal.o
+  LD      drivers/pinctrl/bcm/built-in.o
+  CC      drivers/of/irq.o
+  CC      kernel/sched/deadline.o
+  CC      drivers/power/supply/mediatek/battery/mtk_battery.o
+cc1: all warnings being treated as errors
+  CC      drivers/misc/mediatek/base/power/eem_v2/mt6761/mtk_eem_api.o
+  CC      drivers/power/supply/mediatek/charger/charger_class.o
+make[6]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/base/power/cm_mgr_v1/mtk_cm_mgr.o] Fehler 1
+make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/cm_mgr_v1] Fehler 2
+  CC      kernel/sched/stop_task.o
+make[5]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  CC      drivers/power/supply/mediatek/misc/mtk_gauge_time_service.o
+  CC      drivers/power/supply/mediatek/charger/mtk_charger.o
+  CC      kernel/sched/wait.o
+  CC      drivers/misc/mediatek/base/power/hps_v3/mtk_hps_procfs.o
+  LD      drivers/misc/mediatek/base/power/cpufreq_v1/src/mach/mt6761/built-in.o
+  CC      kernel/sched/swait.o
+  CC      drivers/power/supply/mediatek/battery/mtk_power_misc.o
+  LD      drivers/misc/mediatek/base/power/cpufreq_v1/src/mach/built-in.o
+  LD      drivers/pinctrl/freescale/built-in.o
+  CC      drivers/misc/mediatek/base/power/hps_v3/mtk_hps_cpu.o
+  CC      drivers/power/supply/mediatek/battery/mtk_gauge_coulomb_service.o
+  CC      drivers/pinctrl/mediatek/pinctrl-mtk-common.o
+make[6]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/cpufreq_v1/src] Fehler 2
+make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/cpufreq_v1] Fehler 2
+  CC      drivers/of/of_net.o
+  LD      drivers/pinctrl/nomadik/built-in.o
+  CC      drivers/power/supply/mediatek/battery/mtk_gauge_class.o
+  CC      drivers/pinctrl/mediatek/pinctrl-mt6761.o
+  CC      drivers/of/of_mdio.o
+cc1: all warnings being treated as errors
+  CC      kernel/sched/completion.o
+make[6]: *** [scripts/Makefile.build:335: drivers/input/touchscreen/mediatek/focaltech_touch/focaltech_test/focaltech_test_ini.o] Fehler 1
+make[5]: *** [scripts/Makefile.build:648: drivers/input/touchscreen/mediatek/focaltech_touch/focaltech_test] Fehler 2
+make[4]: *** [scripts/Makefile.build:648: drivers/input/touchscreen/mediatek/focaltech_touch] Fehler 2
 make[3]: *** [scripts/Makefile.build:648: drivers/input/touchscreen/mediatek] Fehler 2
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-voice-md2-bt.o
 make[2]: *** [scripts/Makefile.build:648: drivers/input/touchscreen] Fehler 2
 make[1]: *** [scripts/Makefile.build:648: drivers/input] Fehler 2
-  CC      drivers/gpu/drm/drm_gem.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-voice-usb.o
-  CC      drivers/gpu/drm/drm_ioctl.o
-  CC      drivers/hid/hid-plantronics.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-voice-usb-echoref.o
-  CC      drivers/hid/hid-samsung.o
-  CC      drivers/hid/hid-sjoy.o
-  CC      drivers/gpu/drm/drm_irq.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-dl1-i2s0.o
-  CC      drivers/gpu/drm/drm_lock.o
-  CC      drivers/hid/hid-sony.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-dl1-i2s0Dl1.o
-  CC      drivers/hid/hid-sunplus.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-i2s0-awb.o
-  CC      drivers/gpu/drm/drm_memory.o
-  CC      drivers/hid/hid-gaff.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-uldlloopback.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-dl2.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-deep-buffer-dl.o
-  CC      drivers/hid/hid-tmff.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-mrgrx.o
-  CC      drivers/gpu/drm/drm_drv.o
-  CC      drivers/hid/hid-topseed.o
-  CC      drivers/hid/hid-twinhan.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-mrgrx-awb.o
-  CC      drivers/hid/hid-zpff.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-fm-i2s.o
-  CC      drivers/hid/usbhid/hid-core.o
-  CC      drivers/gpu/drm/drm_vm.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-fm-i2s-awb.o
-  CC      drivers/hid/usbhid/hid-quirks.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-dl1-awb.o
-  CC      drivers/gpu/drm/drm_scatter.o
+  CC      drivers/power/supply/mediatek/charger/mtk_switch_charging.o
+In file included from drivers/power/supply/mediatek/battery/mtk_power_misc.c:31:
+drivers/power/supply/mediatek/battery/mtk_battery_internal.h:26:10: fatal error: mtk_gauge_class.h: Datei oder Verzeichnis nicht gefunden
+   26 | #include <mtk_gauge_class.h>
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[5]: *** [scripts/Makefile.build:334: drivers/power/supply/mediatek/battery/mtk_power_misc.o] Fehler 1
+make[5]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  CC      kernel/sched/idle.o
+  CC      drivers/misc/mediatek/base/power/hps_v3/mtk_hps_api.o
+  LD      drivers/perf/built-in.o
+  CC      drivers/misc/mediatek/base/power/hps_v3/mtk_hps_algo.o
+In file included from drivers/pinctrl/mediatek/pinctrl-mtk-common.c:41:
+drivers/pinctrl/mediatek/pinctrl-mtk-common.h:367:15: error: duplicate ‘const’ declaration specifier [-Werror=duplicate-decl-specifier]
+  367 |         const const struct mtk_pin_drv_grp      *pin_drv_grp;
+      |               ^~~~~
+  CC      drivers/of/of_reserved_mem.o
+  LD      drivers/power/supply/power_supply.o
+  CC      drivers/power/supply/mediatek/charger/mtk_pdc_intf.o
+  CC      drivers/power/supply/mediatek/charger/mtk_chg_type_det.o
+  CC      drivers/power/supply/mediatek/charger/mtk_pe40_intf.o
+  CC      kernel/sched/cpupri.o
+drivers/power/supply/mediatek/battery/mtk_battery.c:64:10: fatal error: mtk_gauge_class.h: Datei oder Verzeichnis nicht gefunden
+   64 | #include <mtk_gauge_class.h>
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from drivers/pinctrl/mediatek/pinctrl-mt6761.c:23:
+drivers/pinctrl/mediatek/pinctrl-mtk-common.h:367:15: error: duplicate ‘const’ declaration specifier [-Werror=duplicate-decl-specifier]
+  367 |         const const struct mtk_pin_drv_grp      *pin_drv_grp;
+      |               ^~~~~
+make[5]: *** [scripts/Makefile.build:334: drivers/power/supply/mediatek/battery/mtk_battery.o] Fehler 1
+  CC      drivers/power/supply/mediatek/charger/bq2560x_charger.o
+  CC      drivers/misc/mediatek/base/power/hps_v3/mtk_hps_ops.o
+  CC      drivers/power/supply/mediatek/charger/pogo_charger.o
+  CC      kernel/sched/cpudeadline.o
+  CC      drivers/power/supply/mediatek/charger/rt9471.o
+drivers/power/supply/mediatek/battery/mtk_gauge_coulomb_service.c:23:10: fatal error: mtk_battery_internal.h: Datei oder Verzeichnis nicht gefunden
+   23 | #include <mtk_battery_internal.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[5]: *** [scripts/Makefile.build:334: drivers/power/supply/mediatek/battery/mtk_gauge_coulomb_service.o] Fehler 1
+  CC      kernel/sched/energy.o
 cc1: all warnings being treated as errors
-  LD      drivers/hid/hid.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-dl1-bt.o
-make[4]: *** [scripts/Makefile.build:334: sound/soc/mediatek/codec/mt6357/mtk-soc-codec-6357.o] Fehler 1
-make[3]: *** [scripts/Makefile.build:648: sound/soc/mediatek/codec/mt6357] Fehler 2
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-bt-dai.o
-  CC      drivers/gpu/drm/drm_pci.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-dai-stub.o
-  CC      drivers/gpu/drm/drm_platform.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-dai-routing.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-codec-dummy.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-fmtx.o
-  CC      drivers/gpu/drm/drm_sysfs.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-tdm-capture.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-pcm-hp-impedance.o
-  CC      drivers/gpu/drm/drm_hashtab.o
-  CC      drivers/gpu/drm/drm_mm.o
-  CC      sound/soc/mediatek/common_int/mtk-soc-machine.o
-  LD      drivers/hid/hid-logitech.o
-  CC      drivers/gpu/drm/drm_crtc.o
-  CC      drivers/gpu/drm/drm_fourcc.o
-  CC      drivers/gpu/drm/drm_modes.o
-  CC      drivers/gpu/drm/drm_edid.o
-  CC      drivers/gpu/drm/drm_info.o
-  CC      drivers/gpu/drm/drm_debugfs.o
-  CC      drivers/gpu/drm/drm_encoder_slave.o
-  CC      drivers/gpu/drm/drm_trace_points.o
-  CC      drivers/gpu/drm/drm_global.o
-  CC      drivers/gpu/drm/drm_prime.o
-  CC      drivers/gpu/drm/drm_rect.o
-  CC      drivers/gpu/drm/drm_vma_manager.o
-  CC      drivers/gpu/drm/drm_flip_work.o
-  CC      drivers/gpu/drm/drm_modeset_lock.o
-  CC      drivers/gpu/drm/drm_atomic.o
-  CC      drivers/gpu/drm/drm_bridge.o
-  CC      drivers/gpu/drm/drm_framebuffer.o
-  CC      drivers/gpu/drm/drm_connector.o
-  CC      drivers/gpu/drm/drm_blend.o
-  CC      drivers/gpu/drm/drm_encoder.o
-  CC      drivers/gpu/drm/drm_mode_object.o
-  CC      drivers/gpu/drm/drm_property.o
-  CC      drivers/gpu/drm/drm_plane.o
-  CC      drivers/gpu/drm/drm_color_mgmt.o
-  CC      drivers/gpu/drm/drm_ioc32.o
-  CC      drivers/gpu/drm/drm_of.o
-  LD      drivers/gpu/drm/bridge/built-in.o
-  LD      drivers/gpu/drm/hisilicon/built-in.o
-  LD      drivers/gpu/drm/i2c/built-in.o
-  LD      drivers/gpu/drm/omapdrm/displays/built-in.o
-  LD      drivers/gpu/drm/omapdrm/dss/built-in.o
-  LD      drivers/gpu/drm/omapdrm/built-in.o
-  LD      drivers/gpu/drm/panel/built-in.o
-  LD      drivers/gpu/drm/tilcdc/built-in.o
-  LD      drivers/gpu/drm/drm_kms_helper.o
-  LD      drivers/hid/usbhid/usbhid.o
-  LD      drivers/hid/usbhid/built-in.o
-  LD      drivers/hid/built-in.o
-  LD      sound/soc/mediatek/common_int/built-in.o
-make[2]: *** [scripts/Makefile.build:648: sound/soc/mediatek] Fehler 2
-make[1]: *** [scripts/Makefile.build:648: sound/soc] Fehler 2
-make: *** [Makefile:1098: sound] Fehler 2
-  LD      drivers/gpu/drm/drm.o
-  LD      drivers/gpu/drm/built-in.o
-  LD      drivers/gpu/built-in.o
-make: *** [Makefile:1098: drivers] Fehler 2
+  LD      drivers/power/supply/mediatek/misc/built-in.o
+  CC      kernel/sched/walt.o
+make[3]: *** [scripts/Makefile.build:335: drivers/pinctrl/mediatek/pinctrl-mt6761.o] Fehler 1
+make[3]: *** Auf noch nicht beendete Prozesse wird gewartet …
+In file included from drivers/power/supply/mediatek/battery/mtk_gauge_class.c:27:
+drivers/power/supply/mediatek/battery/mtk_battery_internal.h:26:10: fatal error: mtk_gauge_class.h: Datei oder Verzeichnis nicht gefunden
+   26 | #include <mtk_gauge_class.h>
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+  CC      kernel/sched/stats.o
+  CC      kernel/sched/debug.o
+make[5]: *** [scripts/Makefile.build:334: drivers/power/supply/mediatek/battery/mtk_gauge_class.o] Fehler 1
+make[4]: *** [scripts/Makefile.build:648: drivers/power/supply/mediatek/battery] Fehler 2
+make[4]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  CC      kernel/sched/tune.o
+In file included from drivers/power/supply/mediatek/charger/mtk_switch_charging.c:66:
+drivers/power/supply/mediatek/charger/mtk_switch_charging.c: In function ‘mtk_switch_charging_run’:
+drivers/power/supply/mediatek/charger/mtk_charger_intf.h:51:13: error: statement will never be executed [-Werror=switch-unreachable]
+   51 |         if (chr_get_debug_level() >= CHRLOG_ERROR_LEVEL) {      \
+      |             ^~~~~~~~~~~~~~~~~~~~~
+drivers/power/supply/mediatek/charger/mtk_switch_charging.c:663:25: note: in expansion of macro ‘chr_err’
+  663 |                         chr_err("%s_2 [%d] %d\n", __func__, swchgalg->state,
+      |                         ^~~~~~~
+  CC      kernel/sched/cpuacct.o
+  CC      kernel/sched/cpufreq.o
+  CC      kernel/sched/cpufreq_schedplus.o
+cc1: all warnings being treated as errors
+make[5]: *** [scripts/Makefile.build:334: drivers/power/supply/mediatek/charger/mtk_switch_charging.o] Fehler 1
+make[5]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  LD      drivers/misc/mediatek/base/power/hps_v3/built-in.o
+  LD      drivers/misc/mediatek/base/power/eem_v2/mt6761/built-in.o
+  LD      drivers/misc/mediatek/base/power/eem_v2/built-in.o
+make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power] Fehler 2
+make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base] Fehler 2
+make[2]: *** [scripts/Makefile.build:648: drivers/misc/mediatek] Fehler 2
+make[1]: *** [scripts/Makefile.build:648: drivers/misc] Fehler 2
+  LD      drivers/of/built-in.o
+cc1: all warnings being treated as errors
+make[3]: *** [scripts/Makefile.build:335: drivers/pinctrl/mediatek/pinctrl-mtk-common.o] Fehler 1
+make[2]: *** [scripts/Makefile.build:648: drivers/pinctrl/mediatek] Fehler 2
+make[1]: *** [scripts/Makefile.build:648: drivers/pinctrl] Fehler 2
+make[4]: *** [scripts/Makefile.build:648: drivers/power/supply/mediatek/charger] Fehler 2
+make[3]: *** [scripts/Makefile.build:648: drivers/power/supply/mediatek] Fehler 2
+make[2]: *** [scripts/Makefile.build:648: drivers/power/supply] Fehler 2
+make[1]: *** [scripts/Makefile.build:648: drivers/power] Fehler 2
+make: *** [Makefile:1104: drivers] Fehler 2
+make: *** Auf noch nicht beendete Prozesse wird gewartet …
+cc1: all warnings being treated as errors
+make[2]: *** [scripts/Makefile.build:334: kernel/sched/core.o] Fehler 1
+make[1]: *** [scripts/Makefile.build:648: kernel/sched] Fehler 2
+make: *** [Makefile:1104: kernel] Fehler 2
 martin@mklinux:~/pwnagotchi-a5/8505F/devenv/linux$ 
-
 
