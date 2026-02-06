@@ -140,7 +140,7 @@ class I2cObj(ModuleObj):
             for key in sorted_key(ModuleObj.get_data(self).keys()):
                 value = ModuleObj.get_data(self)[key]
                 channel = 'I2C_CHANNEL_%d' %(i)
-                if cmp(value.get_channel(), channel) == 0 and cmp(value.get_varName(), 'NC') != 0 and value.get_address().strip() != '':
+                if value.get_channel() == channel and value.get_varName() != 'NC' and value.get_address().strip() != '':
                     gen_str += '''\t%s@%s {\n''' %(value.get_varName().lower(), value.get_address()[2:].lower())
                     gen_str += '''\t\tcompatible = \"mediatek,%s\";\n''' %(value.get_varName().lower())
                     gen_str += '''\t\treg = <%s>;\n''' %(value.get_address().lower())
@@ -187,7 +187,7 @@ class I2cObj_MT6759(I2cObj):
             for key in sorted_key(ModuleObj.get_data(self).keys()):
                 value = ModuleObj.get_data(self)[key]
                 channel = 'I2C_CHANNEL_%d' %(i)
-                if cmp(value.get_channel(), channel) == 0 and cmp(value.get_varName(), 'NC') != 0 and value.get_address().strip() != '':
+                if value.get_channel() == channel and value.get_varName() != 'NC' and value.get_address().strip() != '':
                     gen_str += '''\t%s_mtk:%s@%s {\n''' %(value.get_varName().lower(), value.get_varName().lower(), value.get_address()[2:].lower())
                     gen_str += '''\t\tcompatible = \"mediatek,%s\";\n''' %(value.get_varName().lower())
                     gen_str += '''\t\treg = <%s>;\n''' %(value.get_address().lower())
@@ -225,7 +225,7 @@ class I2cObj_MT6775(I2cObj):
             for key in sorted_key(ModuleObj.get_data(self).keys()):
                 value = ModuleObj.get_data(self)[key]
                 channel = 'I2C_CHANNEL_%d' %(i)
-                if cmp(value.get_channel(), channel) == 0 and cmp(value.get_varName(), 'NC') != 0 and value.get_address().strip() != '':
+                if value.get_channel() == channel and value.get_varName() != 'NC' and value.get_address().strip() != '':
                     gen_str += '''\t%s_mtk:%s@%s {\n''' %(value.get_varName().lower(), value.get_varName().lower(), value.get_address()[2:].lower())
                     if re.match(r'^RT[\d]+$', value.get_varName()):
                         gen_str += '''\t\tcompatible = \"richtek,%s\";\n''' %(value.get_varName().lower())

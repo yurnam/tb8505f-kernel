@@ -161,13 +161,13 @@ class EintObj(ModuleObj):
             polarity = value.get_polarity()
             sensitive = value.get_sensitiveLevel()
 
-            if cmp(polarity, 'High') == 0 and cmp(sensitive, 'Edge') == 0:
+            if polarity == 'High' and sensitive == 'Edge':
                 temp = 'CUST_EINTF_TRIGGER_RISING'
-            elif cmp(polarity, 'Low') == 0 and cmp(sensitive, 'Edge') == 0:
+            elif polarity == 'Low' and sensitive == 'Edge':
                 temp = 'CUST_EINTF_TRIGGER_FALLING'
-            elif cmp(polarity, 'High') == 0 and cmp(sensitive, 'Level') == 0:
+            elif polarity == 'High' and sensitive == 'Level':
                 temp = 'CUST_EINTF_TRIGGER_HIGH'
-            elif cmp(polarity, 'Low') == 0 and cmp(sensitive, 'Level') == 0:
+            elif polarity == 'Low' and sensitive == 'Level':
                 temp = 'CUST_EINTF_TRIGGER_LOW'
 
             gen_str += '''#define CUST_EINT_%s_TYPE\t\t\t%s\n''' %(value.get_varName().upper(), temp)
@@ -291,13 +291,13 @@ class EintObj(ModuleObj):
             polarity = value.get_polarity()
             sensitive = value.get_sensitiveLevel()
 
-            if cmp(polarity, 'High') == 0 and cmp(sensitive, 'Edge') == 0:
+            if polarity == 'High' and sensitive == 'Edge':
                 temp = 'IRQ_TYPE_EDGE_RISING'
-            elif cmp(polarity, 'Low') == 0 and cmp(sensitive, 'Edge') == 0:
+            elif polarity == 'Low' and sensitive == 'Edge':
                 temp = 'IRQ_TYPE_EDGE_FALLING'
-            elif cmp(polarity, 'High') == 0 and cmp(sensitive, 'Level') == 0:
+            elif polarity == 'High' and sensitive == 'Level':
                 temp = 'IRQ_TYPE_LEVEL_HIGH'
-            elif cmp(polarity, 'Low') == 0 and cmp(sensitive, 'Level') == 0:
+            elif polarity == 'Low' and sensitive == 'Level':
                 temp = 'IRQ_TYPE_LEVEL_LOW'
 
             gen_str += '''\tinterrupts = <%s %s>;\n''' %(self.refGpio(key[4:], True)[0], temp)
@@ -349,13 +349,13 @@ class EintObj_MT6739(EintObj):
             polarity = value.get_polarity()
             sensitive = value.get_sensitiveLevel()
 
-            if cmp(polarity, 'High') == 0 and cmp(sensitive, 'Edge') == 0:
+            if polarity == 'High' and sensitive == 'Edge':
                 temp = 'IRQ_TYPE_EDGE_RISING'
-            elif cmp(polarity, 'Low') == 0 and cmp(sensitive, 'Edge') == 0:
+            elif polarity == 'Low' and sensitive == 'Edge':
                 temp = 'IRQ_TYPE_EDGE_FALLING'
-            elif cmp(polarity, 'High') == 0 and cmp(sensitive, 'Level') == 0:
+            elif polarity == 'High' and sensitive == 'Level':
                 temp = 'IRQ_TYPE_LEVEL_HIGH'
-            elif cmp(polarity, 'Low') == 0 and cmp(sensitive, 'Level') == 0:
+            elif polarity == 'Low' and sensitive == 'Level':
                 temp = 'IRQ_TYPE_LEVEL_LOW'
 
             gen_str += '''\tinterrupts = <%s %s %s %d>;\n''' % (key[4:], temp, self.refGpio(key[4:], True)[0], self.refGpio_defMode(key[4:], True))

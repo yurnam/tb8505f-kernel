@@ -21,3 +21,7 @@ scripts/selinux/mdp/mdp
 scripts/kallsyms
 scripts/pnmtologo
 scripts/sortextable
+*.d
+*.order
+vdso.so*
+.version

@@ -416,7 +416,7 @@ class GpioObj(ModuleObj):
                                     mode_name = mode_name.split('//')[1]
 
                             if pat.match(mode_name):
-                                if cmp(item, 'eint') == 0 and ((value.get_eintMode() or mode_name.find('MD_EINT') != -1)):
+                                if item == 'eint' and ((value.get_eintMode() or mode_name.find('MD_EINT') != -1)):
                                     continue
 
                                 gen_str += '''#define %s%s\t\tGPIO_MODE_0%d\n''' % (varName.upper(), GpioData._specMap[item].upper(), i)
@@ -459,7 +459,7 @@ class GpioObj(ModuleObj):
                         regExp = '[_A-Z0-9:]*%s[_A-Z0-9:]*' %(item.upper())
                         pat = re.compile(regExp)
                         if pat.match(mode_name):
-                            if cmp(item, 'eint') == 0 and ((value.get_eintMode() or mode_name.find('MD_EINT') != -1)):
+                            if item == 'eint' and ((value.get_eintMode() or mode_name.find('MD_EINT') != -1)):
                                 continue
                             gen_str += '''#define %s%s\t\tGPIO_MODE_0%d\n''' % (varName.upper(), GpioData._specMap[item].upper(), value.get_defMode())
                             bmatch = True
