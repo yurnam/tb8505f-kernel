@@ -17,44 +17,41 @@ fi
 for i in ./arch/arm64/boot/dts/mediatek/akita_row_wifi.dtb; do \
 	./scripts/dtc/ufdt_apply_overlay ./arch/arm64/boot/dts/mediatek/mt6761.dtb $i $i.merge;\
 done
-ufdt_apply_overlay: took 0.000000000 secs
   CHK     include/generated/timeconst.h
+ufdt_apply_overlay: took 0.000000000 secs
   CHK     include/generated/bounds.h
   CHK     include/generated/asm-offsets.h
   CALL    scripts/checksyscalls.sh
   CHK     include/generated/compile.h
-  CC      drivers/misc/mediatek/base/power/mt6761/mtk_gpufreq_core.o
 .
 FDVT: Drv use 3.5 folder
+  CC      drivers/misc/mediatek/base/power/mt6761/mtk_gpufreq_core.o
 .
-.
-  CC      drivers/misc/mediatek/base/power/spm/common/mtk_idle_select.o
-  CHK     kernel/config_data.h
 .
 cameraisp drv by platform 
+.
+  CC      drivers/misc/mediatek/cmdq/v3/mt6765/cmdq_mdp.o
 PLATFORM = mt6761
 DEVAPC platform code exists...
-  CC      drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_platform.o
-  CC      drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_power_data.o
-  CC      drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_cobra_algo.o
-  CC      drivers/misc/mediatek/base/power/spm/common/mtk_vcore_dvfs.o
-  CC      drivers/misc/mediatek/base/power/spm/common/mtk_idle_sysfs.o
-  CC      drivers/misc/mediatek/base/power/spm/common/mtk_idle_sysfs_debugfs.o
-  CC      drivers/misc/mediatek/cmdq/v3/mt6765/cmdq_mdp.o
+  CHK     kernel/config_data.h
+  CC      drivers/misc/mediatek/base/power/spm/common/mtk_idle_select.o
 imgsensor drv by common ../common/v1/gc5035_mipi_raw/ ../common/v1/gc5035b_mipi_raw/ ../common/v1/hi556_mipi_raw/ ../common/v1/hi556txd_mipi_raw/ ../common/v1/sc500cs_mipi_raw/ ../common/v1/s5k4h7_mipi_raw/ ../common/v1/gc2375h_mipi_raw/ ../common/v1/gc2375_mipi_raw/ ../common/v1/sc201cs_mipi_raw/ ../common/v1/s5k4h7_qtech_mipi_raw/ ../common/v1/gc02m1_mipi_raw/
   CC      drivers/misc/mediatek/leds/mtk_leds_drv.o
-  CC      drivers/misc/mediatek/leds/mt6765/mtk_leds.o
-  CC      drivers/misc/mediatek/m4u/mt6761/m4u_hw.o
 *MTK_GPU_VERSION 2 = clark
+  CC      drivers/misc/mediatek/mlog/mlog_dump.o
+  CC      drivers/misc/mediatek/m4u/mt6761/m4u_hw.o
+  CC      drivers/misc/mediatek/mlog/mlog_logger.o
+  CC      drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_platform.o
+  CC      drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_power_data.o
   LD      drivers/misc/mediatek/lcm/built-in.o
-  CC      drivers/misc/mediatek/memory-ssmr/memory_ssmr.o
-  CC      drivers/misc/mediatek/memory-amms/memory-amms.o
+  CC      drivers/misc/mediatek/mmp/src/mmprofile.o
+  CC      drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_cobra_algo.o
 aarch64-linux-gnu-ld: drivers/misc/mediatek/lcm/ft8201m_wxga_vdo_incell_boe/built-in.o kann nicht gefunden werden: Datei oder Verzeichnis nicht gefunden
 aarch64-linux-gnu-ld: drivers/misc/mediatek/lcm/nt36523b_wxga_vdo_incell_inx/built-in.o kann nicht gefunden werden: Datei oder Verzeichnis nicht gefunden
 make[4]: *** [scripts/Makefile.build:508: drivers/misc/mediatek/lcm/built-in.o] Fehler 1
-  CC      drivers/misc/mediatek/met_drv/met_api.o
 make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/lcm] Fehler 2
 make[3]: *** Auf noch nicht beendete Prozesse wird gewartet …
+  CC      drivers/misc/mediatek/mtprintk/mtk_printk_ctrl.o
   LD      drivers/misc/mediatek/imgsensor/src/mt6761/built-in.o
 aarch64-linux-gnu-ld: drivers/misc/mediatek/imgsensor/src/mt6761/../common/v1/hi556txd_mipi_raw/built-in.o kann nicht gefunden werden: Datei oder Verzeichnis nicht gefunden
 aarch64-linux-gnu-ld: drivers/misc/mediatek/imgsensor/src/mt6761/../common/v1/sc500cs_mipi_raw/built-in.o kann nicht gefunden werden: Datei oder Verzeichnis nicht gefunden
@@ -68,45 +65,10 @@ drivers/misc/mediatek/base/power/spm/common/mtk_idle_select.c:22:10: fatal error
    22 | #include <teei_client_main.h> /* is_teei_ready */
       |          ^~~~~~~~~~~~~~~~~~~~
 compilation terminated.
-make[7]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/base/power/spm/common/mtk_idle_select.o] Fehler 1
-make[7]: *** Auf noch nicht beendete Prozesse wird gewartet …
-In file included from drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_power_data.c:20:
-./drivers/misc/mediatek/base/power/ppm_v3/inc/mtk_ppm_internal.h:35:10: fatal error: mtk_ppm_platform.h: Datei oder Verzeichnis nicht gefunden
-   35 | #include "mtk_ppm_platform.h"
-      |          ^~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[9]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_power_data.o] Fehler 1
-make[9]: *** Auf noch nicht beendete Prozesse wird gewartet …
-drivers/misc/mediatek/leds/mtk_leds_drv.c:26:10: fatal error: mtk_leds_drv.h: Datei oder Verzeichnis nicht gefunden
-   26 | #include <mtk_leds_drv.h>
-      |          ^~~~~~~~~~~~~~~~
-compilation terminated.
-make[4]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/leds/mtk_leds_drv.o] Fehler 1
-make[4]: *** Auf noch nicht beendete Prozesse wird gewartet …
-In file included from drivers/misc/mediatek/base/power/mt6761/mtk_gpufreq_core.c:46:
-./drivers/misc/mediatek/thermal/mt6761/inc/mach/mtk_thermal.h:26:10: fatal error: mtk_gpufreq.h: Datei oder Verzeichnis nicht gefunden
-   26 | #include "mtk_gpufreq.h"
-      |          ^~~~~~~~~~~~~~~
-compilation terminated.
-make[6]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/base/power/mt6761/mtk_gpufreq_core.o] Fehler 1
-make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/mt6761] Fehler 2
+make[7]: *** [scripts/Makefile.build:334: drivers/misc/mediatek/base/power/spm/common/mtk_idle_select.o] Fehler 1
+make[6]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/spm/common] Fehler 2
+make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/spm] Fehler 2
 make[5]: *** Auf noch nicht beendete Prozesse wird gewartet …
-In file included from drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_cobra_algo.c:22:
-./drivers/misc/mediatek/base/power/ppm_v3/inc/mtk_ppm_internal.h:35:10: fatal error: mtk_ppm_platform.h: Datei oder Verzeichnis nicht gefunden
-   35 | #include "mtk_ppm_platform.h"
-      |          ^~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[9]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_cobra_algo.o] Fehler 1
-In file included from drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_platform.c:25:
-./drivers/misc/mediatek/base/power/ppm_v3/inc/mtk_ppm_internal.h:35:10: fatal error: mtk_ppm_platform.h: Datei oder Verzeichnis nicht gefunden
-   35 | #include "mtk_ppm_platform.h"
-      |          ^~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[9]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_platform.o] Fehler 1
-make[8]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761] Fehler 2
-make[7]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/ppm_v3/src/mach] Fehler 2
-make[6]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/ppm_v3/src] Fehler 2
-make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/ppm_v3] Fehler 2
 In file included from drivers/misc/mediatek/m4u/mt6761/m4u.h:17,
                  from drivers/misc/mediatek/m4u/mt6761/m4u_priv.h:25,
                  from drivers/misc/mediatek/m4u/mt6761/m4u_hw.c:17:
@@ -117,6 +79,44 @@ compilation terminated.
 make[5]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/m4u/mt6761/m4u_hw.o] Fehler 1
 make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/m4u/mt6761] Fehler 2
 make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/m4u] Fehler 2
+In file included from drivers/misc/mediatek/base/power/mt6761/mtk_gpufreq_core.c:46:
+./drivers/misc/mediatek/thermal/mt6761/inc/mach/mtk_thermal.h:26:10: fatal error: mtk_gpufreq.h: Datei oder Verzeichnis nicht gefunden
+   26 | #include "mtk_gpufreq.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+make[6]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/base/power/mt6761/mtk_gpufreq_core.o] Fehler 1
+make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/mt6761] Fehler 2
+In file included from drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_platform.c:25:
+./drivers/misc/mediatek/base/power/ppm_v3/inc/mtk_ppm_internal.h:35:10: fatal error: mtk_ppm_platform.h: Datei oder Verzeichnis nicht gefunden
+   35 | #include "mtk_ppm_platform.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[9]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_platform.o] Fehler 1
+make[9]: *** Auf noch nicht beendete Prozesse wird gewartet …
+drivers/misc/mediatek/leds/mtk_leds_drv.c:26:10: fatal error: mtk_leds_drv.h: Datei oder Verzeichnis nicht gefunden
+   26 | #include <mtk_leds_drv.h>
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+make[4]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/leds/mtk_leds_drv.o] Fehler 1
+make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/leds] Fehler 2
+In file included from drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_cobra_algo.c:22:
+./drivers/misc/mediatek/base/power/ppm_v3/inc/mtk_ppm_internal.h:35:10: fatal error: mtk_ppm_platform.h: Datei oder Verzeichnis nicht gefunden
+   35 | #include "mtk_ppm_platform.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_power_data.c:20:
+./drivers/misc/mediatek/base/power/ppm_v3/inc/mtk_ppm_internal.h:35:10: fatal error: mtk_ppm_platform.h: Datei oder Verzeichnis nicht gefunden
+   35 | #include "mtk_ppm_platform.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[9]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_cobra_algo.o] Fehler 1
+make[9]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761/mtk_ppm_power_data.o] Fehler 1
+make[8]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6761] Fehler 2
+make[7]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/ppm_v3/src/mach] Fehler 2
+make[6]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/ppm_v3/src] Fehler 2
+make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/ppm_v3] Fehler 2
+make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power] Fehler 2
+make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base] Fehler 2
 In file included from ./drivers/misc/mediatek/cmdq/v3/cmdq_helper_ext.h:23,
                  from ./drivers/misc/mediatek/cmdq/v3/cmdq_reg.h:20,
                  from drivers/misc/mediatek/cmdq/v3/mt6765/cmdq_mdp.c:13:
@@ -124,22 +124,16 @@ In file included from ./drivers/misc/mediatek/cmdq/v3/cmdq_helper_ext.h:23,
    29 | #include "cmdq_engine.h"
       |          ^~~~~~~~~~~~~~~
 compilation terminated.
-make[6]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/spm/common] Fehler 2
-make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power/spm] Fehler 2
-make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base/power] Fehler 2
-make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/base] Fehler 2
 make[6]: *** [scripts/Makefile.build:335: drivers/misc/mediatek/cmdq/v3/mt6765/cmdq_mdp.o] Fehler 1
 make[5]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/cmdq/v3/mt6765] Fehler 2
 make[4]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/cmdq/v3] Fehler 2
 make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/cmdq] Fehler 2
-  LD      drivers/misc/mediatek/memory-amms/built-in.o
-  LD      drivers/misc/mediatek/leds/mt6765/built-in.o
-make[3]: *** [scripts/Makefile.build:648: drivers/misc/mediatek/leds] Fehler 2
-  LD      drivers/misc/mediatek/met_drv/built-in.o
-  LD      drivers/misc/mediatek/memory-ssmr/built-in.o
+  LD      drivers/misc/mediatek/mtprintk/built-in.o
+  LD      drivers/misc/mediatek/mlog/mlog.o
+  LD      drivers/misc/mediatek/mlog/built-in.o
+  LD      drivers/misc/mediatek/mmp/src/built-in.o
+  LD      drivers/misc/mediatek/mmp/built-in.o
 make[2]: *** [scripts/Makefile.build:648: drivers/misc/mediatek] Fehler 2
 make[1]: *** [scripts/Makefile.build:648: drivers/misc] Fehler 2
 make: *** [Makefile:1110: drivers] Fehler 2
-martin@mklinux:~/pwnagotchi-a5/8505F/devenv/linux$ 
-
 
